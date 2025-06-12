@@ -25,7 +25,24 @@ This profile takes heavy inspiration from the [Process Run Crate](https://www.re
 
 Note the distinction between Bioschemas LabProtocol (a sequence of tasks and operations executed to perform experimental research) and LabProcess (the specific application of a LabProtocol to some input (biological material or data) to produce some output (biological material or data)). This is analogous to the prospective and retrospective provenance ideas presented in [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/).
 
+## Root Data Entity
+
+The root data entity should include the following properties:
+`hasPart`: it must include the objects created by each process - from collected specimen all the way through to assembled genome.
+`mentions`: must include all the processes described (i.e. all the `CreateAction`s)
+`about`: links to a Taxon entity for the species being described (same as `taxonomicRange`)
+`taxonomicRange`: links to a Taxon entity for the species being described (same as `about`)
+`identifier`: should include a BioProject identifier if one exists for the project
+
+## Species/taxon
+
+A species should be represented using the Bioschemas Taxon type (https://bioschemas.org/Taxon). Its properties `name`, `scientificName` and `taxonRank` should be present.
+
 ## Stages
+
+At all stages, there may be multiple samples or data entities - these can be grouped together using an entity of type `Collection` with `hasPart` linking to the individual entities. A `Collection` may be used in any `object` or `result` property on a `CreateAction` instead of an individual entity, provided that the entities in its `hasPart` are of the expected type for that process.
+
+Most processes and objects are optional as not all this data may be collected or machine-retrievable in all cases. Where there are gaps, placeholder entities can be used - these should have an `@id` with a local identifier starting with `#` and a `name` and `description` explaining what the placeholder is representing.
 
 ### Process: Collection
 
