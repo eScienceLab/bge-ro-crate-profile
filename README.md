@@ -25,3 +25,21 @@ The script generates an RO-Crate in the `bge-crate` folder. To generate a HTML p
 npm install ro-crate-html
 rochtml bge-crate/ro-crate-metadata.json
 ```
+
+## Where to find useful metadata and identifiers
+
+* People: https://orcid.org/
+* Organizations: https://ror.org/
+* Places: https://www.geonames.org/v3/
+* Taxonomy: https://www.ncbi.nlm.nih.gov/taxonomy
+* BioProjects: https://www.ncbi.nlm.nih.gov/search/ (though at time of writing, search results may give 500 errors)
+* Protocols: https://protocols.io/
+* Samples (example accession SAMEA114402090):
+    * https://www.ebi.ac.uk/ena/browser/ (preferred)
+    * https://www.ebi.ac.uk/biosamples/
+* Sequencing experiments (example accession ERX12519568):
+    * https://www.ebi.ac.uk/ena/browser/ (preferred)
+    * https://www.ncbi.nlm.nih.gov/sra
+* Assembled genome (example accession GCA_964187845.1):
+    * https://www.ebi.ac.uk/ena/browser/ (preferred)
+    * https://www.ncbi.nlm.nih.gov/datasets/genome/

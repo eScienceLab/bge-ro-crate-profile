@@ -42,7 +42,9 @@ A species should be represented using the Bioschemas Taxon type (https://biosche
 
 At all stages, there may be multiple samples or data entities - these can be grouped together using an entity of type `Collection` with `hasPart` linking to the individual entities. A `Collection` may be used in any `object` or `result` property on a `CreateAction` instead of an individual entity, provided that the entities in its `hasPart` are of the expected type for that process.
 
-Most processes and objects are optional as not all this data may be collected or machine-retrievable in all cases. Where there are gaps, placeholder entities can be used - these should have an `@id` with a local identifier starting with `#` and a `name` and `description` explaining what the placeholder is representing.
+Most processes and objects are optional as not all this data may be collected or machine-retrievable in all cases. Where there are gaps, placeholder entities can be used - these should have an `@id` with a local identifier* and a `name` and `description` explaining what the placeholder is representing. 
+
+*local identifiers should start with `#` and include a UUID to ensure uniqueness. The UUID is useful to avoid duplicate entities when many RO-Crates are combined into a [knowledge graph](https://en.wikipedia.org/wiki/Knowledge_graph).
 
 ### Process: Collection
 
