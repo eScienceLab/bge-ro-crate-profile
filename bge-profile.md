@@ -25,6 +25,8 @@ This profile takes heavy inspiration from the [Process Run Crate](https://www.re
 
 Note the distinction between Bioschemas LabProtocol (a sequence of tasks and operations executed to perform experimental research) and LabProcess (the specific application of a LabProtocol to some input (biological material or data) to produce some output (biological material or data)). This is analogous to the prospective and retrospective provenance ideas presented in [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/).
 
+This spreadsheet [RO-Crate Bioschema mapping](https://docs.google.com/spreadsheets/d/1l33cmZC7SYsbD2JhxZ-XmW5MrwW7bdiBg3tQONWUc1w/edit?gid=1705586496#gid=1705586496) is the original reference for which metadata should be mapped to which terms in RO-Crate and particularly Bioschemas. Where information is omitted here in this draft, it may be present in that spreadsheet (though eventually all of the spreadsheet information should be in this profile).
+
 ## Root Data Entity
 
 The root data entity should include the following properties:
