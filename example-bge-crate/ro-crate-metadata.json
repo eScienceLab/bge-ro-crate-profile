@@ -1,0 +1,182 @@
+{
+    "@context": "https://w3id.org/ro/crate/1.1/context",
+    "@graph": [
+        {
+            "@id": "./",
+            "@type": "Dataset",
+            "about": {
+                "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+            },
+            "datePublished": "2025-04-23T16:50:53+00:00",
+            "description": "Genome of Culex laticinctus created by ERGA-BGE",
+            "hasPart": [
+                {
+                    "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+                }
+            ],
+            "identifier": [
+                "PRJEB75414",
+                "https://www.ncbi.nlm.nih.gov/bioproject/1109235"
+            ],
+            "license": "TODO license",
+            "mentions": [
+                {
+                    "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a"
+                },
+                {
+                    "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7"
+                }
+            ],
+            "name": "Genome of Culex laticinctus",
+            "scientificName": "Culex laticinctus",
+            "taxonomicRange": {
+                "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+            }
+        },
+        {
+            "@id": "ro-crate-metadata.json",
+            "@type": "CreativeWork",
+            "about": {
+                "@id": "./"
+            },
+            "conformsTo": {
+                "@id": "https://w3id.org/ro/crate/1.1"
+            }
+        },
+        {
+            "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
+            "@type": "Taxon",
+            "name": "Culex laticinctus",
+            "scientificName": "Culex laticinctus",
+            "taxonRank": [
+                "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734",
+                "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
+                "https://www.wikidata.org/wiki/Q13855218"
+            ]
+        },
+        {
+            "@id": "https://ror.org/05cy4wa09",
+            "@type": "Organization",
+            "location": {
+                "@id": "https://www.geonames.org/2653941"
+            },
+            "name": "Wellcome Sanger Institute",
+            "url": "https://www.sanger.ac.uk"
+        },
+        {
+            "@id": "https://www.geonames.org/2653941",
+            "@type": "Place",
+            "name": "Cambridge, UK"
+        },
+        {
+            "@id": "#sample-collection",
+            "@type": "Collection",
+            "hasPart": [],
+            "identifier": "EBD_I-002382"
+        },
+        {
+            "@id": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
+            "@type": "BioSample",
+            "collectionMethod": {
+                "@id": "https://eu.biogents.com/bg-sentinel/"
+            },
+            "collector": "TODO collectors",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+            },
+            "contributor": "TODO contributors",
+            "custodian": "TODO custodian",
+            "ethics": {
+                "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+            },
+            "identifier": [
+                "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
+                "idCulLati1"
+            ],
+            "locationOfOrigin": "TODO place entity",
+            "url": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090"
+        },
+        {
+            "@id": "https://eu.biogents.com/bg-sentinel/",
+            "@type": "IndividualProduct",
+            "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
+            "identifier": "https://eu.biogents.com/bg-sentinel/",
+            "name": "BG-Sentinel trap"
+        },
+        {
+            "@id": "#biobank-collection",
+            "@type": "Collection",
+            "hasPart": [],
+            "identifier": "EBD_I-002381"
+        },
+        {
+            "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1",
+            "@type": "LabProtocol",
+            "name": "Sanger Tree of Life Wet Laboratory Protocol Collection  V.1"
+        },
+        {
+            "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30",
+            "@type": "BioSample",
+            "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
+            "name": "Processed DNA/RNA"
+        },
+        {
+            "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a",
+            "@type": "LabProcess",
+            "agent": "TODO wet lab contributors",
+            "executesLabProtocol": {
+                "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+            },
+            "instrument": {
+                "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+            },
+            "location": {
+                "@id": "https://www.geonames.org/2653941"
+            },
+            "name": "DNA/RNA processing",
+            "object": {
+                "@id": "#sample-collection"
+            },
+            "provider": {
+                "@id": "https://ror.org/05cy4wa09"
+            },
+            "result": {
+                "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+            }
+        },
+        {
+            "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b",
+            "@type": "LabProtocol",
+            "description": "Sequencing protocol described in (TODO paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
+            "name": "Sequencing protocol"
+        },
+        {
+            "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1",
+            "@type": "File",
+            "contentSize": "5216568759",
+            "description": "PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+            "encodingFormat": "binary/octet-stream",
+            "identifier": "https://www.ncbi.nlm.nih.gov/sra/ERX12405204",
+            "name": "Revio sequencing",
+            "sdDatePublished": "Thu, 15 Aug 2024 07:14:07 GMT"
+        },
+        {
+            "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7",
+            "@type": "LabProcess",
+            "agent": "TODO wet lab contributors",
+            "executesLabProtocol": {
+                "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+            },
+            "instrument": {
+                "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+            },
+            "name": "Genome sequencing",
+            "object": {
+                "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+            },
+            "result": {
+                "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+            }
+        }
+    ]
+}

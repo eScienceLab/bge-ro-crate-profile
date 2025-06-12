@@ -1,0 +1,478 @@
+
+
+<html>
+<head>
+
+
+<script type="application/ld+json"> 
+  {
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "about": {
+        "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+      },
+      "datePublished": "2025-04-23T16:50:53+00:00",
+      "description": "Genome of Culex laticinctus created by ERGA-BGE",
+      "hasPart": {
+        "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+      },
+      "identifier": [
+        "PRJEB75414",
+        "https://www.ncbi.nlm.nih.gov/bioproject/1109235"
+      ],
+      "license": "TODO license",
+      "mentions": [
+        {
+          "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a"
+        },
+        {
+          "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7"
+        }
+      ],
+      "name": "Genome of Culex laticinctus",
+      "scientificName": "Culex laticinctus",
+      "taxonomicRange": {
+        "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+      }
+    },
+    {
+      "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
+      "@type": "Taxon",
+      "name": "Culex laticinctus",
+      "scientificName": "Culex laticinctus",
+      "taxonRank": [
+        "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734",
+        "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
+        "https://www.wikidata.org/wiki/Q13855218"
+      ]
+    },
+    {
+      "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1",
+      "@type": "File",
+      "contentSize": "5216568759",
+      "description": "PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+      "encodingFormat": "binary/octet-stream",
+      "identifier": "https://www.ncbi.nlm.nih.gov/sra/ERX12405204",
+      "name": "Revio sequencing",
+      "sdDatePublished": "Thu, 15 Aug 2024 07:14:07 GMT"
+    },
+    {
+      "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "instrument": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "DNA/RNA processing",
+      "object": {
+        "@id": "#sample-collection"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": {
+        "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+      }
+    },
+    {
+      "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+      },
+      "name": "Genome sequencing",
+      "object": {
+        "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+      },
+      "result": {
+        "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "https://ror.org/05cy4wa09",
+      "@type": "Organization",
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "Wellcome Sanger Institute",
+      "url": "https://www.sanger.ac.uk"
+    },
+    {
+      "@id": "https://www.geonames.org/2653941",
+      "@type": "Place",
+      "name": "Cambridge, UK"
+    },
+    {
+      "@id": "#sample-collection",
+      "@type": "Collection",
+      "hasPart": [],
+      "identifier": "EBD_I-002382"
+    },
+    {
+      "@id": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
+      "@type": "BioSample",
+      "collectionMethod": {
+        "@id": "https://eu.biogents.com/bg-sentinel/"
+      },
+      "collector": "TODO collectors",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+      },
+      "contributor": "TODO contributors",
+      "custodian": "TODO custodian",
+      "ethics": {
+        "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+      },
+      "identifier": [
+        "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
+        "idCulLati1"
+      ],
+      "locationOfOrigin": "TODO place entity",
+      "url": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090"
+    },
+    {
+      "@id": "https://eu.biogents.com/bg-sentinel/",
+      "@type": "IndividualProduct",
+      "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
+      "identifier": "https://eu.biogents.com/bg-sentinel/",
+      "name": "BG-Sentinel trap"
+    },
+    {
+      "@id": "#biobank-collection",
+      "@type": "Collection",
+      "hasPart": [],
+      "identifier": "EBD_I-002381"
+    },
+    {
+      "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1",
+      "@type": "LabProtocol",
+      "name": "Sanger Tree of Life Wet Laboratory Protocol Collection  V.1"
+    },
+    {
+      "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30",
+      "@type": "BioSample",
+      "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
+      "name": "Processed DNA/RNA"
+    },
+    {
+      "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b",
+      "@type": "LabProtocol",
+      "description": "Sequencing protocol described in (TODO paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
+      "name": "Sequencing protocol"
+    }
+  ]
+}
+</script>
+
+    
+<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script -->
+<script src="https://unpkg.com/ro-crate-html@0.1/dist/ro-crate-dynamic.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset='utf-8'/>
+<style>
+
+table.table {
+  padding-bottom: 300px;
+}
+</style>
+</head>
+
+
+<body>
+
+  <nav class="navbar">
+
+    <ul class="nav navbar-nav" >
+        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;Genome of Culex laticinctus</span></a></li>
+    </ul>
+
+  </nav>
+<div class="container">
+<div class="jumbotron">
+<h4 class="citation"></h4>
+<h3 class="item_name">Genome of Culex laticinctus</h3>
+
+
+<a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Genome of Culex laticinctus</span> in JSON-LD format</a>
+
+
+<div id="check"></div>
+
+
+</div>
+
+
+
+<div id="summary">
+<div class='all-meta'>
+            <div>
+                <h3> Genome of Culex laticinctus</h3>
+                
+                
+                
+                
+        <div id="./">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>./</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Genome of Culex laticinctus</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Genome of Culex laticinctus created by ERGA-BGE</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
+            <td style='text-align:left'><span>2025-04-23T16:50:53+00:00</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.ncbi.nlm.nih.gov/taxonomy/1464561">Culex laticinctus</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1">Revio sequencing</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><span>PRJEB75414</span></li>
+                        
+                        <li><a href="https://www.ncbi.nlm.nih.gov/bioproject/1109235">https://www.ncbi.nlm.nih.gov/bioproject/1109235</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><span>TODO license</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#%23wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a">DNA/RNA processing</a></li>
+                        
+                        <li><a href="#%23sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7">Genome sequencing</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">scientificName</th>
+            <td style='text-align:left'><span>Culex laticinctus</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <td style='text-align:left'><a href="#https%3A//www.ncbi.nlm.nih.gov/taxonomy/1464561">Culex laticinctus</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="https://www.ncbi.nlm.nih.gov/taxonomy/1464561">Go to: </a> Culex laticinctus</h3>
+                
+                
+                
+                
+        <div id="https://www.ncbi.nlm.nih.gov/taxonomy/1464561">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://www.ncbi.nlm.nih.gov/taxonomy/1464561">https://www.ncbi.nlm.nih.gov/taxonomy/1464561</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Culex laticinctus</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Taxon</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">scientificName</th>
+            <td style='text-align:left'><span>Culex laticinctus</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonRank</th>
+            <td style='text-align:left'><ul>
+                        <li><a href="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734">https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734</a></li>
+                        
+                        <li><a href="https://www.ncbi.nlm.nih.gov/taxonomy/1464561">https://www.ncbi.nlm.nih.gov/taxonomy/1464561</a></li>
+                        
+                        <li><a href="https://www.wikidata.org/wiki/Q13855218">https://www.wikidata.org/wiki/Q13855218</a></li>
+                        </ul></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1">Go to: </a> Revio sequencing</h3>
+                
+                
+                
+                
+        <div id="https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1">https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Revio sequencing</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>File</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">encodingFormat<span>&nbsp;</span><a href="http://schema.org/encodingFormat">[?]</a></th>
+            <td style='text-align:left'><span>binary/octet-stream</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">contentSize<span>&nbsp;</span><a href="http://schema.org/contentSize">[?]</a></th>
+            <td style='text-align:left'><span>5216568759</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
+            <td style='text-align:left'><a href="https://www.ncbi.nlm.nih.gov/sra/ERX12405204">https://www.ncbi.nlm.nih.gov/sra/ERX12405204</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">sdDatePublished<span>&nbsp;</span><a href="http://schema.org/sdDatePublished">[?]</a></th>
+            <td style='text-align:left'><span>Thu, 15 Aug 2024 07:14:07 GMT</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7">Genome sequencing</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> DNA/RNA processing</h3>
+                
+                
+                
+                
+        <div id="#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>DNA/RNA processing</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>LabProcess</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
+            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">executesLabProtocol</th>
+            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sample-collection">#sample-collection</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
+            <td style='text-align:left'><a href="#%23processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30">Processed DNA/RNA</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Genome sequencing</h3>
+                
+                
+                
+                
+        <div id="#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Genome sequencing</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>LabProcess</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
+            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">executesLabProtocol</th>
+            <td style='text-align:left'><a href="#%23sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b">Sequencing protocol</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b">Sequencing protocol</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
+            <td style='text-align:left'><a href="#%23processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30">Processed DNA/RNA</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1">Revio sequencing</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/></div>
+</div>
+
+
+
+
+
+</body>
+</html>
