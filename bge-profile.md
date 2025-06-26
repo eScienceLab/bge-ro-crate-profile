@@ -7,6 +7,7 @@ This is a first draft currently in active development. Everything is subject to 
 ## Overview
 
 The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different stages of biodiversity genomics research, including:
+
 * sample collection
 * sample preservation and biobanking
 * extraction of genomic material
@@ -30,6 +31,7 @@ This spreadsheet [RO-Crate Bioschema mapping](https://docs.google.com/spreadshee
 ## Root Data Entity
 
 The root data entity should include the following properties:
+
 `hasPart`: it must include the objects created by each process - from collected specimen all the way through to assembled genome.
 `mentions`: must include all the processes described (i.e. all the `CreateAction`s)
 `about`: links to a Taxon entity for the species being described (same as `taxonomicRange`)
