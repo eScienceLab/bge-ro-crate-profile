@@ -1,7 +1,5 @@
 # Create an RO-Crate following the in-development BGE profile
-import sys
 import uuid
-from datetime import datetime
 import requests
 
 from rocrate.model import ContextEntity, Person
@@ -39,6 +37,31 @@ def validate_crate(crate_uri):
             print(
                 f'Detected issue of severity {issue.severity.name} with check "{issue.check.identifier}": {issue.message}'
             )
+
+
+####################
+# helper functions #
+####################
+def fetch_single_record_by_accession(accession: str, result_type: str) -> dict:
+    ena_api = "https://www.ebi.ac.uk/ena/portal/api"
+    params = {
+        "result": result_type,
+        "query": f'accession="{accession}"',
+        "fields": "all",
+        "format": "json",
+        "limit": 10,  # there should only be one, but this limit prevents malformed requests from hanging
+    }
+    r = requests.get(f"{ena_api}/search", params=params)
+    results_list = r.json()
+
+    if len(results_list) == 1:
+        return results_list[0]
+    elif len(results_list) > 1:
+        raise ValueError(
+            f"Unexpectedly retrieved multiple results for accession {sample_accession}: {[i["sample_accession"] for i in results_list]}"
+        )
+    else:  # len(results_list) is 0
+        raise ValueError(f"No result found for accession {sample_accession}.")
 
 
 ##################
@@ -124,76 +147,59 @@ crate.root_dataset.append_to("hasPart", sample_collection)
 
 # TODO add the other 3 samples
 sample_accession = "SAMEA114402090"
-ena_api = "https://www.ebi.ac.uk/ena/portal/api"
-params = {
-    "result": "sample",
-    "query": f'accession="{sample_accession}"',
-    "fields": "all",
-    "format": "json",
-    "limit": 10,
-}
-r = requests.get(f"{ena_api}/search", params=params)
-sample_metadata_list = r.json()
 
-if len(sample_metadata_list) == 1:
-    sample_metadata = sample_metadata_list[0]
-    ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
-    biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
-    prefixed_id = f"biosample:{sample_accession}"  # TODO how to confirm this?
-    sample = crate.add(
-        ContextEntity(
-            crate,
-            ena_uri,
-            properties={
-                "@type": "BioSample",
-                "conformsTo": {
-                    "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
-                },
-                "url": [ena_uri, biosamples_uri],
-                "identifier": [
-                    sample_accession,
-                    sample_metadata["sample_description"],  # a UUID from ENA
-                    prefixed_id,
-                ],
+sample_metadata = fetch_single_record_by_accession(
+    accession=sample_accession, result_type="sample"
+)
+ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
+biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
+prefixed_id = f"biosample:{sample_accession}"  # TODO how to confirm this?
+sample = crate.add(
+    ContextEntity(
+        crate,
+        ena_uri,
+        properties={
+            "@type": "BioSample",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
             },
-        )
+            "url": [ena_uri, biosamples_uri],
+            "identifier": [
+                sample_accession,
+                sample_metadata["sample_description"],  # a UUID from ENA
+                prefixed_id,
+            ],
+        },
     )
+)
 
-    # sentinel_trap = crate.add(
-    #     ContextEntity(
-    #         crate,
-    #         "https://eu.biogents.com/bg-sentinel/",
-    #         properties={
-    #             "@type": "IndividualProduct",
-    #             "identifier": "https://eu.biogents.com/bg-sentinel/",
-    #             "name": "BG-Sentinel trap",
-    #             "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
-    #         },
-    #     )
-    # )
+# sentinel_trap = crate.add(
+#     ContextEntity(
+#         crate,
+#         "https://eu.biogents.com/bg-sentinel/",
+#         properties={
+#             "@type": "IndividualProduct",
+#             "identifier": "https://eu.biogents.com/bg-sentinel/",
+#             "name": "BG-Sentinel trap",
+#             "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
+#         },
+#     )
+# )
 
-    sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
-    sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
-    sample["custodian"] = "TODO custodian"  # preservation authors
-    sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
-    # sample["collectionMethod"] = (
-    #     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
-    # )
-    sample["ethics"] = {
-        "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
-    }  # term does not yet exist?
+sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
+sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
+sample["custodian"] = "TODO custodian"  # preservation authors
+sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
+# sample["collectionMethod"] = (
+#     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
+# )
+sample["ethics"] = {
+    "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+}  # term does not yet exist?
 
-    # TODO add other samples here
-    # TODO fix this, it doesn't work
-    sample_collection["hasPart"].append(sample)
-
-
-elif len(sample_metadata_list) > 1:
-    raise ValueError(
-        f"Unexpectedly retrieved multiple samples for accession {sample_accession}: {[i["sample_accession"] for i in sample_metadata_list]}"
-    )
-elif len(sample_metadata_list) == 0:
-    raise ValueError(f"No sample found for accession {sample_accession}.")
+# TODO add other samples here
+# TODO fix this, it doesn't work
+sample_collection["hasPart"].append(sample)
 
 # Biobanking
 # TODO creators, maintainers, and such"
