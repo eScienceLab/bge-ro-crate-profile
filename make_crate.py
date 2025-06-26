@@ -1,4 +1,6 @@
 # Create an RO-Crate following the in-development BGE profile
+from datetime import datetime
+import os
 import uuid
 import requests
 
@@ -42,16 +44,28 @@ def validate_crate(crate_uri):
 ####################
 # helper functions #
 ####################
-def fetch_single_record_by_accession(accession: str, result_type: str) -> dict:
+def fetch_single_record_by_accession(
+    accession: str, result_type: str, accession_field: str = "accession"
+) -> dict:
+    """Fetch a single record from the ENA API.
+
+    :param accession: accession of the record
+    :param result_type: the ENA data set to search against.
+        Options are listed in the first column here https://www.ebi.ac.uk/ena/portal/api/results?dataPortal=ena
+    :raises ValueError: multiple results found
+    :raises ValueError: no results found
+    :return: Dictionary (a JSON object) with the record's metadata
+    """
     ena_api = "https://www.ebi.ac.uk/ena/portal/api"
     params = {
         "result": result_type,
-        "query": f'accession="{accession}"',
+        "query": f"{accession_field}={accession}",
         "fields": "all",
         "format": "json",
         "limit": 10,  # there should only be one, but this limit prevents malformed requests from hanging
     }
     r = requests.get(f"{ena_api}/search", params=params)
+    r.raise_for_status()
     results_list = r.json()
 
     if len(results_list) == 1:
@@ -271,16 +285,32 @@ protocol_sequencing = crate.add(
     )
 )
 
-# TODO one of these for each sample?
-sequenced_data = crate.add_file(
-    source="https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1",
-    validate_url=True,
-    properties={
-        "name": "Revio sequencing",
-        "description": "PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
-        "identifier": "https://www.ncbi.nlm.nih.gov/sra/ERX12405204",
-    },
+# TODO collection per experiment accession for the different files?
+sequencing_experiment_accession = "ERX12519568"
+sequencing_metadata = fetch_single_record_by_accession(
+    sequencing_experiment_accession,
+    "read_experiment",
+    accession_field="experiment_accession",
 )
+download_uris = sequencing_metadata["fastq_ftp"].split(";")
+download_sizes = sequencing_metadata["fastq_bytes"].split(";")
+sequenced_data = []
+
+for uri, size in zip(download_uris, download_sizes):
+    sequenced_data.append(
+        crate.add_file(
+            source=f"ftp://{uri}",
+            validate_url=True,
+            properties={
+                "name": f'{sequencing_metadata["experiment_title"]}: {os.path.basename(uri)}',
+                # TODO automate description better
+                "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+                "sdDatePublished": str(datetime.now()),
+                "contentSize": size,
+                "encodingFormat": "TODO file type for FASTA",
+            },
+        )
+    )
 
 # TODO one of these for each sample?
 sequencing_process = crate.add_action(
