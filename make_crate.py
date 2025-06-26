@@ -2,6 +2,7 @@
 import sys
 import uuid
 from datetime import datetime
+import requests
 
 from rocrate.model import ContextEntity, Person
 from rocrate.rocrate import ROCrate
@@ -119,48 +120,80 @@ sample_collection = crate.add(
         },
     )
 )
+crate.root_dataset.append_to("hasPart", sample_collection)
+
 # TODO add the other 3 samples
-sample = crate.add(
-    ContextEntity(
-        crate,
-        "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
-        properties={
-            "@type": "BioSample",
-            "conformsTo": {
-                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+sample_accession = "SAMEA114402090"
+ena_api = "https://www.ebi.ac.uk/ena/portal/api"
+params = {
+    "result": "sample",
+    "query": f'accession="{sample_accession}"',
+    "fields": "all",
+    "format": "json",
+    "limit": 10,
+}
+r = requests.get(f"{ena_api}/search", params=params)
+sample_metadata_list = r.json()
+
+if len(sample_metadata_list) == 1:
+    sample_metadata = sample_metadata_list[0]
+    ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
+    biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
+    prefixed_id = f"biosample:{sample_accession}"  # TODO how to confirm this?
+    sample = crate.add(
+        ContextEntity(
+            crate,
+            ena_uri,
+            properties={
+                "@type": "BioSample",
+                "conformsTo": {
+                    "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+                },
+                "url": [ena_uri, biosamples_uri],
+                "identifier": [
+                    sample_accession,
+                    sample_metadata["sample_description"],  # a UUID from ENA
+                    prefixed_id,
+                ],
             },
-            "url": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
-            "identifier": [
-                "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
-                "idCulLati1",
-            ],
-        },
+        )
     )
-)
-sentinel_trap = crate.add(
-    ContextEntity(
-        crate,
-        "https://eu.biogents.com/bg-sentinel/",
-        properties={
-            "@type": "IndividualProduct",
-            "identifier": "https://eu.biogents.com/bg-sentinel/",
-            "name": "BG-Sentinel trap",
-            "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
-        },
+
+    # sentinel_trap = crate.add(
+    #     ContextEntity(
+    #         crate,
+    #         "https://eu.biogents.com/bg-sentinel/",
+    #         properties={
+    #             "@type": "IndividualProduct",
+    #             "identifier": "https://eu.biogents.com/bg-sentinel/",
+    #             "name": "BG-Sentinel trap",
+    #             "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
+    #         },
+    #     )
+    # )
+
+    sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
+    sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
+    sample["custodian"] = "TODO custodian"  # preservation authors
+    sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
+    # sample["collectionMethod"] = (
+    #     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
+    # )
+    sample["ethics"] = {
+        "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+    }  # term does not yet exist?
+
+    # TODO add other samples here
+    # TODO fix this, it doesn't work
+    sample_collection["hasPart"].append(sample)
+
+
+elif len(sample_metadata_list) > 1:
+    raise ValueError(
+        f"Unexpectedly retrieved multiple samples for accession {sample_accession}: {[i["sample_accession"] for i in sample_metadata_list]}"
     )
-)
-
-sample["locationOfOrigin"] = "TODO place entity"
-sample["collector"] = "TODO collectors"  # sampling authors
-sample["custodian"] = "TODO custodian"  # preservation authors
-sample["contributor"] = "TODO contributors"  # identification authors
-sample["collectionMethod"] = sentinel_trap  # term does not yet exist?
-sample["ethics"] = {
-    "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
-}  # term does not yet exist?
-
-# TODO add other samples here
-sample_collection["hasPart"].append(sample)
+elif len(sample_metadata_list) == 0:
+    raise ValueError(f"No sample found for accession {sample_accession}.")
 
 # Biobanking
 # TODO creators, maintainers, and such"
