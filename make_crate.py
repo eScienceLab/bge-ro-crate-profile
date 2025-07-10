@@ -1,11 +1,34 @@
 # Create an RO-Crate following the in-development BGE profile
 import sys
 import uuid
+import requests
 from datetime import datetime
 
 from rocrate.model import ContextEntity, Person
 from rocrate.rocrate import ROCrate
 from rocrate_validator import services, models
+
+#########################
+#  fetch data from API #
+#########################
+
+def fetch_biosample_data(accession):
+    """
+    Fetches biosample data from the EBI Biosamples API for a given accession.
+    
+    Args:
+        accession (str): The accession number of the biosample.
+        
+    Returns:
+        dict: The JSON response containing biosample data.
+    """
+    url = f"https://www.ebi.ac.uk/biosamples/samples/{accession}"
+    headers = {"Accept": "application/hal+json"}
+    
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()  # raises error if not 200 OK
+    
+    return response.json()
 
 
 #####################
@@ -108,6 +131,11 @@ wsi["location"] = cambridge
 
 
 # Physical sample collection
+accession_numbers = [
+    "SAMEA114402090"]
+
+collection_data = fetch_biosample_data(accession_numbers[0])
+
 sample_collection = crate.add(
     ContextEntity(
         crate,
@@ -150,8 +178,38 @@ sentinel_trap = crate.add(
     )
 )
 
-sample["locationOfOrigin"] = "TODO place entity"
-sample["collector"] = "TODO collectors"  # sampling authors
+collection_author = crate.add(
+    Person(
+        crate,
+        collection_data.get('collector ORCID ID'),
+        properties={
+            "@type": "Person",
+            "name": collection_data.get('collected_by'),
+            "affiliation": collection_data.get('collector institution'),
+        },
+    )
+)
+# sample location id should be updated with sws.geonames.org permalink but need user account to access API
+sample_location_id = f'https://www.geonames.org/maps/google_{collection_data.get('geographic location (latitude')}_{collection_data.get('geographic location (longitude)')}.html'
+sample_location = crate.add(
+    ContextEntity(crate,sample_location_id,
+        properties={
+            "@type": "Place",
+            "description": collection_data.get('habitat'),# this might not be the best place for this information
+            "identifier": sample_location_id,
+            "name": collection_data.get('geographic location (region and locality)'),
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": collection_data.get('geographic location (latitude)'),
+                "longitude": collection_data.get('geographic location (longitude)'),
+            }
+        }
+    )
+)
+
+sample["locationOfOrigin"] = sample_location
+
+sample["collector"] = collection_author  # sampling authors
 sample["custodian"] = "TODO custodian"  # preservation authors
 sample["contributor"] = "TODO contributors"  # identification authors
 sample["collectionMethod"] = sentinel_trap  # term does not yet exist?
