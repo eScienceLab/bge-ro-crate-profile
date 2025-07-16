@@ -1,3 +1,4 @@
 .venv/
 .mypy_cache/
-bge-crate/
+__pycache__/
+bge-crate-*/

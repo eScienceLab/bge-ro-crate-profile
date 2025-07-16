@@ -10,18 +10,18 @@ See [BGE Profile](bge-profile.md), currently under construction.
 
 ## Code
 
-The `make_crate.py` script creates an example crate that represents the profile.
+The `make_crate_genome.py` and `make_crate_barcode.py` scripts create example crates that represent the profile.
 
-Currently the script is more defined than the profile text.
+Currently the scripts are more defined than the profile text.
 
-To run the `make_crate.py` script you must install the requirements listed in `requirements.txt`.
+To run the scripts you must install the requirements listed in `requirements.txt`.
 
-The script automatically runs validation against the RO-Crate 1.1 specification when generating the RO-Crate. This should tell you if you did anything wrong according to the base spec (but does not mean that all entities are linked correctly). 
+The scripts automatically run validation against the RO-Crate 1.1 specification when generating the RO-Crate. This should tell you if you did anything wrong according to the base spec (but does not mean that all entities are linked correctly). 
 
-The script generates an RO-Crate in the `bge-crate` folder. To generate a HTML preview of the crate (useful for checking things are linked as intended):
+The scripts generate RO-Crates in the `bge-crate-genome` and `bge-crate-barcode` folders respectively. To generate a HTML preview of the crate (useful for checking things are linked as intended):
 ```
 npm install ro-crate-html
-rochtml bge-crate/ro-crate-metadata.json
+rochtml bge-crate-genome/ro-crate-metadata.json
 ```
 
 ## Example crate
@@ -62,7 +62,7 @@ Genome Assembly: Shane McCarthy, Kerstin Howe, Mark Blaxter, Wellcome Sanger Ins
 
 (Genome Assembly Review: Jèssica Gómez-Garrido (perexiguus & laticinctus), Fernando Cruz (modestus) & Tom Brown (theileri)
 
-When substantial changes are made to the code, the `example-bge-crate/` folder should also be updated with the generated example crate and the HTML preview.
+When substantial changes are made to the code, the `example-bge-crate-genome/` folder should also be updated with the generated example crate and the HTML preview.
 
 ## Where to find useful metadata and identifiers
 
