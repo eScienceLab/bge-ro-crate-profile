@@ -6,7 +6,7 @@ This is a first draft currently in active development. Everything is subject to 
 
 ## Overview
 
-The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different stages of biodiversity genomics research, including:
+The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different steps of biodiversity genomics research, including:
 
 * sample collection
 * sample preservation and biobanking
@@ -16,9 +16,12 @@ The aim of this profile is to provide a full description of the provenance of bi
 * genome assembly
 * genome annotations and further analysis
 
-These stages represent a mixture of physical processes, lab protocols, and computational workflows.
+These steps represent a mixture of physical and computational processes. They can be broadly grouped into three main stages:
+* Sample collection and preservation - the steps that get you from the field to the preserved sample
+* Wet lab and sequencing - the steps that get you from a sample to raw genetic sequence data
+* Computational analysis - that steps that get you from the raw genetic data to an assembled genome, a reference barcode, or some other "final product"
 
-At each stage, accession numbers, authors, affiliations, and additional metadata are collected. The stages are connected through "actions" which represent the processes and workflows used.
+At each stage, accession numbers, authors, affiliations, and additional metadata are collected. The stages are connected through these accession numbers, and the steps within them are connected as "actions" which represent the processes and workflows used.
 
 This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html)page of the RO-Crate specification is also relevant here.
 
@@ -28,15 +31,24 @@ Note the distinction between Bioschemas LabProtocol (a sequence of tasks and ope
 
 This spreadsheet [RO-Crate Bioschema mapping](https://docs.google.com/spreadsheets/d/1l33cmZC7SYsbD2JhxZ-XmW5MrwW7bdiBg3tQONWUc1w/edit?gid=1705586496#gid=1705586496) is the original reference for which metadata should be mapped to which terms in RO-Crate and particularly Bioschemas. Where information is omitted here in this draft, it may be present in that spreadsheet (though eventually all of the spreadsheet information should be in this profile).
 
-## Root Data Entity
+## Core Metadata
+
+The crate should have all metadata in this section.
+
+### Root Data Entity
 
 The root data entity should include the following properties:
 
-`hasPart`: it must include the objects created by each process - from collected specimen all the way through to assembled genome.
-`mentions`: must include all the processes described (i.e. all the `CreateAction`s)
-`about`: links to a Taxon entity for the species being described (same as `taxonomicRange`)
-`taxonomicRange`: links to a Taxon entity for the species being described (same as `about`)
-`identifier`: should include a BioProject identifier if one exists for the project
+* `hasPart`: must include the data objects included within the crate.
+* `mentions`: must include all the processes described (i.e. all the `CreateAction`s)
+* `about`: links to a Taxon entity for the species being described (same as `taxonomicRange`)
+* `taxonomicRange`: links to a Taxon entity for the species being described (same as `about`)
+* `identifier`: should include a BioProject identifier if one exists for the project
+* `mainEntity`: must reference the following three types of entities ():
+    * One or more `BioSample`s representing the sample(s)
+    * One or more `File`s or `Dataset`s representing the raw genetic data
+    * One or more `File`s or `Dataset`s representing the primary output(s) of the analysis
+    * Exception: If the crate is only representing a sample and not any further analysis, it only needs to have the `BioSample` entity from the sample stage. If the crate is intended to include wet lab processes but not computational analyses, it only needs entities from the first two stages.
 
 ## Species/taxon
 
@@ -49,6 +61,8 @@ At all stages, there may be multiple samples or data entities - these can be gro
 Most processes and objects are optional as not all this data may be collected or machine-retrievable in all cases. Where there are gaps, placeholder entities can be used - these should have an `@id` with a local identifier* and a `name` and `description` explaining what the placeholder is representing. 
 
 *local identifiers should start with `#` and include a UUID to ensure uniqueness. The UUID is useful to avoid duplicate entities when many RO-Crates are combined into a [knowledge graph](https://en.wikipedia.org/wiki/Knowledge_graph).
+
+## Stage: Sample Collection and Preservation
 
 ### Process: Collection
 
@@ -77,6 +91,8 @@ Should be represented using an entity of type `CreateAction` and `LabProcess` (h
 ### Object: Biobanked specimen
 
 A biobanked specimen should be represented using the Bioschemas BioSample type (https://bioschemas.org/BioSample).
+
+## Stage: Wet lab and sequencing
 
 ### Process: Genomic material extraction
 
@@ -107,6 +123,8 @@ Should be represented using an entity of type `CreateAction` with properties:
 ### Object: Genome sequencing data
 
 Represent using `File`/`Dataset` now?
+
+## Stage: Computational Analysis
 
 ### Process: Genome assembly
 
