@@ -76,3 +76,7 @@ def fetch_single_record_by_accession(
         )
     else:  # len(results_list) is 0
         raise ValueError(f"No result found for accession {sample_accession}.")
+
+
+def get_accession_permalink(prefix, accession) -> str:
+    return f"https://identifiers.org/{prefix}:{accession}"

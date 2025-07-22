@@ -8,11 +8,18 @@ from rocrate.model import ContextEntity, Person
 from rocrate.rocrate import ROCrate
 from rocrate_validator import services, models
 
-from utils import validate_crate, fetch_single_record_by_accession
+from utils import (
+    validate_crate,
+    fetch_single_record_by_accession,
+    get_accession_permalink,
+)
 
 ##################
 # crate creation #
 ##################
+
+ENA_PREFIX = "ena.embl"  # identifiers.org prefix
+BIOSAMPLES_PREFIX = "biosample"  # identifiers.org prefix
 
 species_names = [
     "Culex laticinctus",
@@ -50,7 +57,7 @@ crate.root_dataset["about"] = species  # use this and/or taxonomicRange?
 crate.root_dataset["taxonomicRange"] = species  # what uri to use for taxonomy?
 crate.root_dataset["scientificName"] = name  # is this necessary?
 crate.root_dataset["identifier"] = [
-    "PRJEB75414",
+    get_accession_permalink(ENA_PREFIX, "PRJEB75414"),
     "https://www.ncbi.nlm.nih.gov/bioproject/1109235",
 ]  # BioProject identifiers
 
@@ -99,11 +106,14 @@ sample_metadata = fetch_single_record_by_accession(
 )
 ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
 biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
-prefixed_id = f"biosample:{sample_accession}"  # TODO how to confirm this?
+identifiers_org_ena_uri = get_accession_permalink(ENA_PREFIX, sample_accession)
+identifiers_org_biosamples_uri = (
+    get_accession_permalink(BIOSAMPLES_PREFIX, sample_accession),
+)
 sample = crate.add(
     ContextEntity(
         crate,
-        ena_uri,
+        identifiers_org_ena_uri,
         properties={
             "@type": "BioSample",
             "conformsTo": {
@@ -113,7 +123,8 @@ sample = crate.add(
             "identifier": [
                 sample_accession,
                 sample_metadata["sample_description"],  # a UUID from ENA
-                prefixed_id,
+                identifiers_org_ena_uri,
+                identifiers_org_biosamples_uri,
             ],
         },
     )
