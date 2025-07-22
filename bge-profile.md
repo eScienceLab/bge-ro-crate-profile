@@ -8,8 +8,9 @@ This is a first draft currently in active development. Everything is subject to 
 
 The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different steps of biodiversity genomics research, including:
 
-* sample collection
-* sample preservation and biobanking
+* source collection
+* sample collection from a source
+* source/sample preservation and biobanking
 * extraction of genomic material
 * genomic data processing
 * genomic sequencing
@@ -31,6 +32,10 @@ Note the distinction between Bioschemas LabProtocol (a sequence of tasks and ope
 
 This spreadsheet [RO-Crate Bioschema mapping](https://docs.google.com/spreadsheets/d/1l33cmZC7SYsbD2JhxZ-XmW5MrwW7bdiBg3tQONWUc1w/edit?gid=1705586496#gid=1705586496) is the original reference for which metadata should be mapped to which terms in RO-Crate and particularly Bioschemas. Where information is omitted here in this draft, it may be present in that spreadsheet (though eventually all of the spreadsheet information should be in this profile).
 
+The [ISA (Investigation, Study, Assay) metadata framework](https://isa-specs.readthedocs.io/en/latest/index.html) and [ISA RO-Crate profile](https://github.com/nfdi4plants/isa-ro-crate-profile/blob/release/profile/isa_ro_crate.md) may map onto this draft profile cleanly (with the root dataset as the Investigation and the stages as Studies). That profile is already supported by some existing platforms and projects (e.g. FAIRDOM-SEEK, FAIR Data Station, ARC framework). A future version of this profile may incorporate or inherit requirements from the ISA profile in order to improve interoperability.
+
+The [Common Provenance Model](https://www.nature.com/articles/s41597-022-01537-6) (CPM) and the [CPM RO-Crate profile](https://by-covid.github.io/cpm-ro-crate/0.2/) also offer a path to more detailed, distributed provenance metadata. Incorporating CPM would better support the step-by-step construction of the provenance chain _during_ the research pipeline, rather than at the end of it. For now, this profile focuses mainly on the publication use case, where all provenance information is collected from disparate database sources once the analysis is complete and ready to publish. A future version of this profile may incorporate or inherit requirements from the CPM profile.
+
 ## Core Metadata
 
 The crate should have all metadata in this section.
@@ -49,6 +54,7 @@ The root data entity should include the following properties:
     * One or more `File`s or `Dataset`s representing the raw genetic data
     * One or more `File`s or `Dataset`s representing the primary output(s) of the analysis
     * Exception: If the crate is only representing a sample and not any further analysis, it only needs to have the `BioSample` entity from the sample stage. If the crate is intended to include wet lab processes but not computational analyses, it only needs entities from the first two stages.
+* `funder`: should reference an `Organization` representing the project that funded the work. See [Funding and grants](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#funding-and-grants) from the core RO-Crate spec.
 
 ## Species/taxon
 
