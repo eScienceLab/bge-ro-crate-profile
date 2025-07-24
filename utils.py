@@ -52,6 +52,7 @@ def fetch_single_record_by_accession(
     :param accession: accession of the record
     :param result_type: the ENA data set to search against.
         Options are listed in the first column here https://www.ebi.ac.uk/ena/portal/api/results?dataPortal=ena
+    :param accession_field: the field which represents the accession in the chosen result_type (ENA data set). Default is "accession".
     :raises ValueError: multiple results found
     :raises ValueError: no results found
     :return: Dictionary (a JSON object) with the record's metadata
@@ -59,7 +60,7 @@ def fetch_single_record_by_accession(
     ena_api = "https://www.ebi.ac.uk/ena/portal/api"
     params = {
         "result": result_type,
-        "query": f"{accession_field}={accession}",
+        "query": f'{accession_field}="{accession}"',
         "fields": "all",
         "format": "json",
         "limit": 10,  # there should only be one, but this limit prevents malformed requests from hanging
@@ -72,10 +73,10 @@ def fetch_single_record_by_accession(
         return results_list[0]
     elif len(results_list) > 1:
         raise ValueError(
-            f"Unexpectedly retrieved multiple results for accession {sample_accession}: {[i["sample_accession"] for i in results_list]}"
+            f"Unexpectedly retrieved multiple results for accession {accession}: {[i["sample_accession"] for i in results_list]}"
         )
     else:  # len(results_list) is 0
-        raise ValueError(f"No result found for accession {sample_accession}.")
+        raise ValueError(f"No result found for accession {accession}.")
 
 
 def get_accession_permalink(prefix, accession) -> str:

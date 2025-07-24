@@ -14,9 +14,9 @@ from utils import (
     get_accession_permalink,
 )
 
-##################
-# crate creation #
-##################
+#########
+# setup #
+#########
 
 ENA_PREFIX = "ena.embl"  # identifiers.org prefix
 BIOSAMPLES_PREFIX = "biosample"  # identifiers.org prefix
@@ -27,6 +27,17 @@ species_names = [
     "Culex perexiguus",
     "Culex theileri",
 ]
+
+# TODO add the other 3 samples & ensure they make sense
+sample_accession = "SAMEA114402090"  # sample from specimen SAMEA114402071
+sequencing_experiment_accession = (
+    "ERX12519568"  # linked to another sample? SAMEA114402094
+)
+genome_assembly_accession = "GCA_964187845.1"  # cross-refs SAMEA114402071
+
+##################
+# core metadata  #
+##################
 
 name = species_names[0]
 output_dir = "bge-crate-genome/"
@@ -83,6 +94,9 @@ cambridge = crate.add(
 )
 wsi["location"] = cambridge
 
+################
+# sample stage #
+################
 
 # Physical sample collection
 sample_collection = crate.add(
@@ -98,17 +112,14 @@ sample_collection = crate.add(
 )
 crate.root_dataset.append_to("hasPart", sample_collection)
 
-# TODO add the other 3 samples
-sample_accession = "SAMEA114402090"
-
 sample_metadata = fetch_single_record_by_accession(
     accession=sample_accession, result_type="sample"
 )
 ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
 biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
 identifiers_org_ena_uri = get_accession_permalink(ENA_PREFIX, sample_accession)
-identifiers_org_biosamples_uri = (
-    get_accession_permalink(BIOSAMPLES_PREFIX, sample_accession),
+identifiers_org_biosamples_uri = get_accession_permalink(
+    BIOSAMPLES_PREFIX, sample_accession
 )
 sample = crate.add(
     ContextEntity(
@@ -143,7 +154,20 @@ sample = crate.add(
 #     )
 # )
 
-sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
+print(sample_metadata)
+location = crate.add(
+    ContextEntity(
+        crate,
+        f"#location-{uuid.uuid4()}",
+        properties={
+            "@type": "Collection",  # TODO check this
+            "name": sample_metadata["location"],
+            "identifier": "EBD_I-002381",  # need collection name and URL
+            "hasPart": [],  # are there parts of this?
+        },
+    )
+)
+sample["locationOfOrigin"] = location
 sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
 sample["custodian"] = "TODO custodian"  # preservation authors
 sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
@@ -172,7 +196,9 @@ biobank_collection = crate.add(
     )
 )
 
-# Genomic material extraction / wet lab
+#################
+# wet lab stage #
+#################
 
 # ideally this protocol would be an RO-Crate itself so we could include just minimal metadata here
 protocol_wet_lab = crate.add(
@@ -229,7 +255,7 @@ protocol_sequencing = crate.add(
 )
 
 # TODO collection per experiment accession for the different files?
-sequencing_experiment_accession = "ERX12519568"
+
 sequencing_metadata = fetch_single_record_by_accession(
     sequencing_experiment_accession,
     "read_experiment",
@@ -270,6 +296,87 @@ sequencing_process = crate.add_action(
 sequencing_process["executesLabProtocol"] = protocol_sequencing
 wet_lab_process["location"] = cambridge
 wet_lab_process["provider"] = wsi  # provisional term in schema.org
+
+##################
+# analysis stage #
+##################
+
+# try main accession first, then set accession, as they are similar but different...
+genome_assembly_metadata = {}
+try:
+    genome_assembly_metadata = fetch_single_record_by_accession(
+        genome_assembly_accession, "assembly", "assembly_accession"
+    )
+except ValueError:
+    genome_assembly_metadata = fetch_single_record_by_accession(
+        genome_assembly_accession, "assembly", "assembly_set_accession"
+    )
+
+
+# ENA specific - get data files
+wgs_set_accession = genome_assembly_metadata["wgs_set"]
+wgs_set_metadata = fetch_single_record_by_accession(
+    wgs_set_accession, "wgs_set", "wgs_set"
+)
+
+print(wgs_set_metadata)
+
+download_uris = wgs_set_metadata["set_fasta_ftp"].split(";")
+
+genome_assembly_data = []
+
+for uri in download_uris:
+    genome_assembly_data.append(
+        crate.add_file(
+            source=f"ftp://{uri}",
+            validate_url=True,
+            properties={
+                "name": f'{wgs_set_metadata["description"]}',
+                "sdDatePublished": str(datetime.now()),
+                "encodingFormat": "TODO file type for FASTA",
+                "identifier": get_accession_permalink(ENA_PREFIX, wgs_set_accession),
+            },
+        )
+    )
+
+# TODO should this be a dataset or some other class?
+genome_assembly = crate.add_dataset(
+    # source=get_accession_permalink(ENA_PREFIX, genome_assembly_accession), # TODO identifiers.org doesn't work with the underscore?
+    source=f"https://www.ebi.ac.uk/ena/browser/view/{genome_assembly_accession}",
+    validate_url=True,
+    properties={
+        "name": f'{genome_assembly_metadata["assembly_title"]}',
+        "description": genome_assembly_metadata["description_comment"],
+        "sdDatePublished": str(datetime.now()),
+    },
+)
+genome_assembly["hasPart"] = genome_assembly_data
+
+workflow_assembly = crate.add_workflow(
+    dest_path=f"#assembly-workflow-{uuid.uuid4()}",
+    properties={
+        "name": f"Assembly workflow (placeholder)",
+        "description": genome_assembly_metadata["description_comment"],
+        "sdDatePublished": str(datetime.now()),
+    },
+)
+
+# TODO one of these for each assembly?
+assembly_process = crate.add_action(
+    instrument=workflow_assembly,
+    identifier=f"#assembly-process-{uuid.uuid4()}",
+    object=sequenced_data,
+    result=genome_assembly,
+    properties={
+        "@type": "CreateAction",  # is this in roc?
+        "agent": "TODO assembly contributors",
+        "name": "Genome assembly",
+    },
+)
+
+#################
+# write & check #
+#################
 
 # Writing the RO-Crate metadata:
 crate.write(output_dir)
