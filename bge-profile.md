@@ -49,11 +49,10 @@ The root data entity should include the following properties:
 * `about`: links to a Taxon entity for the species being described (same as `taxonomicRange`)
 * `taxonomicRange`: links to a Taxon entity for the species being described (same as `about`)
 * `identifier`: should include a BioProject identifier if one exists for the project
-* `mainEntity`: must reference the following three types of entities ():
+* `mainEntity`: must reference one of the following three types of entities according to the focus of the crate:
     * One or more `BioSample`s representing the sample(s)
     * One or more `File`s or `Dataset`s representing the raw genetic data
     * One or more `File`s or `Dataset`s representing the primary output(s) of the analysis
-    * Exception: If the crate is only representing a sample and not any further analysis, it only needs to have the `BioSample` entity from the sample stage. If the crate is intended to include wet lab processes but not computational analyses, it only needs entities from the first two stages.
 * `funder`: should reference an `Organization` representing the project that funded the work. See [Funding and grants](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#funding-and-grants) from the core RO-Crate spec.
 
 ## Species/taxon
@@ -70,65 +69,56 @@ Most processes and objects are optional as not all this data may be collected or
 
 ## Stage: Sample Collection and Preservation
 
-### Process: Collection
+At minimum, there MUST be an entity representing a biobanked sample. This entity should have the Bioschemas BioSample type (https://bioschemas.org/BioSample). There MAY be multiple entities representing one sample each.
 
-Optional - may be sufficient to include `collectionMethod` on the description of the collected specimen.
+Additional provenance information for the biobanked sample MAY be provided. This SHOULD be in the form of a chain of `BioSample` entities connected by `LabProcess` entities (a subclass of `Action` in schema.org). For example:
 
-### Object: Collected specimen
+* Original specimen (BioSample) -> Sampling process (LabProcess) -> Raw sample (BioSample) -> Biobanking process (LabProcess) -> Biobanked sample (BioSample)
+* Original specimen (BioSample) -> Sampling & biobanking processes combined (LabProcess) -> Biobanked sample (BioSample)
 
-A physical specimen should be represented using the Bioschemas BioSample type (https://bioschemas.org/BioSample).
+### BioSample entity metadata
 
-Properties of that entity should include:
-* `identifier`: URI or accession of the sample in a database (BioSamples, COPO, etc)
+Each BioSample entity's `@id` MUST be either:
+* a resolvable permalink for its accession (e.g. `https://identifiers.org/ena.embl:SAMEA114402090` not just `SAMEA114402090`).
+* a permalink for an RO-Crate containing the sample's provenance (note that if FAIR Signposting is used, an accession permalink can be made to resolve to a RO-Crate)
+* a local identifier, if no accession is available (e.g. if the entity represents an untracked intermediate stage in a process)
+
+If the `@id` resolves to another RO-Crate, additional metadata should be added according to [Referencing other RO-Crates](
+https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#referencing-other-ro-crates).
+
+A BioSample entity MUST include the following properties:
+* `name`: A human-friendly name for the sample. This SHOULD be unique within the crate. Example: "Culex laticinctus sample SAMEA114402090"
+
+If the `@id` does not resolve to another RO-Crate, the following additional metadata SHOULD be added to describe the sample:
+* `identifier`: URI, accession, or other identifier(s) of the sample in a database (BioSamples, COPO, etc). This may lead to a landing page or API endpoint with additional metadata.
 * `collector`: person who collected the sample
-* `maintainer`: person who preserved the sample ?
+* `maintainer` / `custodian`: person who is or was responsible for custody of the sample
 * `contributor`: person who identified the sample
 * `locationOfOrigin`: where the sample was collected
 * `collectionMethod` and `ethics`: Details/locations of permits and/or ethical/legal documentation/compliance
 
-### Process: Biobanking
+### LabProcess entity metadata
+`LabProcess` entities MUST have the following properties:
+* `@id`: MUST be a unique identifier, the use of randomly generated UUIDs (type 4) is RECOMMENDED.
+* `instrument`: SHOULD link to a `LabProtocol` entity for the SOP used
 
-Should be represented using an entity of type `CreateAction` and `LabProcess` (https://bioschemas.org/LabProcess) with properties:
-* `instrument`: any relevant lab protocol used (link to a `LabProtocol`)
-* `object`: the collected specimen
-* `result`: the biobanked specimen
-* `agent`: the person who carried out the process
-
-### Object: Biobanked specimen
-
-A biobanked specimen should be represented using the Bioschemas BioSample type (https://bioschemas.org/BioSample).
+`LabProcess` entities SHOULD have the following properties:
+* `name`
+* `description`
+* `endTime`: The datetime that the process was completed.
+* `agent`: link to a `Person` who carried out the process
+* `object`: link to entities representing the inputs
+* `result`: link to entities representing the output
 
 ## Stage: Wet lab and sequencing
 
-### Process: Genomic material extraction
+At minimum, there MUST be an entity representing the sequenced data. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
 
-Should be represented using an entity of type `CreateAction` and `LabProcess` (https://bioschemas.org/LabProcess) with properties:
-* `instrument`: the genomic material extraction protocol used (link to a `LabProtocol`)
-* `object`: the biobanked specimen
-* `result`: the genomic material sample
-* `agent`: the person who carried out the process
+Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `BioSample`s connected to `File`/`Dataset` entities by `LabProcess` and `CreateAction` entities. For example:
 
-### Object: Genomic material extraction protocol
+* Biobanked sample (BioSample, from the Sample stage) -> DNA extraction process (LabProcess) -> Extracted DNA (BioSample) -> Sequencing process (CreateAction) -> Sequenced data (File or Dataset)
 
-Should be represented using the Bioschemas LabProtocol type (https://bioschemas.org/LabProtocol).
-
-Ideally has `author`s and `name`.
-
-### Object: Genomic material sample
-
-Should be represented using the Bioschemas BioSample type (https://bioschemas.org/BioSample).
-
-### Process: Genome sequencing
-
-Should be represented using an entity of type `CreateAction` with properties:
-* `instrument`: the computational workflow or software application used (link to a `ComputationalWorkflow` and/or `SoftwareApplication`, see Process/Workflow Run Crate)
-* `object`: the genomic material sample
-* `result`: the genome sequencing data
-* `agent`: the person who initiated the workflow
-
-### Object: Genome sequencing data
-
-Represent using `File`/`Dataset` now?
+`LabProcess` entities and `BioSample` should be described as above. Computational processes should be described as `CreateAction`s following the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) or [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/) patterns.
 
 ## Stage: Computational Analysis
 
