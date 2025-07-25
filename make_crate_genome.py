@@ -182,8 +182,12 @@ for sample_accession in sample_accessions:
             )
         )
         sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
-        sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
-        sample["custodian"] = "TODO custodian"  # preservation authors
+        sample["collector"] = sample_metadata[
+            "collected_by"
+        ]  # TODO Person entity? Reqiuires ORCID - available in ENA browser but not ENA API?
+        sample["custodian"] = (
+            "TODO custodian"  # preservation authors? Sample coordinator not available in ENA API
+        )
         sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
         # sample["collectionMethod"] = (
         #     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
