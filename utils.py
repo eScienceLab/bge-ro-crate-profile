@@ -44,7 +44,7 @@ def validate_crate(crate_uri):
 ####################
 # helper functions #
 ####################
-def fetch_single_record_by_accession(
+def fetch_single_ena_record_by_accession(
     accession: str, result_type: str, accession_field: str = "accession"
 ) -> dict:
     """Fetch a single record from the ENA API.
@@ -81,3 +81,34 @@ def fetch_single_record_by_accession(
 
 def get_accession_permalink(prefix, accession) -> str:
     return f"https://identifiers.org/{prefix}:{accession}"
+
+
+def get_copo_rocrate_uri_from_accession(accession: str) -> str:
+    copo_api = "https://copo-project.org/api"
+    params = {
+        "standard": "tol",
+        "return_type": "json",
+    }
+    r = requests.get(f"{copo_api}/sample/biosampleAccession/{accession}", params=params)
+    r.raise_for_status()
+    results_list = r.json()["data"]
+
+    if len(results_list) == 1:
+        manifest_id = results_list[0]["manifest_id"]
+        return f"{copo_api}/manifest/{manifest_id}?return_type=rocrate"
+    elif len(results_list) > 1:
+        raise ValueError(
+            f"Unexpectedly retrieved multiple results for accession {accession}: {[i["copo_id"] for i in results_list]}"
+        )
+    else:  # len(results_list) is 0
+        raise ValueError(f"No COPO record found for accession {accession}.")
+
+
+def load_remote_crate(uri: str) -> dict:
+    r = requests.get(uri)
+    r.raise_for_status()
+    dir = f"/tmp/{uuid.uuid4()}"
+    with open(f"{dir}/ro-crate-metadata.json", "w") as f:
+        f.write(r.text)
+        crate = ROCrate(dir)
+    return crate

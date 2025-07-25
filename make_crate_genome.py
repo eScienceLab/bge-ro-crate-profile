@@ -10,8 +10,10 @@ from rocrate_validator import services, models
 
 from utils import (
     validate_crate,
-    fetch_single_record_by_accession,
+    fetch_single_ena_record_by_accession,
+    load_remote_crate,
     get_accession_permalink,
+    get_copo_rocrate_uri_from_accession,
 )
 
 #########
@@ -29,7 +31,13 @@ species_names = [
 ]
 
 # TODO add the other 3 samples & ensure they make sense
-sample_accession = "SAMEA114402090"  # sample from specimen SAMEA114402071
+sample_accessions = (
+    "SAMEA114402090",
+    "SAMEA114402091",
+    "SAMEA114402094",
+    "SAMEA114402071",
+)
+# sample from specimen SAMEA114402071
 sequencing_experiment_accession = (
     "ERX12519568"  # linked to another sample? SAMEA114402094
 )
@@ -112,75 +120,89 @@ sample_collection = crate.add(
 )
 crate.root_dataset.append_to("hasPart", sample_collection)
 
-sample_metadata = fetch_single_record_by_accession(
-    accession=sample_accession, result_type="sample"
-)
-ena_uri = f"https://www.ebi.ac.uk/ena/browser/view/{sample_accession}"
-biosamples_uri = f"https://www.ebi.ac.uk/biosamples/samples/{sample_accession}"
-identifiers_org_ena_uri = get_accession_permalink(ENA_PREFIX, sample_accession)
-identifiers_org_biosamples_uri = get_accession_permalink(
-    BIOSAMPLES_PREFIX, sample_accession
-)
-sample = crate.add(
-    ContextEntity(
-        crate,
-        identifiers_org_ena_uri,
-        properties={
-            "@type": "BioSample",
-            "conformsTo": {
-                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
-            },
-            "url": [ena_uri, biosamples_uri],
-            "identifier": [
-                sample_accession,
-                sample_metadata["sample_description"],  # a UUID from ENA
+for sample_accession in sample_accessions:
+    sample_metadata = fetch_single_ena_record_by_accession(
+        accession=sample_accession, result_type="sample"
+    )
+
+    # reference the copo crate which has all the provenance for the sample
+    # try:
+    #     copo_rocrate_uri = get_copo_rocrate_uri_from_accession(sample_accession)
+    # except ValueError:
+    #     copo_rocrate_uri = ""
+
+    # fetch and load the crate
+    # copo_rocrate = load_remote_crate(copo_rocrate_uri)
+
+    identifiers_org_ena_uri = get_accession_permalink(ENA_PREFIX, sample_accession)
+    identifiers_org_biosamples_uri = get_accession_permalink(
+        BIOSAMPLES_PREFIX, sample_accession
+    )
+
+    if False:  # TODO if copo_rocrate_uri:
+        sample = crate.add(
+            ContextEntity(
+                crate,
+                copo_rocrate_uri,
+                properties={
+                    "@type": ["Dataset", "BioSample"],
+                    "conformsTo": [
+                        {"@id": "https://w3id.org/ro/crate"},
+                    ],
+                    "name": f"Sample {sample_accession}",
+                    "description": f"COPO manifest for biosample accession {sample_accession}. Resolves to a detached RO-Crate.",
+                    "identifier": [
+                        sample_accession,
+                        identifiers_org_ena_uri,
+                        identifiers_org_biosamples_uri,
+                    ],
+                    "sdDatePublished": str(datetime.now()),
+                },
+            )
+        )
+    else:
+        sample = crate.add(
+            ContextEntity(
+                crate,
                 identifiers_org_ena_uri,
-                identifiers_org_biosamples_uri,
-            ],
-        },
-    )
-)
+                properties={
+                    "@type": "BioSample",
+                    "conformsTo": {
+                        "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+                    },
+                    "name": f"Sample {sample_accession}",
+                    "description": f"ENA record for biosample accession {sample_accession}.",
+                    "identifier": [
+                        sample_accession,
+                        sample_metadata["sample_description"],  # a UUID from ENA
+                        identifiers_org_ena_uri,
+                        identifiers_org_biosamples_uri,
+                    ],
+                },
+            )
+        )
+        sample["locationOfOrigin"] = sample_metadata["location"]  # TODO Place entity?
+        sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
+        sample["custodian"] = "TODO custodian"  # preservation authors
+        sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
+        # sample["collectionMethod"] = (
+        #     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
+        # )
+        sample["ethics"] = {
+            "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+        }  # term does not yet exist?
 
-# sentinel_trap = crate.add(
-#     ContextEntity(
-#         crate,
-#         "https://eu.biogents.com/bg-sentinel/",
-#         properties={
-#             "@type": "IndividualProduct",
-#             "identifier": "https://eu.biogents.com/bg-sentinel/",
-#             "name": "BG-Sentinel trap",
-#             "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
-#         },
-#     )
-# )
+    if related_samples := sample_metadata["related_sample_accession"]:
+        if type(related_samples) != list:
+            related_samples = [related_samples]
+        for id in related_samples:
+            accession, relation = id.split(":")
+            if relation == "same_as":
+                sample["sameAs"] = {
+                    "@id": get_accession_permalink(ENA_PREFIX, accession)
+                }
 
-print(sample_metadata)
-location = crate.add(
-    ContextEntity(
-        crate,
-        f"#location-{uuid.uuid4()}",
-        properties={
-            "@type": "Collection",  # TODO check this
-            "name": sample_metadata["location"],
-            "identifier": "EBD_I-002381",  # need collection name and URL
-            "hasPart": [],  # are there parts of this?
-        },
-    )
-)
-sample["locationOfOrigin"] = location
-sample["collector"] = sample_metadata["collected_by"]  # TODO Person entity?
-sample["custodian"] = "TODO custodian"  # preservation authors
-sample["contributor"] = sample_metadata["identified_by"]  # TODO Person entity?
-# sample["collectionMethod"] = (
-#     sentinel_trap  # term does not yet exist? # TODO how to track in ENA? Biosamples has this but ENA doesn't
-# )
-sample["ethics"] = {
-    "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
-}  # term does not yet exist?
-
-# TODO add other samples here
-# TODO fix this, it doesn't work
-sample_collection["hasPart"].append(sample)
+    sample_collection.append_to("hasPart", sample)
 
 # Biobanking
 # TODO creators, maintainers, and such"
@@ -256,7 +278,7 @@ protocol_sequencing = crate.add(
 
 # TODO collection per experiment accession for the different files?
 
-sequencing_metadata = fetch_single_record_by_accession(
+sequencing_metadata = fetch_single_ena_record_by_accession(
     sequencing_experiment_accession,
     "read_experiment",
     accession_field="experiment_accession",
@@ -304,22 +326,20 @@ wet_lab_process["provider"] = wsi  # provisional term in schema.org
 # try main accession first, then set accession, as they are similar but different...
 genome_assembly_metadata = {}
 try:
-    genome_assembly_metadata = fetch_single_record_by_accession(
+    genome_assembly_metadata = fetch_single_ena_record_by_accession(
         genome_assembly_accession, "assembly", "assembly_accession"
     )
 except ValueError:
-    genome_assembly_metadata = fetch_single_record_by_accession(
+    genome_assembly_metadata = fetch_single_ena_record_by_accession(
         genome_assembly_accession, "assembly", "assembly_set_accession"
     )
 
 
 # ENA specific - get data files
 wgs_set_accession = genome_assembly_metadata["wgs_set"]
-wgs_set_metadata = fetch_single_record_by_accession(
+wgs_set_metadata = fetch_single_ena_record_by_accession(
     wgs_set_accession, "wgs_set", "wgs_set"
 )
-
-print(wgs_set_metadata)
 
 download_uris = wgs_set_metadata["set_fasta_ftp"].split(";")
 
