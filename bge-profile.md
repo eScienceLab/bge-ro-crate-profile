@@ -114,7 +114,7 @@ If the `@id` does not resolve to another RO-Crate, the following additional meta
 
 At minimum, there MUST be an entity representing the sequenced data. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
 
-Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `BioSample`s connected to `File`/`Dataset` entities by `LabProcess` and `CreateAction` entities. For example:
+Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `BioSample`s connected to `File`/`Dataset` entities by `LabProcess` and `CreateAction` entities, and the chain SHOULD be connected to the biobanked sample from the previous stage. For example:
 
 * Biobanked sample (BioSample, from the Sample stage) -> DNA extraction process (LabProcess) -> Extracted DNA (BioSample) -> Sequencing process (CreateAction) -> Sequenced data (File or Dataset)
 
@@ -122,26 +122,23 @@ Additional provenance information for the sequenced data MAY be provided. This S
 
 ## Stage: Computational Analysis
 
-### Process: Genome assembly
+At minimum, there MUST be an entity representing the analysis results. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
 
-Should be represented using an entity of type `CreateAction` with properties:
-* `instrument`: the computational workflow or software application used (link to a `ComputationalWorkflow` and/or `SoftwareApplication`, see Process/Workflow Run Crate)
-* `object`: the genome sequencing data
-* `result`: the assembled genome
-* `agent`: the person who initiated the workflow
+Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `File`/`Dataset` entities connected by `CreateAction` entities, and the chain SHOULD be connected to the sequenced data from the previous stage. For example:
 
-### Object: Assembled genome
+* Sequenced data (File/Dataset, from the Wet Lab stage) -> Assembly workflow (ComputationalWorkflow) -> Assembled genome data (File/Dataset)
 
-Represent using `File`/`Dataset` now?
+This stage should follow the style of the [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/) profile, with the following exceptions:
 
-### Process: Genome annotation/other additional processes
+* may ignore rules around `conformsTo` and `mainEntity`
+* The workflow does not need to be defined directly in the crate – instead it may link to a workflow in a registry such as WorkflowHub or Dockstore. 
+    * In this case the `@id` of the workflow entity should ideally be a DOI, and the registry should support [FAIR Signposting](https://signposting.org/FAIR/) to retrieve the workflow as a RO-Crate from its DOI.
+    * Linking out to a workflow also means the guidance around `FormalParameters` can be ignored (though `PropertyValue`s should still be used to capture parameter values where possible)
 
-Should be represented using an entity of type `CreateAction` with properties:
-* `instrument`: the computational workflow or software application used (link to a `ComputationalWorkflow` and/or `SoftwareApplication`, see Process/Workflow Run Crate)
-* `object`: the genome sequencing data or the assembled genome
-* `result`: the annotation or other outputs
-* `agent`: the person who initiated the workflow
+It is possible to make a RO-Crate that is fully compliant with both this profile and the Workflow Run Crate profile, in which case it can be declared as conforming to both profiles. This may be appropriate where the computational analysis is the primary focus of the crate (regardless of how much provenance is provided for the earlier stages).
 
-### Object: Annotation
+Multiple analyses may be chained together.
 
-Represent using `File`/`Dataset` now?
+## Multiple processes per stage
+
+It is common for multiple samples to feed into a single computational analysis, or for one analysis output to be the input of multiple secondary analyses. As such, it is permitted to have multiple "core" entities for each stage, each with their own provenance chain. Between one stage and the next, the core entities may be connected in one-to-one, many-to-one, one-to-many, or many-to-many relationships.
