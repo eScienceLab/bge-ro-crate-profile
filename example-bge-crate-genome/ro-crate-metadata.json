@@ -4,34 +4,60 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "about": {
-                "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
-            },
-            "datePublished": "2025-04-23T16:50:53+00:00",
+            "about": [
+                {
+                    "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+                }
+            ],
+            "datePublished": "2025-08-08T17:01:54+00:00",
             "description": "Genome of Culex laticinctus created by ERGA-BGE",
             "hasPart": [
                 {
-                    "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+                    "@id": "#sample-collection"
+                },
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
+                },
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
+                },
+                {
+                    "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz"
+                },
+                {
+                    "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/"
+                },
+                {
+                    "@id": "%23assembly-workflow-95107ddc-df6a-4760-b19a-8695397a780f"
                 }
             ],
             "identifier": [
-                "PRJEB75414",
+                "https://identifiers.org/ena.embl:PRJEB75414",
                 "https://www.ncbi.nlm.nih.gov/bioproject/1109235"
             ],
             "license": "TODO license",
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a"
+                    "@id": "#wet-lab-process-fb3af92d-5fe9-4388-9797-19f91e4f0bb7"
                 },
                 {
-                    "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7"
+                    "@id": "#sequencing-process-86cec22f-0b3a-40f6-a395-b969a8f0d290"
+                },
+                {
+                    "@id": "#assembly-process-07e39307-9563-465f-aac1-b45daa97f849"
                 }
             ],
             "name": "Genome of Culex laticinctus",
-            "scientificName": "Culex laticinctus",
-            "taxonomicRange": {
-                "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
-            }
+            "scientificName": [
+                {
+                    "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+                }
+            ],
+            "taxonomicRange": [
+                {
+                    "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+                }
+            ]
         },
         {
             "@id": "ro-crate-metadata.json",
@@ -71,43 +97,118 @@
         {
             "@id": "#sample-collection",
             "@type": "Collection",
-            "hasPart": [],
+            "hasPart": [
+                {
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
+                },
+                {
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402091"
+                },
+                {
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402094"
+                },
+                {
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402071"
+                }
+            ],
             "identifier": "EBD_I-002382"
         },
         {
-            "@id": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
+            "@id": "https://identifiers.org/ena.embl:SAMEA114402090",
             "@type": "BioSample",
-            "collectionMethod": {
-                "@id": "https://eu.biogents.com/bg-sentinel/"
-            },
-            "collector": "TODO collectors",
+            "collector": "Sonia Cebrian Camison",
             "conformsTo": {
                 "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
             },
-            "contributor": "TODO contributors",
+            "contributor": "Sonia Cebrian Camison",
             "custodian": "TODO custodian",
+            "description": "ENA record for biosample accession SAMEA114402090.",
             "ethics": {
                 "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
             },
             "identifier": [
-                "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090",
-                "idCulLati1"
+                "SAMEA114402090",
+                "fe1d65c3-3ac9-4eb3-b02e-f37da49d4ce6-erga",
+                "https://identifiers.org/ena.embl:SAMEA114402090",
+                "https://identifiers.org/biosample:SAMEA114402090"
             ],
-            "locationOfOrigin": "TODO place entity",
-            "url": "https://www.ebi.ac.uk/biosamples/samples/SAMEA114402090"
+            "locationOfOrigin": "37.315096 N 6.168537 W",
+            "name": "Sample SAMEA114402090",
+            "sameAs": {
+                "@id": "https://identifiers.org/ena.embl:SAMEA114402071"
+            }
         },
         {
-            "@id": "https://eu.biogents.com/bg-sentinel/",
-            "@type": "IndividualProduct",
-            "description": "The BG-Sentinel (a.k.a. the BG trap or BGS trap) is a mosquito trap.",
-            "identifier": "https://eu.biogents.com/bg-sentinel/",
-            "name": "BG-Sentinel trap"
+            "@id": "https://identifiers.org/ena.embl:SAMEA114402091",
+            "@type": "BioSample",
+            "collector": "Sonia Cebrian Camison",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+            },
+            "contributor": "Sonia Cebrian Camison",
+            "custodian": "TODO custodian",
+            "description": "ENA record for biosample accession SAMEA114402091.",
+            "ethics": {
+                "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+            },
+            "identifier": [
+                "SAMEA114402091",
+                "87e8869d-bd17-4afd-ad0e-79790c8a1425-erga",
+                "https://identifiers.org/ena.embl:SAMEA114402091",
+                "https://identifiers.org/biosample:SAMEA114402091"
+            ],
+            "locationOfOrigin": "37.315096 N 6.168537 W",
+            "name": "Sample SAMEA114402091",
+            "sameAs": {
+                "@id": "https://identifiers.org/ena.embl:SAMEA114402072"
+            }
         },
         {
-            "@id": "#biobank-collection",
-            "@type": "Collection",
-            "hasPart": [],
-            "identifier": "EBD_I-002381"
+            "@id": "https://identifiers.org/ena.embl:SAMEA114402094",
+            "@type": "BioSample",
+            "collector": "Sonia Cebrian Camison",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+            },
+            "contributor": "Sonia Cebrian Camison",
+            "custodian": "TODO custodian",
+            "description": "ENA record for biosample accession SAMEA114402094.",
+            "ethics": {
+                "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+            },
+            "identifier": [
+                "SAMEA114402094",
+                "a14e1740-783c-4c9e-80f2-1889b6ca02ee-erga",
+                "https://identifiers.org/ena.embl:SAMEA114402094",
+                "https://identifiers.org/biosample:SAMEA114402094"
+            ],
+            "locationOfOrigin": "37.315096 N 6.168537 W",
+            "name": "Sample SAMEA114402094",
+            "sameAs": {
+                "@id": "https://identifiers.org/ena.embl:SAMEA114402075"
+            }
+        },
+        {
+            "@id": "https://identifiers.org/ena.embl:SAMEA114402071",
+            "@type": "BioSample",
+            "collector": "Sonia Cebrian Camison",
+            "conformsTo": {
+                "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+            },
+            "contributor": "Sonia Cebrian Camison",
+            "custodian": "TODO custodian",
+            "description": "ENA record for biosample accession SAMEA114402071.",
+            "ethics": {
+                "@id": "https://www.boe.es/eli/es-an/l/2003/10/28/8"
+            },
+            "identifier": [
+                "SAMEA114402071",
+                "40f1ad17-6bc7-4d6b-afc1-cf7789569071-ERGA-specimen",
+                "https://identifiers.org/ena.embl:SAMEA114402071",
+                "https://identifiers.org/biosample:SAMEA114402071"
+            ],
+            "locationOfOrigin": "37.315096 N 6.168537 W",
+            "name": "Sample SAMEA114402071"
         },
         {
             "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1",
@@ -115,13 +216,13 @@
             "name": "Sanger Tree of Life Wet Laboratory Protocol Collection  V.1"
         },
         {
-            "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30",
+            "@id": "#processed-dna-rna-742410a4-7bb2-4463-88c1-be18ed76a8fa",
             "@type": "BioSample",
             "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
             "name": "Processed DNA/RNA"
         },
         {
-            "@id": "#wet-lab-process-8b187e8d-2c2e-47a6-a087-fe4e02041f9a",
+            "@id": "#wet-lab-process-fb3af92d-5fe9-4388-9797-19f91e4f0bb7",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
@@ -133,49 +234,134 @@
             "location": {
                 "@id": "https://www.geonames.org/2653941"
             },
-            "name": "DNA/RNA processing",
+            "name": "DNA/RNA extraction process",
             "object": {
-                "@id": "#sample-collection"
+                "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
             },
             "provider": {
                 "@id": "https://ror.org/05cy4wa09"
             },
             "result": {
-                "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+                "@id": "#processed-dna-rna-742410a4-7bb2-4463-88c1-be18ed76a8fa"
             }
         },
         {
-            "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b",
+            "@id": "#sequencing-protocol-0a095632-15b7-424f-b636-f980ab666138",
             "@type": "LabProtocol",
             "description": "Sequencing protocol described in (TODO paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
             "name": "Sequencing protocol"
         },
         {
-            "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1",
+            "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz",
             "@type": "File",
-            "contentSize": "5216568759",
-            "description": "PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
-            "encodingFormat": "binary/octet-stream",
-            "identifier": "https://www.ncbi.nlm.nih.gov/sra/ERX12405204",
-            "name": "Revio sequencing",
-            "sdDatePublished": "Thu, 15 Aug 2024 07:14:07 GMT"
+            "contentSize": "1784967592",
+            "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+            "encodingFormat": "TODO file type for FASTA",
+            "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_1.fastq.gz",
+            "sdDatePublished": "2025-08-08 18:01:55.090427"
         },
         {
-            "@id": "#sequencing-process-4e2e77cd-60d3-4470-8a88-4e80d0729ec7",
+            "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz",
+            "@type": "File",
+            "contentSize": "1785456385",
+            "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+            "encodingFormat": "TODO file type for FASTA",
+            "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_2.fastq.gz",
+            "sdDatePublished": "2025-08-08 18:01:55.090489"
+        },
+        {
+            "@id": "#sequencing-process-86cec22f-0b3a-40f6-a395-b969a8f0d290",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+                "@id": "#sequencing-protocol-0a095632-15b7-424f-b636-f980ab666138"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-29072a01-9441-4141-b359-2ff9ae68602b"
+                "@id": "#sequencing-protocol-0a095632-15b7-424f-b636-f980ab666138"
             },
-            "name": "Genome sequencing",
+            "location": {
+                "@id": "https://www.geonames.org/2653941"
+            },
+            "name": "Genome sequencing process",
             "object": {
-                "@id": "#processed-dna-rna-254bbf3c-f91a-47fe-a8d7-daf5076a3e30"
+                "@id": "#processed-dna-rna-742410a4-7bb2-4463-88c1-be18ed76a8fa"
             },
+            "provider": {
+                "@id": "https://ror.org/05cy4wa09"
+            },
+            "result": [
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
+                },
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
+                }
+            ]
+        },
+        {
+            "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz",
+            "@type": "File",
+            "encodingFormat": "TODO file type for FASTA",
+            "identifier": "https://identifiers.org/ena.embl:CAXLNB01",
+            "name": "Culex laticinctus genome assembly",
+            "sdDatePublished": "2025-08-08 18:01:55.408724"
+        },
+        {
+            "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/",
+            "@type": "Dataset",
+            "description": "The assembly idCulLati1.1 is based on 51x PacBio data and Arima2 Hi-C data generated as part of the European Reference Genome Atlas (ERGA, https://www.erga-biodiversity.eu/) via the Biodiversity Genomics Europe project (BGE, https://biodiversitygenomics.eu/). The assembly process included the following sequence of steps: initial PacBio assembly generation with Hifiasm, and Hi-C based scaffolding with YaHS. The mitochondrial genome was assembled using MitoHiFi. A manually phased assembly (based on HiC signal) was generated from a jointly curated primary and alt assembly. Finally, the primary assembly was analysed and manually improved using TreeVal. Chromosome-scale scaffolds confirmed by the Hi-C data have been named in order of size.",
+            "hasPart": [
+                {
+                    "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz"
+                }
+            ],
+            "name": "idCulLati1.1 assembly for Culex laticinctus",
+            "sdDatePublished": "2025-08-08T17:01:55+00:00"
+        },
+        {
+            "@id": "%23assembly-workflow-95107ddc-df6a-4760-b19a-8695397a780f",
+            "@type": [
+                "File",
+                "SoftwareSourceCode",
+                "ComputationalWorkflow"
+            ],
+            "description": "The assembly idCulLati1.1 is based on 51x PacBio data and Arima2 Hi-C data generated as part of the European Reference Genome Atlas (ERGA, https://www.erga-biodiversity.eu/) via the Biodiversity Genomics Europe project (BGE, https://biodiversitygenomics.eu/). The assembly process included the following sequence of steps: initial PacBio assembly generation with Hifiasm, and Hi-C based scaffolding with YaHS. The mitochondrial genome was assembled using MitoHiFi. A manually phased assembly (based on HiC signal) was generated from a jointly curated primary and alt assembly. Finally, the primary assembly was analysed and manually improved using TreeVal. Chromosome-scale scaffolds confirmed by the Hi-C data have been named in order of size.",
+            "name": "Assembly workflow (placeholder)",
+            "programmingLanguage": {
+                "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+            },
+            "sdDatePublished": "2025-08-08 18:01:55.408840"
+        },
+        {
+            "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+            "@type": "ComputerLanguage",
+            "alternateName": "CWL",
+            "identifier": {
+                "@id": "https://w3id.org/cwl/"
+            },
+            "name": "Common Workflow Language",
+            "url": {
+                "@id": "https://www.commonwl.org/"
+            }
+        },
+        {
+            "@id": "#assembly-process-07e39307-9563-465f-aac1-b45daa97f849",
+            "@type": "CreateAction",
+            "agent": "TODO assembly contributors",
+            "instrument": {
+                "@id": "%23assembly-workflow-95107ddc-df6a-4760-b19a-8695397a780f"
+            },
+            "name": "Genome assembly process",
+            "object": [
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
+                },
+                {
+                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
+                }
+            ],
             "result": {
-                "@id": "https://sra-downloadb.be-md.ncbi.nlm.nih.gov/sos4/sra-pub-run-30/ERR013/13033/ERR13033463/ERR13033463.1"
+                "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/"
             }
         }
     ]
