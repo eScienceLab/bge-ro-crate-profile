@@ -9,7 +9,7 @@ from rocrate.model import ContextEntity, Person
 from rocrate.rocrate import ROCrate
 from rocrate_validator import services, models
 
-from utils import validate_crate, fetch_single_record_by_accession
+from utils import validate_crate, fetch_single_ena_record_by_accession
 
 
 ##################
