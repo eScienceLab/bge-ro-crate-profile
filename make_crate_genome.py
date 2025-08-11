@@ -90,7 +90,7 @@ def add_sample_stage(crate: ROCrate, sample_accessions: list[str]) -> list[Entit
             crate,
             "#sample-collection",
             properties={
-                "@type": "Collection",  # TODO check this
+                "@type": "Collection",
                 "identifier": "EBD_I-002382",  # need collection name and URL; TODO: automate
                 "hasPart": [],
             },
@@ -193,20 +193,6 @@ def add_sample_stage(crate: ROCrate, sample_accessions: list[str]) -> list[Entit
     return sample_collection["hasPart"]
 
 
-# # Biobanking (commented out because I think these samples are already biobanked)
-# # TODO creators, maintainers, and such"
-# biobank_collection = crate.add(
-#     ContextEntity(
-#         crate,
-#         "#biobank-collection",
-#         properties={
-#             "@type": "Collection",  # TODO check this
-#             "identifier": "EBD_I-002381",  # need collection name and URL
-#             "hasPart": [],  # are there parts of this?
-#         },
-#     )
-# )
-
 #################
 # wet lab stage #
 #################
@@ -233,7 +219,7 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
             properties={
                 "@type": "LabProtocol",
                 "name": f"Sequencing protocol",
-                "description": "Sequencing protocol described in (TODO paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
+                "description": "Sequencing protocol described in (paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
             },
         )
     )
@@ -244,7 +230,7 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
             crate,
             "#sequencing-collection",
             properties={
-                "@type": "Collection",  # TODO check this
+                "@type": "Collection",
                 "hasPart": [],
             },
         )
@@ -259,7 +245,7 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
                 crate,
                 get_accession_permalink(ENA_PREFIX, sequencing_accession),
                 properties={
-                    "@type": "Dataset",  # TODO check this
+                    "@type": "Dataset",
                     "name": f"Sequencing stage {sequencing_accession}",
                     "hasPart": [],
                 },
@@ -317,8 +303,6 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
 
         # Sequencing
 
-        # TODO collection per experiment accession for the different files?
-
         download_uris = sequencing_metadata["fastq_ftp"].split(";")
         download_sizes = sequencing_metadata["fastq_bytes"].split(";")
         sequenced_data = []
@@ -339,7 +323,6 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
                 )
             )
 
-        # TODO one of these for each sample?
         sequencing_process = crate.add_action(
             instrument=protocol_sequencing,
             identifier=f"#sequencing-process-{uuid.uuid4()}",
@@ -386,7 +369,7 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
             crate,
             "#analysis-collection",
             properties={
-                "@type": "Collection",  # TODO check this
+                "@type": "Collection",
                 "hasPart": [],
             },
         )
@@ -448,7 +431,6 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
                 )
             )
 
-        # TODO should this be a dataset or some other class?
         genome_assembly = crate.add_dataset(
             # source=get_accession_permalink(ENA_PREFIX, analysis_accession), # TODO identifiers.org doesn't work with the underscore?
             source=f"https://www.ebi.ac.uk/ena/browser/view/{analysis_accession}",
@@ -465,7 +447,6 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
             "mentions", workflow_assembly
         )  # TODO: could also be mainEntity? in WROC style?
 
-        # TODO one of these for each assembly?
         assembly_process = crate.add_action(
             instrument=workflow_assembly,
             identifier=f"#assembly-process-{uuid.uuid4()}",
@@ -492,7 +473,6 @@ def main():
         # "Culex theileri",
     ]
 
-    # TODO add the other 3 samples & ensure they make sense
     sample_accessions = [
         "SAMEA114402090",
         "SAMEA114402091",
@@ -535,7 +515,6 @@ def main():
 
     samples = add_sample_stage(crate=crate, sample_accessions=sample_accessions)
 
-    # TODO this should be all the sequencing not just one sample
     sequenced_data = add_sequencing_stage(
         crate=crate, sequencing_accessions=sequencing_experiment_accessions
     )
