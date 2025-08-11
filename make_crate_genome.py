@@ -212,9 +212,7 @@ def add_sample_stage(crate: ROCrate, sample_accessions: list[str]) -> list[Entit
 #################
 
 
-def add_sequencing_stage(
-    crate: ROCrate, sequencing_accession: str, sample_stage_entity: Entity
-) -> Entity:
+def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> Entity:
 
     # ideally this protocol would be an RO-Crate itself so we could include just minimal metadata here
     protocol_wet_lab = crate.add(
@@ -228,98 +226,143 @@ def add_sequencing_stage(
         )
     )
 
-    processed_dna = crate.add(
-        ContextEntity(
-            crate,
-            f"#processed-dna-rna-{uuid.uuid4()}",
-            properties={
-                "@type": "BioSample",
-                "name": "Processed DNA/RNA",
-                "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
-            },
-        )
-    )
-
-    # action connects protocol and output
-    wet_lab_process = crate.add_action(
-        instrument=protocol_wet_lab,
-        identifier=f"#wet-lab-process-{uuid.uuid4()}",
-        object=sample_stage_entity,  # sample or biobank? assume sample...
-        result=processed_dna,
-        properties={
-            "@type": "LabProcess",  # is this in roc?
-            "agent": "TODO wet lab contributors",
-            "name": "DNA/RNA extraction process",
-        },
-    )
-    wet_lab_process["executesLabProtocol"] = protocol_wet_lab
-    wet_lab_process["location"] = crate.get(
-        "https://www.geonames.org/2653941"
-    )  # TODO: set these...
-    wet_lab_process["provider"] = crate.get(
-        "https://ror.org/05cy4wa09"
-    )  # provisional term in schema.org
-
-    # Sequencing
-
     protocol_sequencing = crate.add(
         ContextEntity(
             crate,
             f"#sequencing-protocol-{uuid.uuid4()}",
             properties={
                 "@type": "LabProtocol",
-                "name": "Sequencing protocol",
+                "name": f"Sequencing protocol",
                 "description": "Sequencing protocol described in (TODO paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
             },
         )
     )
 
-    # TODO collection per experiment accession for the different files?
-
-    sequencing_metadata = fetch_single_ena_record_by_accession(
-        sequencing_accession,
-        "read_experiment",
-        accession_field="experiment_accession",
+    # Sequenced data collection
+    sequencing_collection = crate.add(
+        ContextEntity(
+            crate,
+            "#sequencing-collection",
+            properties={
+                "@type": "Collection",  # TODO check this
+                "hasPart": [],
+            },
+        )
     )
-    download_uris = sequencing_metadata["fastq_ftp"].split(";")
-    download_sizes = sequencing_metadata["fastq_bytes"].split(";")
-    sequenced_data = []
+    crate.root_dataset.append_to("hasPart", sequencing_collection)
 
-    for uri, size in zip(download_uris, download_sizes):
-        sequenced_data.append(
-            crate.add_file(
-                source=f"ftp://{uri}",
-                validate_url=True,
+    for sequencing_accession in sequencing_accessions:
+
+        # Sequenced data collection
+        sequencing_main_entity = crate.add(
+            ContextEntity(
+                crate,
+                get_accession_permalink(ENA_PREFIX, sequencing_accession),
                 properties={
-                    "name": f'{sequencing_metadata["experiment_title"]}: {os.path.basename(uri)}',
-                    # TODO automate description better
-                    "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
-                    "sdDatePublished": str(datetime.now()),
-                    "contentSize": size,
-                    "encodingFormat": "TODO file type for FASTA",
+                    "@type": "Dataset",  # TODO check this
+                    "name": f"Sequencing stage {sequencing_accession}",
+                    "hasPart": [],
                 },
             )
         )
+        # crate.root_dataset.append_to("hasPart", sequencing_main_entity)
 
-    # TODO one of these for each sample?
-    sequencing_process = crate.add_action(
-        instrument=protocol_sequencing,
-        identifier=f"#sequencing-process-{uuid.uuid4()}",
-        object=processed_dna,
-        result=sequenced_data,
-        properties={
-            "@type": "LabProcess",  # is this in roc?
-            "agent": "TODO wet lab contributors",
-            "name": "Genome sequencing process",
-        },
-    )
-    sequencing_process["executesLabProtocol"] = protocol_sequencing
-    sequencing_process["location"] = crate.get("https://www.geonames.org/2653941")
-    sequencing_process["provider"] = crate.get(
-        "https://ror.org/05cy4wa09"
-    )  # provisional term in schema.org
+        sequencing_metadata = fetch_single_ena_record_by_accession(
+            sequencing_accession,
+            "read_experiment",
+            accession_field="experiment_accession",
+        )
 
-    return sequenced_data
+        processed_dna = crate.add(
+            ContextEntity(
+                crate,
+                f"#processed-dna-rna-{uuid.uuid4()}",
+                properties={
+                    "@type": "BioSample",
+                    "name": f"Processed DNA/RNA ({sequencing_accession})",
+                    "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
+                },
+            )
+        )
+        sequencing_main_entity.append_to("hasPart", processed_dna)
+
+        sample_accession = sequencing_metadata["sample_accession"]
+        sample_id = get_accession_permalink(ENA_PREFIX, sample_accession)
+        sample_entity = crate.get(sample_id)
+        if not sample_entity:
+            raise ValueError(
+                f"Sequencing {sequencing_accession} is based on sample f{sample_accession}, but no entity f{sample_id} exists in the RO-Crate. Please ensure all samples are added to the RO-Crate before adding sequencing."
+            )
+
+        # action connects protocol and output
+        wet_lab_process = crate.add_action(
+            instrument=protocol_wet_lab,
+            identifier=f"#wet-lab-process-{uuid.uuid4()}",
+            object=sample_entity,  # sample or biobank? assume sample...
+            result=processed_dna,
+            properties={
+                "@type": "LabProcess",  # is this in roc?
+                "agent": "TODO wet lab contributors",
+                "name": f"DNA/RNA extraction process ({sequencing_accession})",
+            },
+        )
+        wet_lab_process["executesLabProtocol"] = protocol_wet_lab
+        wet_lab_process["location"] = crate.get(
+            "https://www.geonames.org/2653941"
+        )  # TODO: set these...
+        wet_lab_process["provider"] = crate.get(
+            "https://ror.org/05cy4wa09"
+        )  # provisional term in schema.org
+        sequencing_main_entity.append_to("mentions", wet_lab_process)
+
+        # Sequencing
+
+        # TODO collection per experiment accession for the different files?
+
+        download_uris = sequencing_metadata["fastq_ftp"].split(";")
+        download_sizes = sequencing_metadata["fastq_bytes"].split(";")
+        sequenced_data = []
+
+        for uri, size in zip(download_uris, download_sizes):
+            sequenced_data.append(
+                crate.add_file(
+                    source=f"ftp://{uri}",
+                    validate_url=True,
+                    properties={
+                        "name": f'{sequencing_metadata["experiment_title"]}: {os.path.basename(uri)}',
+                        # TODO automate description better
+                        "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
+                        "sdDatePublished": str(datetime.now()),
+                        "contentSize": size,
+                        "encodingFormat": "TODO file type for FASTA",
+                    },
+                )
+            )
+
+        # TODO one of these for each sample?
+        sequencing_process = crate.add_action(
+            instrument=protocol_sequencing,
+            identifier=f"#sequencing-process-{uuid.uuid4()}",
+            object=processed_dna,
+            result=sequenced_data,
+            properties={
+                "@type": "LabProcess",  # is this in roc?
+                "agent": "TODO wet lab contributors",
+                "name": f"Genome sequencing process ({sequencing_accession})",
+            },
+        )
+        sequencing_process["executesLabProtocol"] = protocol_sequencing
+        sequencing_process["location"] = crate.get("https://www.geonames.org/2653941")
+        sequencing_process["provider"] = crate.get(
+            "https://ror.org/05cy4wa09"
+        )  # provisional term in schema.org
+        sequencing_main_entity.append_to("mentions", sequencing_process)
+        sequencing_main_entity.append_to("hasPart", sequenced_data)
+
+        # sequencing_collection.append_to("hasPart", sequenced_data)
+        sequencing_collection.append_to("hasPart", sequencing_main_entity)
+
+    return sequencing_collection["hasPart"]
 
 
 ##################
@@ -327,82 +370,118 @@ def add_sequencing_stage(
 ##################
 
 
-def add_analysis_stage(
-    crate: ROCrate, analysis_accession: str, sequencing_stage_entity: Entity
-) -> Entity:
-    # try main accession first, then set accession, as they are similar but different...
-    genome_assembly_metadata = {}
-    try:
-        genome_assembly_metadata = fetch_single_ena_record_by_accession(
-            analysis_accession, "assembly", "assembly_accession"
-        )
-    except ValueError:
-        genome_assembly_metadata = fetch_single_ena_record_by_accession(
-            analysis_accession, "assembly", "assembly_set_accession"
-        )
-
-    # ENA specific - get data files
-    wgs_set_accession = genome_assembly_metadata["wgs_set"]
-    wgs_set_metadata = fetch_single_ena_record_by_accession(
-        wgs_set_accession, "wgs_set", "wgs_set"
-    )
-
-    download_uris = wgs_set_metadata["set_fasta_ftp"].split(";")
-
-    genome_assembly_data = []
-
-    for uri in download_uris:
-        genome_assembly_data.append(
-            crate.add_file(
-                source=f"ftp://{uri}",
-                validate_url=True,
-                properties={
-                    "name": f'{wgs_set_metadata["description"]}',
-                    "sdDatePublished": str(datetime.now()),
-                    "encodingFormat": "TODO file type for FASTA",
-                    "identifier": get_accession_permalink(
-                        ENA_PREFIX, wgs_set_accession
-                    ),
-                },
-            )
-        )
-
-    # TODO should this be a dataset or some other class?
-    genome_assembly = crate.add_dataset(
-        # source=get_accession_permalink(ENA_PREFIX, analysis_accession), # TODO identifiers.org doesn't work with the underscore?
-        source=f"https://www.ebi.ac.uk/ena/browser/view/{analysis_accession}",
-        validate_url=True,
-        properties={
-            "name": f'{genome_assembly_metadata["assembly_title"]}',
-            "description": genome_assembly_metadata["description_comment"],
-            "sdDatePublished": str(datetime.now()),
-        },
-    )
-    genome_assembly["hasPart"] = genome_assembly_data
+def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
 
     workflow_assembly = crate.add_workflow(
         dest_path=f"#assembly-workflow-{uuid.uuid4()}",
         properties={
             "name": f"Assembly workflow (placeholder)",
-            "description": genome_assembly_metadata["description_comment"],
+            "description": "A placeholder for a workflow that could exist on WorkflowHub (etc) or be directly contained within the crate",
             "sdDatePublished": str(datetime.now()),
         },
     )
 
-    # TODO one of these for each assembly?
-    assembly_process = crate.add_action(
-        instrument=workflow_assembly,
-        identifier=f"#assembly-process-{uuid.uuid4()}",
-        object=sequencing_stage_entity,
-        result=genome_assembly,
-        properties={
-            "@type": "CreateAction",  # is this in roc?
-            "agent": "TODO assembly contributors",
-            "name": "Genome assembly process",
-        },
+    analysis_collection = crate.add(
+        ContextEntity(
+            crate,
+            "#analysis-collection",
+            properties={
+                "@type": "Collection",  # TODO check this
+                "hasPart": [],
+            },
+        )
     )
+    crate.root_dataset.append_to("hasPart", analysis_collection)
 
-    return genome_assembly
+    for analysis_accession in analysis_accessions:
+        # try main accession first, then set accession, as they are similar but different...
+        genome_assembly_metadata = {}
+        try:
+            genome_assembly_metadata = fetch_single_ena_record_by_accession(
+                analysis_accession, "assembly", "assembly_accession"
+            )
+        except ValueError:
+            genome_assembly_metadata = fetch_single_ena_record_by_accession(
+                analysis_accession, "assembly", "assembly_set_accession"
+            )
+
+        # fetch experiment accessions to connect to sequencing stage
+        # but the assembly metadata only has the runs
+        run_accessions = genome_assembly_metadata["run_accession"].split(";")
+        experiment_entities = []
+        for run in run_accessions:
+            experiment_metadata = fetch_single_ena_record_by_accession(
+                run, "read_experiment", accession_field="run_accession"
+            )
+            experiment_accession = experiment_metadata["experiment_accession"]
+            experiment_id = get_accession_permalink(ENA_PREFIX, experiment_accession)
+            experiment_entity = crate.get(experiment_id)
+            if not experiment_entity:
+                raise ValueError(
+                    f"Analysis {analysis_accession} is based on sequencing f{experiment_accession}, but no entity f{experiment_id} exists in the RO-Crate. Please ensure all sequencing is added to the RO-Crate before adding analyses."
+                )
+            experiment_entities.append(experiment_entity)
+
+        # ENA specific - get data files
+        wgs_set_accession = genome_assembly_metadata["wgs_set"]
+        wgs_set_metadata = fetch_single_ena_record_by_accession(
+            wgs_set_accession, "wgs_set", "wgs_set"
+        )
+
+        download_uris = wgs_set_metadata["set_fasta_ftp"].split(";")
+
+        genome_assembly_data = []
+
+        for uri in download_uris:
+            genome_assembly_data.append(
+                crate.add_file(
+                    source=f"ftp://{uri}",
+                    validate_url=True,
+                    properties={
+                        "name": f'{wgs_set_metadata["description"]}',
+                        "sdDatePublished": str(datetime.now()),
+                        "encodingFormat": "TODO file type for FASTA",
+                        "identifier": get_accession_permalink(
+                            ENA_PREFIX, wgs_set_accession
+                        ),
+                    },
+                )
+            )
+
+        # TODO should this be a dataset or some other class?
+        genome_assembly = crate.add_dataset(
+            # source=get_accession_permalink(ENA_PREFIX, analysis_accession), # TODO identifiers.org doesn't work with the underscore?
+            source=f"https://www.ebi.ac.uk/ena/browser/view/{analysis_accession}",
+            validate_url=True,
+            properties={
+                "name": f'{genome_assembly_metadata["assembly_title"]}',
+                "description": genome_assembly_metadata["description_comment"],
+                "sdDatePublished": str(datetime.now()),
+            },
+        )
+        genome_assembly.append_to("hasPart", genome_assembly_data)
+
+        genome_assembly.append_to(
+            "mentions", workflow_assembly
+        )  # TODO: could also be mainEntity? in WROC style?
+
+        # TODO one of these for each assembly?
+        assembly_process = crate.add_action(
+            instrument=workflow_assembly,
+            identifier=f"#assembly-process-{uuid.uuid4()}",
+            object=experiment_entities,
+            result=genome_assembly,
+            properties={
+                "@type": "CreateAction",  # is this in roc?
+                "agent": "TODO assembly contributors",
+                "name": f"Genome assembly process ({analysis_accession})",
+            },
+        )
+        genome_assembly.append_to("mentions", assembly_process)
+
+        analysis_collection.append_to("hasPart", genome_assembly)
+
+    return analysis_collection["hasPart"]
 
 
 def main():
@@ -414,17 +493,23 @@ def main():
     ]
 
     # TODO add the other 3 samples & ensure they make sense
-    sample_accessions = (
+    sample_accessions = [
         "SAMEA114402090",
         "SAMEA114402091",
         "SAMEA114402094",
         "SAMEA114402071",
-    )
+    ]
     # sample from specimen SAMEA114402071
-    sequencing_experiment_accession = (
-        "ERX12519568"  # linked to another sample? SAMEA114402094
-    )
-    genome_assembly_accession = "GCA_964187845.1"  # cross-refs SAMEA114402071
+    sequencing_experiment_accessions = [
+        "ERX12519568",  # linked to another sample? SAMEA114402094
+        "ERX12433627",
+        "ERX12405204",
+        "ERX12405205",
+    ]
+    genome_assembly_accessions = [
+        "GCA_964187845.1",  # cross-refs SAMEA114402071
+        "GCA_964187835.1",
+    ]
 
     crate = ROCrate()
     output_dir = "bge-crate-genome/"
@@ -452,15 +537,12 @@ def main():
 
     # TODO this should be all the sequencing not just one sample
     sequenced_data = add_sequencing_stage(
-        crate=crate,
-        sequencing_accession=sequencing_experiment_accession,
-        sample_stage_entity=samples[0],
+        crate=crate, sequencing_accessions=sequencing_experiment_accessions
     )
 
     assembly = add_analysis_stage(
         crate=crate,
-        analysis_accession=genome_assembly_accession,
-        sequencing_stage_entity=sequenced_data,
+        analysis_accessions=genome_assembly_accessions,
     )
 
     #################
