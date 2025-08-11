@@ -137,6 +137,11 @@ This stage should follow the style of the [Workflow Run Crate](https://www.resea
 
 It is possible to make a RO-Crate that is fully compliant with both this profile and the Workflow Run Crate profile, in which case it can be declared as conforming to both profiles. This may be appropriate where the computational analysis is the primary focus of the crate (regardless of how much provenance is provided for the earlier stages).
 
+Any computational workflow files included directly in the RO-Crate should follow the style of the [Workflow RO-Crate](https://about.workflowhub.eu/Workflow-RO-Crate/) profile, with the following exceptions:
+
+* may ignore rules around `mainEntity`
+* may ignore the [crate-level rules](https://about.workflowhub.eu/Workflow-RO-Crate/#crate).
+
 Multiple analyses may be chained together.
 
 ## Multiple processes per stage
