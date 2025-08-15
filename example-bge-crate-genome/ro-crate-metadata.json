@@ -9,47 +9,35 @@
                     "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
                 }
             ],
-            "datePublished": "2025-08-11T11:47:17+00:00",
+            "datePublished": "2025-08-15T12:51:05+00:00",
             "description": "Genome of Culex laticinctus created by ERGA-BGE",
             "hasPart": [
                 {
-                    "@id": "#sample-collection"
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
                 },
                 {
-                    "@id": "#sequencing-collection"
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402091"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402094"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
+                    "@id": "https://identifiers.org/ena.embl:SAMEA114402071"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz"
+                    "@id": "https://identifiers.org/ena.embl:ERX12519568"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz"
+                    "@id": "https://identifiers.org/ena.embl:ERX12433627"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz"
+                    "@id": "https://identifiers.org/ena.embl:ERX12405204"
                 },
                 {
-                    "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz"
-                },
-                {
-                    "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802"
-                },
-                {
-                    "@id": "#analysis-collection"
-                },
-                {
-                    "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz"
+                    "@id": "https://identifiers.org/ena.embl:ERX12405205"
                 },
                 {
                     "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/"
-                },
-                {
-                    "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNG01.fasta.gz"
                 },
                 {
                     "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/"
@@ -62,34 +50,34 @@
             "license": "TODO license",
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-32bf3b28-e978-4921-9c85-6533bb61846f"
+                    "@id": "#wet-lab-process-6c585144-62e6-47ee-93a3-13bd873c602d"
                 },
                 {
-                    "@id": "#sequencing-process-e7ae0f72-75af-4a25-9e05-765d281462e1"
+                    "@id": "#sequencing-process-f8ac7e4d-2901-4112-ba0a-35db7678f077"
                 },
                 {
-                    "@id": "#wet-lab-process-34268000-727b-4bcd-b8da-cf89458ddb78"
+                    "@id": "#wet-lab-process-b1011905-bc14-40e4-85b3-359e53186a50"
                 },
                 {
-                    "@id": "#sequencing-process-d4c98415-6ae2-4f8b-98e6-95492d2a178b"
+                    "@id": "#sequencing-process-b49edbbc-2ca0-4009-b08e-ca7588d48bf9"
                 },
                 {
-                    "@id": "#wet-lab-process-5e639682-5fae-4fe5-8596-997e3b7da2fa"
+                    "@id": "#wet-lab-process-0c567b84-139d-4f89-8e9b-885c734fb4a0"
                 },
                 {
-                    "@id": "#sequencing-process-0cc1d8b3-0e0d-47eb-9e86-70488626d870"
+                    "@id": "#sequencing-process-fd7ec438-9871-4ae5-bb5d-3efda9075e78"
                 },
                 {
-                    "@id": "#wet-lab-process-9b4b1412-7111-4725-be92-90f7f6ee8d7a"
+                    "@id": "#wet-lab-process-9eb9afac-9394-4112-8cce-c02b5c6533b0"
                 },
                 {
-                    "@id": "#sequencing-process-c18bfde4-ec11-4936-8958-11e15ac780fe"
+                    "@id": "#sequencing-process-8324acac-8978-4e90-bae4-38adc258434a"
                 },
                 {
-                    "@id": "#assembly-process-d481ceb9-0e65-45d8-8e5d-bdc9c4a16b09"
+                    "@id": "#assembly-process-32ac0adf-7000-44a8-a691-fa5000fc35bf"
                 },
                 {
-                    "@id": "#assembly-process-eb843f18-7a9c-47b6-bb0f-f65d306fe435"
+                    "@id": "#assembly-process-3d5ff126-8142-47c0-99d3-88be181e021b"
                 }
             ],
             "name": "Genome of Culex laticinctus",
@@ -261,7 +249,7 @@
             "name": "Sanger Tree of Life Wet Laboratory Protocol Collection  V.1"
         },
         {
-            "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5",
+            "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a",
             "@type": "LabProtocol",
             "description": "Sequencing protocol described in (paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
             "name": "Sequencing protocol"
@@ -289,7 +277,7 @@
             "@type": "Dataset",
             "hasPart": [
                 {
-                    "@id": "#processed-dna-rna-cefcf1de-1386-422d-a9f5-42ad9c5936e7"
+                    "@id": "#processed-dna-rna-551f5326-6443-4baf-91ee-c855e41bd1f7"
                 },
                 {
                     "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
@@ -300,22 +288,22 @@
             ],
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-32bf3b28-e978-4921-9c85-6533bb61846f"
+                    "@id": "#wet-lab-process-6c585144-62e6-47ee-93a3-13bd873c602d"
                 },
                 {
-                    "@id": "#sequencing-process-e7ae0f72-75af-4a25-9e05-765d281462e1"
+                    "@id": "#sequencing-process-f8ac7e4d-2901-4112-ba0a-35db7678f077"
                 }
             ],
             "name": "Sequencing stage ERX12519568"
         },
         {
-            "@id": "#processed-dna-rna-cefcf1de-1386-422d-a9f5-42ad9c5936e7",
+            "@id": "#processed-dna-rna-551f5326-6443-4baf-91ee-c855e41bd1f7",
             "@type": "BioSample",
             "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
             "name": "Processed DNA/RNA (ERX12519568)"
         },
         {
-            "@id": "#wet-lab-process-32bf3b28-e978-4921-9c85-6533bb61846f",
+            "@id": "#wet-lab-process-6c585144-62e6-47ee-93a3-13bd873c602d",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
@@ -335,7 +323,7 @@
                 "@id": "https://ror.org/05cy4wa09"
             },
             "result": {
-                "@id": "#processed-dna-rna-cefcf1de-1386-422d-a9f5-42ad9c5936e7"
+                "@id": "#processed-dna-rna-551f5326-6443-4baf-91ee-c855e41bd1f7"
             }
         },
         {
@@ -345,7 +333,7 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_1.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.243209"
+            "sdDatePublished": "2025-08-15 13:51:05.994254"
         },
         {
             "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz",
@@ -354,24 +342,24 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_2.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.243257"
+            "sdDatePublished": "2025-08-15 13:51:05.994324"
         },
         {
-            "@id": "#sequencing-process-e7ae0f72-75af-4a25-9e05-765d281462e1",
+            "@id": "#sequencing-process-f8ac7e4d-2901-4112-ba0a-35db7678f077",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "location": {
                 "@id": "https://www.geonames.org/2653941"
             },
             "name": "Genome sequencing process (ERX12519568)",
             "object": {
-                "@id": "#processed-dna-rna-cefcf1de-1386-422d-a9f5-42ad9c5936e7"
+                "@id": "#processed-dna-rna-551f5326-6443-4baf-91ee-c855e41bd1f7"
             },
             "provider": {
                 "@id": "https://ror.org/05cy4wa09"
@@ -390,7 +378,7 @@
             "@type": "Dataset",
             "hasPart": [
                 {
-                    "@id": "#processed-dna-rna-f70a346d-a3b5-4fab-8434-5eb47b32d097"
+                    "@id": "#processed-dna-rna-03a716da-8e52-4830-9eb1-d8d44202abf9"
                 },
                 {
                     "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz"
@@ -401,22 +389,22 @@
             ],
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-34268000-727b-4bcd-b8da-cf89458ddb78"
+                    "@id": "#wet-lab-process-b1011905-bc14-40e4-85b3-359e53186a50"
                 },
                 {
-                    "@id": "#sequencing-process-d4c98415-6ae2-4f8b-98e6-95492d2a178b"
+                    "@id": "#sequencing-process-b49edbbc-2ca0-4009-b08e-ca7588d48bf9"
                 }
             ],
             "name": "Sequencing stage ERX12433627"
         },
         {
-            "@id": "#processed-dna-rna-f70a346d-a3b5-4fab-8434-5eb47b32d097",
+            "@id": "#processed-dna-rna-03a716da-8e52-4830-9eb1-d8d44202abf9",
             "@type": "BioSample",
             "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
             "name": "Processed DNA/RNA (ERX12433627)"
         },
         {
-            "@id": "#wet-lab-process-34268000-727b-4bcd-b8da-cf89458ddb78",
+            "@id": "#wet-lab-process-b1011905-bc14-40e4-85b3-359e53186a50",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
@@ -436,7 +424,7 @@
                 "@id": "https://ror.org/05cy4wa09"
             },
             "result": {
-                "@id": "#processed-dna-rna-f70a346d-a3b5-4fab-8434-5eb47b32d097"
+                "@id": "#processed-dna-rna-03a716da-8e52-4830-9eb1-d8d44202abf9"
             }
         },
         {
@@ -446,7 +434,7 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Illumina NovaSeq X paired end sequencing: ERR13063103_1.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.309836"
+            "sdDatePublished": "2025-08-15 13:51:06.071593"
         },
         {
             "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz",
@@ -455,24 +443,24 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Illumina NovaSeq X paired end sequencing: ERR13063103_2.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.309868"
+            "sdDatePublished": "2025-08-15 13:51:06.071627"
         },
         {
-            "@id": "#sequencing-process-d4c98415-6ae2-4f8b-98e6-95492d2a178b",
+            "@id": "#sequencing-process-b49edbbc-2ca0-4009-b08e-ca7588d48bf9",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "location": {
                 "@id": "https://www.geonames.org/2653941"
             },
             "name": "Genome sequencing process (ERX12433627)",
             "object": {
-                "@id": "#processed-dna-rna-f70a346d-a3b5-4fab-8434-5eb47b32d097"
+                "@id": "#processed-dna-rna-03a716da-8e52-4830-9eb1-d8d44202abf9"
             },
             "provider": {
                 "@id": "https://ror.org/05cy4wa09"
@@ -491,7 +479,7 @@
             "@type": "Dataset",
             "hasPart": [
                 {
-                    "@id": "#processed-dna-rna-05a06714-c339-4e10-8bdd-cea50cc9a2fe"
+                    "@id": "#processed-dna-rna-6971c7a6-41ce-4dc0-89d1-afd5a247c3c0"
                 },
                 {
                     "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz"
@@ -499,22 +487,22 @@
             ],
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-5e639682-5fae-4fe5-8596-997e3b7da2fa"
+                    "@id": "#wet-lab-process-0c567b84-139d-4f89-8e9b-885c734fb4a0"
                 },
                 {
-                    "@id": "#sequencing-process-0cc1d8b3-0e0d-47eb-9e86-70488626d870"
+                    "@id": "#sequencing-process-fd7ec438-9871-4ae5-bb5d-3efda9075e78"
                 }
             ],
             "name": "Sequencing stage ERX12405204"
         },
         {
-            "@id": "#processed-dna-rna-05a06714-c339-4e10-8bdd-cea50cc9a2fe",
+            "@id": "#processed-dna-rna-6971c7a6-41ce-4dc0-89d1-afd5a247c3c0",
             "@type": "BioSample",
             "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
             "name": "Processed DNA/RNA (ERX12405204)"
         },
         {
-            "@id": "#wet-lab-process-5e639682-5fae-4fe5-8596-997e3b7da2fa",
+            "@id": "#wet-lab-process-0c567b84-139d-4f89-8e9b-885c734fb4a0",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
@@ -534,7 +522,7 @@
                 "@id": "https://ror.org/05cy4wa09"
             },
             "result": {
-                "@id": "#processed-dna-rna-05a06714-c339-4e10-8bdd-cea50cc9a2fe"
+                "@id": "#processed-dna-rna-6971c7a6-41ce-4dc0-89d1-afd5a247c3c0"
             }
         },
         {
@@ -544,24 +532,24 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Revio sequencing: ERR13033463.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.401137"
+            "sdDatePublished": "2025-08-15 13:51:06.156858"
         },
         {
-            "@id": "#sequencing-process-0cc1d8b3-0e0d-47eb-9e86-70488626d870",
+            "@id": "#sequencing-process-fd7ec438-9871-4ae5-bb5d-3efda9075e78",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "location": {
                 "@id": "https://www.geonames.org/2653941"
             },
             "name": "Genome sequencing process (ERX12405204)",
             "object": {
-                "@id": "#processed-dna-rna-05a06714-c339-4e10-8bdd-cea50cc9a2fe"
+                "@id": "#processed-dna-rna-6971c7a6-41ce-4dc0-89d1-afd5a247c3c0"
             },
             "provider": {
                 "@id": "https://ror.org/05cy4wa09"
@@ -577,7 +565,7 @@
             "@type": "Dataset",
             "hasPart": [
                 {
-                    "@id": "#processed-dna-rna-28bba600-0629-4526-b7cf-7b9d0ad3ec38"
+                    "@id": "#processed-dna-rna-0867cbb6-e722-4ad2-a1eb-26c178fdc59c"
                 },
                 {
                     "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz"
@@ -585,22 +573,22 @@
             ],
             "mentions": [
                 {
-                    "@id": "#wet-lab-process-9b4b1412-7111-4725-be92-90f7f6ee8d7a"
+                    "@id": "#wet-lab-process-9eb9afac-9394-4112-8cce-c02b5c6533b0"
                 },
                 {
-                    "@id": "#sequencing-process-c18bfde4-ec11-4936-8958-11e15ac780fe"
+                    "@id": "#sequencing-process-8324acac-8978-4e90-bae4-38adc258434a"
                 }
             ],
             "name": "Sequencing stage ERX12405205"
         },
         {
-            "@id": "#processed-dna-rna-28bba600-0629-4526-b7cf-7b9d0ad3ec38",
+            "@id": "#processed-dna-rna-0867cbb6-e722-4ad2-a1eb-26c178fdc59c",
             "@type": "BioSample",
             "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
             "name": "Processed DNA/RNA (ERX12405205)"
         },
         {
-            "@id": "#wet-lab-process-9b4b1412-7111-4725-be92-90f7f6ee8d7a",
+            "@id": "#wet-lab-process-9eb9afac-9394-4112-8cce-c02b5c6533b0",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
@@ -620,7 +608,7 @@
                 "@id": "https://ror.org/05cy4wa09"
             },
             "result": {
-                "@id": "#processed-dna-rna-28bba600-0629-4526-b7cf-7b9d0ad3ec38"
+                "@id": "#processed-dna-rna-0867cbb6-e722-4ad2-a1eb-26c178fdc59c"
             }
         },
         {
@@ -630,24 +618,24 @@
             "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
             "encodingFormat": "TODO file type for FASTA",
             "name": "Revio sequencing: ERR13033464.fastq.gz",
-            "sdDatePublished": "2025-08-11 12:47:18.488266"
+            "sdDatePublished": "2025-08-15 13:51:06.233286"
         },
         {
-            "@id": "#sequencing-process-c18bfde4-ec11-4936-8958-11e15ac780fe",
+            "@id": "#sequencing-process-8324acac-8978-4e90-bae4-38adc258434a",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-210782ea-e9cf-4721-aaca-e158139120a5"
+                "@id": "#sequencing-protocol-0749aa93-2a62-4e32-b13c-f13746cad36a"
             },
             "location": {
                 "@id": "https://www.geonames.org/2653941"
             },
             "name": "Genome sequencing process (ERX12405205)",
             "object": {
-                "@id": "#processed-dna-rna-28bba600-0629-4526-b7cf-7b9d0ad3ec38"
+                "@id": "#processed-dna-rna-0867cbb6-e722-4ad2-a1eb-26c178fdc59c"
             },
             "provider": {
                 "@id": "https://ror.org/05cy4wa09"
@@ -659,7 +647,7 @@
             ]
         },
         {
-            "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802",
+            "@id": "%23assembly-workflow-78238225-a359-47b6-ac85-9949d80cb8d7",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
@@ -670,7 +658,7 @@
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
             },
-            "sdDatePublished": "2025-08-11 12:47:18.488491"
+            "sdDatePublished": "2025-08-15 13:51:06.233381"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
@@ -702,7 +690,7 @@
             "encodingFormat": "TODO file type for FASTA",
             "identifier": "https://identifiers.org/ena.embl:CAXLNB01",
             "name": "Culex laticinctus genome assembly",
-            "sdDatePublished": "2025-08-11 12:47:18.893588"
+            "sdDatePublished": "2025-08-15 13:51:06.591919"
         },
         {
             "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/",
@@ -711,25 +699,25 @@
             "hasPart": [
                 {
                     "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz"
+                },
+                {
+                    "@id": "%23assembly-workflow-78238225-a359-47b6-ac85-9949d80cb8d7"
                 }
             ],
             "mentions": [
                 {
-                    "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802"
-                },
-                {
-                    "@id": "#assembly-process-d481ceb9-0e65-45d8-8e5d-bdc9c4a16b09"
+                    "@id": "#assembly-process-32ac0adf-7000-44a8-a691-fa5000fc35bf"
                 }
             ],
             "name": "idCulLati1.1 assembly for Culex laticinctus",
-            "sdDatePublished": "2025-08-11T11:47:19+00:00"
+            "sdDatePublished": "2025-08-15T12:51:07+00:00"
         },
         {
-            "@id": "#assembly-process-d481ceb9-0e65-45d8-8e5d-bdc9c4a16b09",
+            "@id": "#assembly-process-32ac0adf-7000-44a8-a691-fa5000fc35bf",
             "@type": "CreateAction",
             "agent": "TODO assembly contributors",
             "instrument": {
-                "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802"
+                "@id": "%23assembly-workflow-78238225-a359-47b6-ac85-9949d80cb8d7"
             },
             "name": "Genome assembly process (GCA_964187845.1)",
             "object": [
@@ -753,7 +741,7 @@
             "encodingFormat": "TODO file type for FASTA",
             "identifier": "https://identifiers.org/ena.embl:CAXLNG01",
             "name": "Culex laticinctus genome assembly",
-            "sdDatePublished": "2025-08-11 12:47:19.275457"
+            "sdDatePublished": "2025-08-15 13:51:06.956792"
         },
         {
             "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/",
@@ -762,25 +750,25 @@
             "hasPart": [
                 {
                     "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNG01.fasta.gz"
+                },
+                {
+                    "@id": "%23assembly-workflow-78238225-a359-47b6-ac85-9949d80cb8d7"
                 }
             ],
             "mentions": [
                 {
-                    "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802"
-                },
-                {
-                    "@id": "#assembly-process-eb843f18-7a9c-47b6-bb0f-f65d306fe435"
+                    "@id": "#assembly-process-3d5ff126-8142-47c0-99d3-88be181e021b"
                 }
             ],
             "name": "idCulLati1.1 alternate haplotype assembly for Culex laticinctus",
-            "sdDatePublished": "2025-08-11T11:47:19+00:00"
+            "sdDatePublished": "2025-08-15T12:51:07+00:00"
         },
         {
-            "@id": "#assembly-process-eb843f18-7a9c-47b6-bb0f-f65d306fe435",
+            "@id": "#assembly-process-3d5ff126-8142-47c0-99d3-88be181e021b",
             "@type": "CreateAction",
             "agent": "TODO assembly contributors",
             "instrument": {
-                "@id": "%23assembly-workflow-622e38e3-bdd1-42ab-9cdf-9950863e4802"
+                "@id": "%23assembly-workflow-78238225-a359-47b6-ac85-9949d80cb8d7"
             },
             "name": "Genome assembly process (GCA_964187835.1)",
             "object": [
