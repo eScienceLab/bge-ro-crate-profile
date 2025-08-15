@@ -444,7 +444,7 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
         genome_assembly.append_to("hasPart", genome_assembly_data)
 
         genome_assembly.append_to(
-            "mentions", workflow_assembly
+            "hasPart", workflow_assembly
         )  # TODO: could also be mainEntity? in WROC style?
 
         assembly_process = crate.add_action(
@@ -519,7 +519,7 @@ def main():
         crate=crate, sequencing_accessions=sequencing_experiment_accessions
     )
 
-    assembly = add_analysis_stage(
+    assemblies = add_analysis_stage(
         crate=crate,
         analysis_accessions=genome_assembly_accessions,
     )
@@ -527,6 +527,7 @@ def main():
     #################
     # write & check #
     #################
+    crate.root_dataset["hasPart"] = [*samples, *sequenced_data, *assemblies]
 
     # Writing the RO-Crate metadata:
     crate.write(output_dir)
