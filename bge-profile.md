@@ -22,7 +22,11 @@ These steps represent a mixture of physical and computational processes. They ca
 * Wet lab and sequencing - the steps that get you from a sample to raw genetic sequence data
 * Computational analysis - that steps that get you from the raw genetic data to an assembled genome, a reference barcode, or some other "final product"
 
+![General structure of a BGE RO-Crate. Core metadata is at the top connected to all the stages. The three main stages described in earlier text are connected in a chain.](img/general-sequence-of-processes.svg)
+
 At each stage, accession numbers, authors, affiliations, and additional metadata are collected. The stages are connected through these accession numbers, and the steps within them are connected as "actions" which represent the processes and workflows used.
+
+![Detailed structure of a BGE RO-Crate. Each main stage now contains the data and processes as a smaller chain within the stage. The output of one stage is connected to the input of the next by the accession number.](img/detailed-sequence-of-processes.svg)
 
 This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html)page of the RO-Crate specification is also relevant here.
 
@@ -147,3 +151,5 @@ Multiple analyses may be chained together.
 ## Multiple processes per stage
 
 It is common for multiple samples to feed into a single computational analysis, or for one analysis output to be the input of multiple secondary analyses. As such, it is permitted to have multiple "core" entities for each stage, each with their own provenance chain. Between one stage and the next, the core entities may be connected in one-to-one, many-to-one, one-to-many, or many-to-many relationships.
+
+![Diagram showing mix-and-match combination of stages.Multiple samples are each connected to their own wet lab & sequencing stage. All the wet lab stages are connected to one single primary analysis stage, and that primary analysis stage is connected to a secondary analysis stage.](img/mix-and-match-processes.svg)
