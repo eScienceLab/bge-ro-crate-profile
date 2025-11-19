@@ -73,10 +73,66 @@ def fetch_single_ena_record_by_accession(
         return results_list[0]
     elif len(results_list) > 1:
         raise ValueError(
-            f"Unexpectedly retrieved multiple results for accession {accession}: {[i["sample_accession"] for i in results_list]}"
+            f"Unexpectedly retrieved multiple ENA records for accession {accession}: {[i["sample_accession"] for i in results_list]}"
         )
     else:  # len(results_list) is 0
-        raise ValueError(f"No result found for accession {accession}.")
+        raise ValueError(f"No ENA record found for accession {accession}.")
+
+
+def fetch_single_bold_record_by_id(id: str, query_field: str = None) -> dict:
+    """Fetch a single record from the BOLD API.
+
+    :param id: id of the record
+    :param result_type: BOLD tokens to narrow the query, e.g. "ids:processid" narrows the search to just BOLD process IDs.
+        By default, this function will use the BOLD API to narrow the query automatically.
+        See the BOLD API docs: https://portal.boldsystems.org/api/docs#/query/query_records_api_query_get
+    :raises ValueError: multiple results found
+    :raises ValueError: no results found
+    :return: Dictionary (a JSON object) with the record's metadata
+    """
+    BOLD_API = "https://portal.boldsystems.org/api"
+
+    # build query terms
+    if query_field:
+        query_str = f"{query_field}:{id}"
+    else:
+        r = requests.get(f"{BOLD_API}/query/parse", params={"query": {id}})
+        r.raise_for_status()
+        query_str = r.json()["terms"]
+
+    # preprocessing - resolves wildcards to specific terms
+    r = requests.get(f"{BOLD_API}/query/preprocessor", params={"query": {query_str}})
+    r.raise_for_status()
+    try:
+        query_str = r.json()["successful_terms"][0]["matched"]
+    except KeyError:
+        raise ValueError(
+            f"BOLD query could not be built for id {id} (query preprocessing failed with {query_str})."
+        )
+
+    if ";" in query_str:
+        print(f"Warning: multiple query strings identified: {query_str}")
+        query_str = query_str.split(";")[0]
+        print(f"Selecting first query from list: {query_str}")
+
+    # query records - returns an ID which can be used to fetch data
+    r = requests.get(f"{BOLD_API}/query", params={"query": query_str})
+    r.raise_for_status()
+    bold_query_id = r.json()["query_id"]
+
+    # fetch the record
+    r = requests.get(f"{BOLD_API}/documents/{bold_query_id}")
+    r.raise_for_status()
+    results_list = r.json()["data"]
+
+    if len(results_list) == 1:
+        return results_list[0]
+    elif len(results_list) > 1:
+        raise ValueError(
+            f"Unexpectedly retrieved multiple BOLD records for id {id}: {[i["processid"] for i in results_list]}"
+        )
+    else:  # len(results_list) is 0
+        raise ValueError(f"No BOLD record found for id {id}.")
 
 
 def get_accession_permalink(prefix, accession) -> str:
