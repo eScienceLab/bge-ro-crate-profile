@@ -1,0 +1,610 @@
+
+
+<html>
+<head>
+
+
+<script type="application/ld+json"> 
+  {
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context"
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "about": {
+        "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
+      },
+      "datePublished": "2025-11-24T13:01:47+00:00",
+      "description": "Barcode of Carystina auriferDHJ01",
+      "hasPart": [
+        {
+          "@id": "#07-SRNP-32653"
+        },
+        {
+          "@id": "#MHMXN361-07-sequencing"
+        },
+        {
+          "@id": "#MHMXN361-07.COI-5P"
+        }
+      ],
+      "identifier": "TODO project identifiers for barcoding",
+      "license": "TODO license",
+      "mentions": [
+        {
+          "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f"
+        },
+        {
+          "@id": "#MHMXN361-07-assembly"
+        }
+      ],
+      "name": "Barcode of Carystina auriferDHJ01",
+      "scientificName": {
+        "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
+      },
+      "taxonomicRange": {
+        "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
+      }
+    },
+    {
+      "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969",
+      "@type": "Taxon",
+      "name": "Carystina auriferDHJ01",
+      "scientificName": "Carystina auriferDHJ01",
+      "taxonRank": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
+    },
+    {
+      "@id": "#07-SRNP-32653",
+      "@type": "BioSample",
+      "collector": "Calixto Moraga",
+      "conformsTo": {
+        "@id": "https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10"
+      },
+      "contributor": "Daniel H. Janzen",
+      "custodian": "TODO custodian",
+      "dateCollected": "2007-08-02",
+      "description": "BOLD record for biosample accession 07-SRNP-32653.",
+      "identifier": "07-SRNP-32653",
+      "locationOfOrigin": "[10.989, -85.423]",
+      "name": "Sample 07-SRNP-32653"
+    },
+    {
+      "@id": "#MHMXN361-07-sequencing",
+      "@type": "Dataset",
+      "description": "Sequencing stage for MHMXN361-07. Contains sequenced data and a description of the process used to create it.",
+      "hasPart": {
+        "@id": "ftp://placeholder-data-download-link"
+      },
+      "mentions": {
+        "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f"
+      },
+      "name": "Sequencing stage MHMXN361-07"
+    },
+    {
+      "@id": "#MHMXN361-07.COI-5P",
+      "@type": "Dataset",
+      "description": "Barcode assembly stage for MHMXN361-07.COI-5P. Contains the workflow used, the workflow execution details, and the output data.",
+      "hasPart": [
+        {
+          "@id": "https://identifiers.org/ena.embl:JF761761"
+        },
+        {
+          "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c"
+        }
+      ],
+      "mentions": {
+        "@id": "#MHMXN361-07-assembly"
+      },
+      "name": "Barcode assembly MHMXN361-07.COI-5P",
+      "sdDatePublished": "2025-11-24 13:01:53.250353"
+    },
+    {
+      "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "endDate": "2009-01-05",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3"
+      },
+      "name": "Genome sequencing process (MHMXN361-07)",
+      "object": {
+        "@id": "#07-SRNP-32653"
+      },
+      "provider": "Centre for Biodiversity Genomics",
+      "result": {
+        "@id": "ftp://placeholder-data-download-link"
+      }
+    },
+    {
+      "@id": "#MHMXN361-07-assembly",
+      "@type": "CreateAction",
+      "agent": "TODO assembly contributors",
+      "instrument": {
+        "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c"
+      },
+      "name": "Barcode assembly process (MHMXN361-07)",
+      "object": {
+        "@id": "ftp://placeholder-data-download-link"
+      },
+      "result": {
+        "@id": "https://identifiers.org/ena.embl:JF761761"
+      }
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
+    },
+    {
+      "@id": "https://ror.org/0566bfb96",
+      "@type": "Organization",
+      "location": {
+        "@id": "https://www.geonames.org/2751773"
+      },
+      "name": "Naturalis Biodiversity Center",
+      "url": "https://www.naturalis.nl"
+    },
+    {
+      "@id": "https://www.geonames.org/2751773",
+      "@type": "Place",
+      "name": "Leiden, NL"
+    },
+    {
+      "@id": "https://ror.org/039zvsn29",
+      "@type": "Organization",
+      "location": {
+        "@id": "https://www.geonames.org/2643743"
+      },
+      "name": "Natural History Museum",
+      "url": "https://www.nhm.ac.uk"
+    },
+    {
+      "@id": "https://www.geonames.org/2643743",
+      "@type": "Place",
+      "name": "London, UK"
+    },
+    {
+      "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3",
+      "@type": "LabProtocol",
+      "description": "Sequencing protocol [placeholder]",
+      "name": "Sequencing protocol"
+    },
+    {
+      "@id": "ftp://placeholder-data-download-link",
+      "@type": "File",
+      "contentSize": 0,
+      "description": "example: PacBio sequencing of sample 07-SRNP-32653, performed as part of process MHMXN361-07 for study accession XYZ.",
+      "encodingFormat": "TODO",
+      "name": "Sequencing data for MHMXN361-07",
+      "sdDatePublished": "2025-11-24 13:01:51.554696"
+    },
+    {
+      "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "description": "A placeholder for a workflow that could exist on WorkflowHub (etc) or be directly contained within the crate",
+      "name": "Assembly workflow (placeholder)",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "sdDatePublished": "2025-11-24 13:01:51.555311"
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/"
+      },
+      "name": "Common Workflow Language",
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      }
+    },
+    {
+      "@id": "https://identifiers.org/ena.embl:JF761761",
+      "@type": "BioChemEntity",
+      "hasRepresentation": "--------------------------------------TAGGAACATCATTAAGATTATTAATCCGAACAGAATTAGGAAACCCAGGATCTTTAATTGGAGATGATCAAATTTACAATACTATCGTTACTGCTCATGCTTTTATTATAATTTTTTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGATTAATTCCCTTAATATTAGGGGCTCCCGACATAGCTTTCCCCCGAATAAACAACATAAGATTTTGAATATTACCCCCATCTTTAACTCTTTTAATTTCAAGAAGAATTGTAGAAAATGGTGCCGGAACAGGTTGAACTGTTTACCCCCCCCTTTCATCTAATATTGCCCATCAAGGATCTTCGGTCGATTTAGCAATTTTTTCCTTACATTTAGCTGGTATTTCTTCAATCTTAGGGGCTATCAATTTTATTACTACAATTATTAATATACGAATTAAAAACTTATCATTTGATCAAATACCTTTATTTATTTGATCTGTAGGAATTACAGCACTATTATTACTCTTATCTTTACCCGTATTAGCTGGCGCTATTACTATACTTTTAACTGATCGAAATTTAAATACCTCTTTTTTCGACCCTGCGGGAGGGGG----------------------------",
+      "name": "Barcode data from process MHMXN361-07",
+      "sdDatePublished": "2025-11-24 13:01:53.250294"
+    },
+    {
+      "@id": "https://github.com/naturalis/barcode_validator",
+      "@type": "Thing",
+      "description": "A Python-based toolkit for validating DNA barcode sequences through structural and taxonomic validation.",
+      "name": "DNA Barcode Validator",
+      "version": "TODO"
+    }
+  ]
+}
+</script>
+
+    
+<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script -->
+<script src="https://unpkg.com/ro-crate-html@0.1/dist/ro-crate-dynamic.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta charset='utf-8'/>
+<style>
+
+table.table {
+  padding-bottom: 300px;
+}
+</style>
+</head>
+
+
+<body>
+
+  <nav class="navbar">
+
+    <ul class="nav navbar-nav" >
+        <li ><a href="#"><span class="glyphicon glyphicon-home dataset_name">&nbsp;Barcode of Carystina auriferDHJ01</span></a></li>
+    </ul>
+
+  </nav>
+<div class="container">
+<div class="jumbotron">
+<h4 class="citation"></h4>
+<h3 class="item_name">Barcode of Carystina auriferDHJ01</h3>
+
+
+<a href="./ro-crate-metadata.json">⬇️🏷️ Download all the metadata for <span class='name'>Barcode of Carystina auriferDHJ01</span> in JSON-LD format</a>
+
+
+<div id="check"></div>
+
+
+</div>
+
+
+
+<div id="summary">
+<div class='all-meta'>
+            <div>
+                <h3> Barcode of Carystina auriferDHJ01</h3>
+                
+                
+                
+                
+        <div id="./">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>./</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Barcode of Carystina auriferDHJ01</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Barcode of Carystina auriferDHJ01</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
+            <td style='text-align:left'><span>2025-11-24T13:01:47+00:00</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//bench.boldsystems.org/index.php/TaxBrowser_TaxonPage%3Ftaxid%3D66969">Carystina auriferDHJ01</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#%2307-SRNP-32653">Sample 07-SRNP-32653</a></li>
+                        
+                        <li><a href="#%23MHMXN361-07-sequencing">Sequencing stage MHMXN361-07</a></li>
+                        
+                        <li><a href="#%23MHMXN361-07.COI-5P">Barcode assembly MHMXN361-07.COI-5P</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
+            <td style='text-align:left'><span>TODO project identifiers for barcoding</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
+            <td style='text-align:left'><span>TODO license</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#%23sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f">Genome sequencing process (MHMXN361-07)</a></li>
+                        
+                        <li><a href="#%23MHMXN361-07-assembly">Barcode assembly process (MHMXN361-07)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">scientificName</th>
+            <td style='text-align:left'><a href="#https%3A//bench.boldsystems.org/index.php/TaxBrowser_TaxonPage%3Ftaxid%3D66969">Carystina auriferDHJ01</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <td style='text-align:left'><a href="#https%3A//bench.boldsystems.org/index.php/TaxBrowser_TaxonPage%3Ftaxid%3D66969">Carystina auriferDHJ01</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#ro-crate-metadata.json">ro-crate-metadata.json</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3><a href="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969">Go to: </a> Carystina auriferDHJ01</h3>
+                
+                
+                
+                
+        <div id="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><a href="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969">https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Carystina auriferDHJ01</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Taxon</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">scientificName</th>
+            <td style='text-align:left'><span>Carystina auriferDHJ01</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonRank</th>
+            <td style='text-align:left'><a href="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969">https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">scientificName</th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Sample 07-SRNP-32653</h3>
+                
+                
+                
+                
+        <div id="#07-SRNP-32653">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#07-SRNP-32653</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Sample 07-SRNP-32653</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>BioSample</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>BOLD record for biosample accession 07-SRNP-32653.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">collector</th>
+            <td style='text-align:left'><span>Calixto Moraga</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
+            <td style='text-align:left'><a href="https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10">https://bioschemas.org/profiles/Sample/0.2-RELEASE-2018_11_10</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">contributor<span>&nbsp;</span><a href="http://schema.org/contributor">[?]</a></th>
+            <td style='text-align:left'><span>Daniel H. Janzen</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">custodian</th>
+            <td style='text-align:left'><span>TODO custodian</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">dateCollected</th>
+            <td style='text-align:left'><span>2007-08-02</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
+            <td style='text-align:left'><span>07-SRNP-32653</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">locationOfOrigin</th>
+            <td style='text-align:left'><span>[10.989, -85.423]</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f">Genome sequencing process (MHMXN361-07)</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Sequencing stage MHMXN361-07</h3>
+                
+                
+                
+                
+        <div id="#MHMXN361-07-sequencing">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#MHMXN361-07-sequencing</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Sequencing stage MHMXN361-07</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Sequencing stage for MHMXN361-07. Contains sequenced data and a description of the process used to create it.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#ftp%3A//placeholder-data-download-link">Sequencing data for MHMXN361-07</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f">Genome sequencing process (MHMXN361-07)</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Barcode assembly MHMXN361-07.COI-5P</h3>
+                
+                
+                
+                
+        <div id="#MHMXN361-07.COI-5P">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#MHMXN361-07.COI-5P</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Barcode assembly MHMXN361-07.COI-5P</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>Dataset</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
+            <td style='text-align:left'><span>Barcode assembly stage for MHMXN361-07.COI-5P. Contains the workflow used, the workflow execution details, and the output data.</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#https%3A//identifiers.org/ena.embl%3AJF761761">Barcode data from process MHMXN361-07</a></li>
+                        
+                        <li><a href="#%2523assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c">Assembly workflow (placeholder)</a></li>
+                        </ul></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><a href="#%23MHMXN361-07-assembly">Barcode assembly process (MHMXN361-07)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">sdDatePublished<span>&nbsp;</span><a href="http://schema.org/sdDatePublished">[?]</a></th>
+            <td style='text-align:left'><span>2025-11-24 13:01:53.250353</span></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
+            <td style='text-align:left'><a href="#./">Barcode of Carystina auriferDHJ01</a></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Genome sequencing process (MHMXN361-07)</h3>
+                
+                
+                
+                
+        <div id="#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Genome sequencing process (MHMXN361-07)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>LabProcess</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
+            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">endDate<span>&nbsp;</span><a href="http://schema.org/endDate">[?]</a></th>
+            <td style='text-align:left'><span>2009-01-05</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">executesLabProtocol</th>
+            <td style='text-align:left'><a href="#%23sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3">Sequencing protocol</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
+            <td style='text-align:left'><a href="#%23sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3">Sequencing protocol</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
+            <td style='text-align:left'><a href="#%2307-SRNP-32653">Sample 07-SRNP-32653</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
+            <td style='text-align:left'><span>Centre for Biodiversity Genomics</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
+            <td style='text-align:left'><a href="#ftp%3A//placeholder-data-download-link">Sequencing data for MHMXN361-07</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#./">Barcode of Carystina auriferDHJ01</a></li>
+                        
+                        <li><a href="#%23MHMXN361-07-sequencing">Sequencing stage MHMXN361-07</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/>
+            <div>
+                <h3> Barcode assembly process (MHMXN361-07)</h3>
+                
+                
+                
+                
+        <div id="#MHMXN361-07-assembly">
+            
+            <table class="table metadata table-striped" >
+                <tbody><tr>
+            <th style="text-align:left;" class="prop">@id</th>
+            <td style='text-align:left'><span>#MHMXN361-07-assembly</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
+            <td style='text-align:left'><span>Barcode assembly process (MHMXN361-07)</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">@type</th>
+            <td style='text-align:left'><span>CreateAction</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
+            <td style='text-align:left'><span>TODO assembly contributors</span></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
+            <td style='text-align:left'><a href="#%2523assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c">Assembly workflow (placeholder)</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
+            <td style='text-align:left'><a href="#ftp%3A//placeholder-data-download-link">Sequencing data for MHMXN361-07</a></td>
+            </tr><tr>
+            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
+            <td style='text-align:left'><a href="#https%3A//identifiers.org/ena.embl%3AJF761761">Barcode data from process MHMXN361-07</a></td>
+            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
+            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
+            <td style='text-align:left'><ul>
+                        <li><a href="#./">Barcode of Carystina auriferDHJ01</a></li>
+                        
+                        <li><a href="#%23MHMXN361-07.COI-5P">Barcode assembly MHMXN361-07.COI-5P</a></li>
+                        </ul></td>
+            </tr></tbody>
+            </table>
+        </div>
+            </div>
+        <hr/><br/><br/></div>
+</div>
+
+
+
+
+
+</body>
+</html>

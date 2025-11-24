@@ -10,7 +10,10 @@ A RO-Crate profile for biodiversity genomics is being developed as part of the [
 
 Read the profile here: [BGE Profile](bge-profile.md).
 
-View an example RO-Crate which follows the profile here: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
+There are two example RO-Crates which follow the profile: 
+
+* Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
+* Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
 
 ## Example crate details
 

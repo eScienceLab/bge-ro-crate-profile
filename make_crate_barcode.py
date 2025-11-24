@@ -28,32 +28,30 @@ BIOSAMPLES_PREFIX = "biosample"  # identifiers.org prefix
 def add_species_metadata(
     crate: ROCrate, species_names: list[str], bold_taxid: str | None = None
 ) -> None:
-
+    if not bold_taxid:
+        raise ValueError("BOLD taxid must be specified")
     for name in species_names:
         # TODO: lookup species name in NCBI/BOLD to get id
         species = ContextEntity(
             crate,
-            "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
+            f"https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid={bold_taxid}",
             properties={
                 "@type": "Taxon",
                 "name": name,
                 "scientificName": name,
             },
         )
-        if bold_taxid:
-            species.append_to(
-                "taxonRank",
-                f"https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid={bold_taxid}",
-            )
+        species.append_to(
+            "taxonRank",
+            f"https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid={bold_taxid}",
+        )
 
-        crate.add(species)
-        crate.root_dataset.append_to(
-            "about", species
-        )  # use this and/or taxonomicRange?
-        crate.root_dataset.append_to(
-            "taxonomicRange", species
-        )  # what uri to use for taxonomy?
-        crate.root_dataset.append_to("scientificName", species)  # is this necessary?
+    crate.add(species)
+    crate.root_dataset.append_to("about", species)  # use this and/or taxonomicRange?
+    crate.root_dataset.append_to(
+        "taxonomicRange", species
+    )  # what uri to use for taxonomy?
+    crate.root_dataset.append_to("scientificName", species)  # is this necessary?
 
 
 def add_authors_and_affiliations(crate: ROCrate) -> None:
@@ -127,8 +125,6 @@ def add_sample_stage(crate: ROCrate, sample_accessions: list[str]) -> list[Entit
         sample_metadata = fetch_single_bold_record_by_id(
             id=sample_accession,  # query_field="ids:sampleid"
         )
-
-        print(sample_metadata)
 
         sample = crate.add(
             ContextEntity(
@@ -216,6 +212,7 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
                 properties={
                     "@type": "Dataset",
                     "name": f"Sequencing stage {sequencing_accession}",
+                    "description": f"Sequencing stage for {sequencing_accession}. Contains sequenced data and a description of the process used to create it.",
                     "hasPart": [],
                 },
             )
@@ -261,10 +258,7 @@ def add_sequencing_stage(crate: ROCrate, sequencing_accessions: list[str]) -> En
             },
         )
         sequencing_process["executesLabProtocol"] = protocol_sequencing
-        sequencing_process["provider"] = crate.get(
-            "https://ror.org/0566bfb96"
-        )  # provisional term in schema.org # sequencing_process["sequence_run_site"]
-        sequencing_process["location"] = sequencing_process["provider"]["location"]
+        sequencing_process["provider"] = sequencing_metadata["sequence_run_site"]
         sequencing_process["endDate"] = sequencing_metadata["sequence_upload_date"]
         sequencing_main_entity.append_to("mentions", sequencing_process)
         sequencing_main_entity.append_to("hasPart", sequenced_data)
@@ -313,17 +307,32 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
 
         genome_assembly_data = []
 
-        genome_assembly_data.append(
-            crate.add_file(
-                source=f"ftp://placeholder-barcode-data-file",
-                validate_url=True,
+        accession = genome_assembly_metadata["insdc_acs"]
+        id = (
+            get_accession_permalink(ENA_PREFIX, accession)
+            if accession
+            else f"#{analysis_accession}-barcode"
+        )
+        genome_assembly_item = crate.add(
+            ContextEntity(
+                crate,
+                id,
                 properties={
+                    "@type": "BioChemEntity",
                     "name": f"Barcode data from process {analysis_accession}",
                     "sdDatePublished": str(datetime.now()),
-                    "encodingFormat": "TODO",
+                    "hasRepresentation": genome_assembly_metadata["nuc"],
                 },
             )
         )
+        tax_id = genome_assembly_metadata["taxid"]
+        tax_range = (
+            f"https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid={tax_id}",
+        )
+        genome_assembly_item["taxonomicRange"] = crate.get(
+            f"https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid={tax_range}"
+        )
+        genome_assembly_data.append(genome_assembly_item)
 
         record_id = genome_assembly_metadata["record_id"]
         genome_assembly = crate.add(
@@ -332,7 +341,7 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
                 f"#{record_id}",
                 properties={
                     "name": f"Barcode assembly {record_id}",
-                    "description": "",
+                    "description": f"Barcode assembly stage for {record_id}. Contains the workflow used, the workflow execution details, and the output data.",
                     "sdDatePublished": str(datetime.now()),
                     "@type": "Dataset",
                 },
@@ -365,11 +374,11 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
 
 def main():
 
-    target_bold_process_id = "BHNHM001-24"
+    target_bold_process_id = "MHMXN361-07"
 
     # TODO - multiple?
     bold_metadata = fetch_single_bold_record_by_id(target_bold_process_id)
-
+    print(bold_metadata)
     species_names = [bold_metadata["species"]]
 
     sample_accessions = [bold_metadata["sampleid"]]
@@ -391,7 +400,7 @@ def main():
     name = species_names[0]
 
     crate.name = f"Barcode of {name}"
-    crate.description = f"Barcode of {name} created by iBOL and BGE"
+    crate.description = f"Barcode of {name}"
     crate.license = "TODO license"
 
     add_species_metadata(
