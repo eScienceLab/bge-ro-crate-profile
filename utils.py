@@ -73,13 +73,13 @@ def fetch_single_ena_record_by_accession(
         return results_list[0]
     elif len(results_list) > 1:
         raise ValueError(
-            f"Unexpectedly retrieved multiple ENA records for accession {accession}: {[i["sample_accession"] for i in results_list]}"
+            f'Unexpectedly retrieved multiple ENA records for accession {accession}: {[i["sample_accession"] for i in results_list]}'
         )
     else:  # len(results_list) is 0
         raise ValueError(f"No ENA record found for accession {accession}.")
 
 
-def fetch_single_bold_record_by_id(id: str, query_field: str = None) -> dict:
+def fetch_single_bold_record_by_id(id: str, query_field: str | None = None) -> dict:
     """Fetch a single record from the BOLD API.
 
     :param id: id of the record
@@ -129,7 +129,7 @@ def fetch_single_bold_record_by_id(id: str, query_field: str = None) -> dict:
         return results_list[0]
     elif len(results_list) > 1:
         raise ValueError(
-            f"Unexpectedly retrieved multiple BOLD records for id {id}: {[i["processid"] for i in results_list]}"
+            f'Unexpectedly retrieved multiple BOLD records for id {id}: {[i["processid"] for i in results_list]}'
         )
     else:  # len(results_list) is 0
         raise ValueError(f"No BOLD record found for id {id}.")
@@ -154,7 +154,7 @@ def get_copo_rocrate_uri_from_accession(accession: str) -> str:
         return f"{copo_api}/manifest/{manifest_id}?return_type=rocrate"
     elif len(results_list) > 1:
         raise ValueError(
-            f"Unexpectedly retrieved multiple results for accession {accession}: {[i["copo_id"] for i in results_list]}"
+            f'Unexpectedly retrieved multiple results for accession {accession}: {[i["copo_id"] for i in results_list]}'
         )
     else:  # len(results_list) is 0
         raise ValueError(f"No COPO record found for accession {accession}.")
