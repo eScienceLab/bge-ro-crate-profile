@@ -1,8 +1,6 @@
 # RO-Crate for Biodiversity Genomics
 
-## UNDER CONSTRUCTION
-
-This is a first draft currently in active development. Everything is subject to change.
+**Note:** This is a first draft currently in active development.
 
 ## RO-Crate Profile for Biodiversity Genomics Europe
 
@@ -17,7 +15,9 @@ There are two example RO-Crates which follow the profile:
 
 ## Example crate details
 
-The example is built using information about the following mosquito genome:
+### Genome example 
+
+The genome example is built using information about the following mosquito genome:
 
 1. Culex laticinctus  
     SAMEA114402090, SAMEA114402091, SAMEA114402094, SAMEA114402071  
@@ -55,6 +55,14 @@ Genome Assembly: Shane McCarthy, Kerstin Howe, Mark Blaxter, Wellcome Sanger Ins
 Genome Assembly Review: Jèssica Gómez-Garrido (perexiguus & laticinctus), Fernando Cruz (modestus) & Tom Brown (theileri)  
 
 When substantial changes are made to the code, the `example-bge-crate-genome/` folder should also be updated with the generated example crate and the HTML preview.
+
+### Barcode example 
+
+The barcode example is built using metadata retrieved from BOLD for the Process ID [MHMXN361-07](https://portal.boldsystems.org/record/MHMXN361-07). The script `make_crate_barcode.py` is used to generate the example.
+
+Examples can also be made using BGE-related process IDs such as [BHNHM001-24](https://portal.boldsystems.org/record/BHNHM001-24) - the process ID can simply be swapped in the `make_crate_barcode.py` script. The reason for not using a BGE record is that these do not yet have GenBank Accessions, as these barcodes are not yet submitted to ENA, therefore related metadata cannot yet be fetched using the accession.
+
+When substantial changes are made to the code, the `example-bge-crate-barcode/` folder should also be updated with the generated example crate and the HTML preview.
 
 ## For developers – scripts and examples
 

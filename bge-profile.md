@@ -1,8 +1,12 @@
 # Biodiversity Genomics RO-Crate Profile
 
-## UNDER CONSTRUCTION
-
-This is a first draft currently in active development. Everything is subject to change.
+Version: 0.1-DRAFT
+Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/bge-profile.html>
+Authors: 
+    * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
+Example metadata files (work in progress, may not be fully compliant):
+    * Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
+    * Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
 
 ## Overview
 
@@ -31,6 +35,8 @@ At each stage, accession numbers, authors, affiliations, and additional metadata
 This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html)page of the RO-Crate specification is also relevant here.
 
 ## Notes before reading
+
+This profile is a first draft currently in active development. It may change substantially before a stable release is made.
 
 Note the distinction between Bioschemas LabProtocol (a sequence of tasks and operations executed to perform experimental research) and LabProcess (the specific application of a LabProtocol to some input (biological material or data) to produce some output (biological material or data)). This is analogous to the prospective and retrospective provenance ideas presented in [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/).
 

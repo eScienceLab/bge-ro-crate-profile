@@ -528,6 +528,8 @@ def main():
     # write & check #
     #################
     crate.root_dataset["hasPart"] = [*samples, *sequenced_data, *assemblies]
+    # the assembled genomes are the focus of the crate
+    crate.root_dataset["mainEntity"] = assemblies
 
     # Writing the RO-Crate metadata:
     crate.write(output_dir)
