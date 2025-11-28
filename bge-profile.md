@@ -1,12 +1,13 @@
 # Biodiversity Genomics RO-Crate Profile
 
-Version: 0.1-DRAFT
-Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/bge-profile.html>
+Version: 0.1-DRAFT  
+Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/bge-profile.html>  
 Authors: 
-    * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
+* Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
+
 Example metadata files (work in progress, may not be fully compliant):
-    * Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
-    * Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
+* Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
+* Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
 
 ## Overview
 
