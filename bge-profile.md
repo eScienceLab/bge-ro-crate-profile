@@ -5,9 +5,23 @@ Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile
 Authors: 
 * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
 
+Contributors:
+* Nick Juty, <https://orcid.org/0000-0002-2036-8350>
+* Joana Pauperio, <https://orcid.org/0000-0003-2569-0768>
+* Tom Brown, <https://orcid.org/0000-0001-8293-4816>
+* Rutger Vos, <https://orcid.org/0000-0001-9254-7318>
+
 Example metadata files (work in progress, may not be fully compliant):
 * Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
 * Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
+
+© 2025 The University of Manchester, UK
+
+Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+<http://www.apache.org/licenses/LICENSE-2.0>
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. 
 
 ## Overview
 

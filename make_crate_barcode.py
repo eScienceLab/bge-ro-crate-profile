@@ -401,7 +401,18 @@ def main():
 
     crate.name = f"Barcode of {name}"
     crate.description = f"Barcode of {name}"
-    crate.license = "TODO license"
+    license = crate.add(
+        ContextEntity(
+            crate,
+            "https://spdx.org/licenses/CC0-1.0",
+            properties={
+                "@type": "CreativeWork",
+                "name": "Creative Commons Zero v1.0 Universal",
+                "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            },
+        )
+    )
+    crate.license = license
 
     add_species_metadata(
         crate=crate, species_names=species_names, bold_taxid=bold_metadata["taxid"]

@@ -32,7 +32,18 @@ crate = ROCrate()
 
 crate.name = f"Barcode of {name}"
 crate.description = f"Barcode of {name} created by iBOL and BGE"
-crate.license = "TODO license"
+license = crate.add(
+        ContextEntity(
+            crate,
+            "https://spdx.org/licenses/CC0-1.0",
+            properties={
+                "@type": "CreativeWork",
+                "name": "Creative Commons Zero v1.0 Universal",
+                "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+            },
+        )
+    )
+    crate.license = license
 
 # TODO get this info from API
 species = ContextEntity(
