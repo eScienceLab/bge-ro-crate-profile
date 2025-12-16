@@ -9,7 +9,7 @@
                     "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
                 }
             ],
-            "datePublished": "2025-11-24T13:01:47+00:00",
+            "datePublished": "2025-12-16T11:09:49+00:00",
             "description": "Barcode of Carystina auriferDHJ01",
             "hasPart": [
                 {
@@ -25,10 +25,17 @@
             "identifier": [
                 "TODO project identifiers for barcoding"
             ],
-            "license": "TODO license",
+            "license": {
+                "@id": "https://spdx.org/licenses/CC0-1.0"
+            },
+            "mainEntity": [
+                {
+                    "@id": "#MHMXN361-07.COI-5P"
+                }
+            ],
             "mentions": [
                 {
-                    "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f"
+                    "@id": "#sequencing-process-77ec6dca-0a44-4bba-aba7-b45a3d92eb4d"
                 },
                 {
                     "@id": "#MHMXN361-07-assembly"
@@ -55,6 +62,12 @@
             "conformsTo": {
                 "@id": "https://w3id.org/ro/crate/1.1"
             }
+        },
+        {
+            "@id": "https://spdx.org/licenses/CC0-1.0",
+            "@type": "CreativeWork",
+            "name": "Creative Commons Zero v1.0 Universal",
+            "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
         },
         {
             "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969",
@@ -113,7 +126,7 @@
             "name": "Sample 07-SRNP-32653"
         },
         {
-            "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3",
+            "@id": "#sequencing-protocol-b0e36202-92f7-4e2c-96c3-e896cb27f43f",
             "@type": "LabProtocol",
             "description": "Sequencing protocol [placeholder]",
             "name": "Sequencing protocol"
@@ -129,7 +142,7 @@
             ],
             "mentions": [
                 {
-                    "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f"
+                    "@id": "#sequencing-process-77ec6dca-0a44-4bba-aba7-b45a3d92eb4d"
                 }
             ],
             "name": "Sequencing stage MHMXN361-07"
@@ -141,18 +154,18 @@
             "description": "example: PacBio sequencing of sample 07-SRNP-32653, performed as part of process MHMXN361-07 for study accession XYZ.",
             "encodingFormat": "TODO",
             "name": "Sequencing data for MHMXN361-07",
-            "sdDatePublished": "2025-11-24 13:01:51.554696"
+            "sdDatePublished": "2025-12-16 11:09:53.297528"
         },
         {
-            "@id": "#sequencing-process-3c09558f-6511-4afb-b6a8-bf9d997ac52f",
+            "@id": "#sequencing-process-77ec6dca-0a44-4bba-aba7-b45a3d92eb4d",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "endDate": "2009-01-05",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3"
+                "@id": "#sequencing-protocol-b0e36202-92f7-4e2c-96c3-e896cb27f43f"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-de5874b6-087f-404b-bf3e-c5d642ba96a3"
+                "@id": "#sequencing-protocol-b0e36202-92f7-4e2c-96c3-e896cb27f43f"
             },
             "name": "Genome sequencing process (MHMXN361-07)",
             "object": {
@@ -166,7 +179,7 @@
             ]
         },
         {
-            "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c",
+            "@id": "%23assembly-workflow-434cf1d0-2982-4569-9a1e-393c7d1ce539",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
@@ -177,7 +190,7 @@
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
             },
-            "sdDatePublished": "2025-11-24 13:01:51.555311"
+            "sdDatePublished": "2025-12-16 11:09:53.297792"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
@@ -196,7 +209,7 @@
             "@type": "BioChemEntity",
             "hasRepresentation": "--------------------------------------TAGGAACATCATTAAGATTATTAATCCGAACAGAATTAGGAAACCCAGGATCTTTAATTGGAGATGATCAAATTTACAATACTATCGTTACTGCTCATGCTTTTATTATAATTTTTTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGATTAATTCCCTTAATATTAGGGGCTCCCGACATAGCTTTCCCCCGAATAAACAACATAAGATTTTGAATATTACCCCCATCTTTAACTCTTTTAATTTCAAGAAGAATTGTAGAAAATGGTGCCGGAACAGGTTGAACTGTTTACCCCCCCCTTTCATCTAATATTGCCCATCAAGGATCTTCGGTCGATTTAGCAATTTTTTCCTTACATTTAGCTGGTATTTCTTCAATCTTAGGGGCTATCAATTTTATTACTACAATTATTAATATACGAATTAAAAACTTATCATTTGATCAAATACCTTTATTTATTTGATCTGTAGGAATTACAGCACTATTATTACTCTTATCTTTACCCGTATTAGCTGGCGCTATTACTATACTTTTAACTGATCGAAATTTAAATACCTCTTTTTTCGACCCTGCGGGAGGGGG----------------------------",
             "name": "Barcode data from process MHMXN361-07",
-            "sdDatePublished": "2025-11-24 13:01:53.250294",
+            "sdDatePublished": "2025-12-16 11:09:55.003663",
             "taxonomicRange": null
         },
         {
@@ -208,7 +221,7 @@
                     "@id": "https://identifiers.org/ena.embl:JF761761"
                 },
                 {
-                    "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c"
+                    "@id": "%23assembly-workflow-434cf1d0-2982-4569-9a1e-393c7d1ce539"
                 }
             ],
             "mentions": [
@@ -217,14 +230,14 @@
                 }
             ],
             "name": "Barcode assembly MHMXN361-07.COI-5P",
-            "sdDatePublished": "2025-11-24 13:01:53.250353"
+            "sdDatePublished": "2025-12-16 11:09:55.003727"
         },
         {
             "@id": "#MHMXN361-07-assembly",
             "@type": "CreateAction",
             "agent": "TODO assembly contributors",
             "instrument": {
-                "@id": "%23assembly-workflow-c333d345-6f5b-418b-a732-6949fddaf92c"
+                "@id": "%23assembly-workflow-434cf1d0-2982-4569-9a1e-393c7d1ce539"
             },
             "name": "Barcode assembly process (MHMXN361-07)",
             "object": [
