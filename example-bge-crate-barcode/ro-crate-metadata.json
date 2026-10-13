@@ -1,7 +1,7 @@
 {
     "@context": [
         "https://w3id.org/ro/crate/1.3/context",
-        "https://esciencelab.org.uk/bge-ro-crate-profile/context.json"
+        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
     ],
     "@graph": [
         {
@@ -12,7 +12,12 @@
                     "@id": "https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=66969"
                 }
             ],
-            "datePublished": "2026-10-13T13:45:58+00:00",
+            "conformsTo": [
+                {
+                    "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"
+                }
+            ],
+            "datePublished": "2026-10-13T15:43:21+00:00",
             "description": "Barcode of Carystina auriferDHJ01",
             "hasPart": [
                 {
@@ -121,7 +126,7 @@
             "name": "Sample 07-SRNP-32653"
         },
         {
-            "@id": "#sequencing-protocol-ba7eb30f-0739-4368-81ce-ebc113a6dde9",
+            "@id": "#sequencing-protocol-fa9bda73-a7e2-48b2-a9e6-89e2f4494246",
             "@type": "LabProtocol",
             "description": "Sequencing protocol [placeholder]",
             "name": "Sequencing protocol"
@@ -137,7 +142,7 @@
             ],
             "mentions": [
                 {
-                    "@id": "#sequencing-process-b2d22c5a-c7f7-46cd-99e3-7e929b2b4bf5"
+                    "@id": "#sequencing-process-5b6784e7-81ee-4ad2-9f36-ec6fd906abdb"
                 }
             ],
             "name": "Sequencing stage MHMXN361-07"
@@ -149,18 +154,18 @@
             "description": "example: PacBio sequencing of sample 07-SRNP-32653, performed as part of process MHMXN361-07 for study accession XYZ.",
             "encodingFormat": "TODO",
             "name": "Sequencing data for MHMXN361-07",
-            "sdDatePublished": "2026-10-13 14:46:00.913244"
+            "sdDatePublished": "2026-10-13 16:43:23.440729"
         },
         {
-            "@id": "#sequencing-process-b2d22c5a-c7f7-46cd-99e3-7e929b2b4bf5",
+            "@id": "#sequencing-process-5b6784e7-81ee-4ad2-9f36-ec6fd906abdb",
             "@type": "LabProcess",
             "agent": "TODO wet lab contributors",
             "endDate": "2009-01-05",
             "executesLabProtocol": {
-                "@id": "#sequencing-protocol-ba7eb30f-0739-4368-81ce-ebc113a6dde9"
+                "@id": "#sequencing-protocol-fa9bda73-a7e2-48b2-a9e6-89e2f4494246"
             },
             "instrument": {
-                "@id": "#sequencing-protocol-ba7eb30f-0739-4368-81ce-ebc113a6dde9"
+                "@id": "#sequencing-protocol-fa9bda73-a7e2-48b2-a9e6-89e2f4494246"
             },
             "name": "Genome sequencing process (MHMXN361-07)",
             "object": {
@@ -174,7 +179,7 @@
             ]
         },
         {
-            "@id": "%23assembly-workflow-8783c421-8ee3-4e57-8121-01e78d45ea88",
+            "@id": "%23assembly-workflow-6916243b-4442-42b9-9174-edaebb4dd3a1",
             "@type": [
                 "File",
                 "SoftwareSourceCode",
@@ -185,7 +190,7 @@
             "programmingLanguage": {
                 "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
             },
-            "sdDatePublished": "2026-10-13 14:46:00.913449"
+            "sdDatePublished": "2026-10-13 16:43:23.440874"
         },
         {
             "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
@@ -205,7 +210,7 @@
             "@type": "BioChemEntity",
             "hasRepresentation": "--------------------------------------TAGGAACATCATTAAGATTATTAATCCGAACAGAATTAGGAAACCCAGGATCTTTAATTGGAGATGATCAAATTTACAATACTATCGTTACTGCTCATGCTTTTATTATAATTTTTTTTATAGTAATACCTATTATAATTGGAGGATTTGGAAATTGATTAATTCCCTTAATATTAGGGGCTCCCGACATAGCTTTCCCCCGAATAAACAACATAAGATTTTGAATATTACCCCCATCTTTAACTCTTTTAATTTCAAGAAGAATTGTAGAAAATGGTGCCGGAACAGGTTGAACTGTTTACCCCCCCCTTTCATCTAATATTGCCCATCAAGGATCTTCGGTCGATTTAGCAATTTTTTCCTTACATTTAGCTGGTATTTCTTCAATCTTAGGGGCTATCAATTTTATTACTACAATTATTAATATACGAATTAAAAACTTATCATTTGATCAAATACCTTTATTTATTTGATCTGTAGGAATTACAGCACTATTATTACTCTTATCTTTACCCGTATTAGCTGGCGCTATTACTATACTTTTAACTGATCGAAATTTAAATACCTCTTTTTTCGACCCTGCGGGAGGGGG----------------------------",
             "name": "Barcode data from process MHMXN361-07",
-            "sdDatePublished": "2026-10-13 14:46:01.948394",
+            "sdDatePublished": "2026-10-13 16:43:24.372400",
             "taxonomicRange": null
         },
         {
@@ -217,7 +222,7 @@
                     "@id": "https://identifiers.org/ena.embl:JF761761"
                 },
                 {
-                    "@id": "%23assembly-workflow-8783c421-8ee3-4e57-8121-01e78d45ea88"
+                    "@id": "%23assembly-workflow-6916243b-4442-42b9-9174-edaebb4dd3a1"
                 }
             ],
             "mentions": [
@@ -226,14 +231,14 @@
                 }
             ],
             "name": "Barcode assembly MHMXN361-07.COI-5P",
-            "sdDatePublished": "2026-10-13 14:46:01.948624"
+            "sdDatePublished": "2026-10-13 16:43:24.372516"
         },
         {
             "@id": "#MHMXN361-07-assembly",
             "@type": "CreateAction",
             "agent": "TODO assembly contributors",
             "instrument": {
-                "@id": "%23assembly-workflow-8783c421-8ee3-4e57-8121-01e78d45ea88"
+                "@id": "%23assembly-workflow-6916243b-4442-42b9-9174-edaebb4dd3a1"
             },
             "name": "Barcode assembly process (MHMXN361-07)",
             "object": [
@@ -253,6 +258,15 @@
             "description": "A Python-based toolkit for validating DNA barcode sequences through structural and taxonomic validation.",
             "name": "DNA Barcode Validator",
             "version": "TODO"
+        },
+        {
+            "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile",
+            "@type": [
+                "CreativeWork",
+                "Profile"
+            ],
+            "name": "Biodiversity Genomics RO-Crate Profile",
+            "version": "0.2-DRAFT"
         }
     ]
 }
