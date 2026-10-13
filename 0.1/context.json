@@ -1,0 +1,19 @@
+{
+    "@context": {
+        "BioSample": "https://bioschemas.org/BioSample",
+        "Taxon": "https://bioschemas.org/Taxon",
+        "LabProcess": "https://bioschemas.org/LabProcess",
+        "LabProtocol": "https://bioschemas.org/LabProtocol",
+        "scientificName": "https://bioschemas.org/terms/scientificName",
+        "taxonRank": "https://bioschemas.org/terms/taxonRank",
+        "collector": "https://bioschemas.org/terms/collector",
+        "maintainer": "https://bioschemas.org/terms/maintainer",
+        "custodian": "https://bioschemas.org/terms/custodian",
+        "locationOfOrigin": "https://bioschemas.org/terms/locationOfOrigin",
+        "collectionMethod": "https://bioschemas.org/terms/collectionMethod",
+        "ethics": "https://bioschemas.org/terms/ethics",
+        "submitter": "https://bioschemas.org/terms/submitter",
+        "dateCollected": "https://bioschemas.org/terms/dateCollected",
+        "executesLabProtocol": "https://bioschemas.org/terms/executesLabProtocol"
+    }
+}
