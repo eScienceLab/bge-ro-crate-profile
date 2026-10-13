@@ -7,16 +7,19 @@
 <script type="application/ld+json"> 
   {
   "@context": [
-    "https://w3id.org/ro/crate/1.1/context"
+    "https://w3id.org/ro/crate/1.3/context",
+    "https://esciencelab.org.uk/bge-ro-crate-profile/context.json"
   ],
   "@graph": [
     {
       "@id": "./",
       "@type": "Dataset",
-      "about": {
-        "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
-      },
-      "datePublished": "2025-12-16T11:09:16+00:00",
+      "about": [
+        {
+          "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+        }
+      ],
+      "datePublished": "2026-10-13T13:45:38+00:00",
       "description": "Genome of Culex laticinctus created by ERGA-BGE",
       "hasPart": [
         {
@@ -65,45 +68,17 @@
           "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/"
         }
       ],
-      "mentions": [
+      "name": "Genome of Culex laticinctus",
+      "scientificName": [
         {
-          "@id": "#wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4"
-        },
-        {
-          "@id": "#sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1"
-        },
-        {
-          "@id": "#wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f"
-        },
-        {
-          "@id": "#sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32"
-        },
-        {
-          "@id": "#wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340"
-        },
-        {
-          "@id": "#sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7"
-        },
-        {
-          "@id": "#wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f"
-        },
-        {
-          "@id": "#sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67"
-        },
-        {
-          "@id": "#assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95"
-        },
-        {
-          "@id": "#assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42"
+          "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
         }
       ],
-      "name": "Genome of Culex laticinctus",
-      "scientificName": {
-        "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
-      },
-      "taxonomicRange": {
-        "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
-      }
+      "taxonomicRange": [
+        {
+          "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561"
+        }
+      ]
     },
     {
       "@id": "https://www.ncbi.nlm.nih.gov/taxonomy/1464561",
@@ -218,7 +193,7 @@
       "@type": "Dataset",
       "hasPart": [
         {
-          "@id": "#processed-dna-rna-725f2053-d8db-472c-a815-361997c13865"
+          "@id": "#processed-dna-rna-dd4def88-2c2c-44a4-834d-dcfe40052de5"
         },
         {
           "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
@@ -229,10 +204,10 @@
       ],
       "mentions": [
         {
-          "@id": "#wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4"
+          "@id": "#wet-lab-process-32443baf-d200-4c86-88d7-b52ce72c2e70"
         },
         {
-          "@id": "#sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1"
+          "@id": "#sequencing-process-92ff7213-cde6-4605-ab88-d43c052a87ed"
         }
       ],
       "name": "Sequencing stage ERX12519568"
@@ -242,7 +217,7 @@
       "@type": "Dataset",
       "hasPart": [
         {
-          "@id": "#processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe"
+          "@id": "#processed-dna-rna-9b8d9e96-6dac-48a0-acd8-5ce120ddf117"
         },
         {
           "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz"
@@ -253,10 +228,10 @@
       ],
       "mentions": [
         {
-          "@id": "#wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f"
+          "@id": "#wet-lab-process-380341f0-f7d2-40b5-bdb3-66b237c3c867"
         },
         {
-          "@id": "#sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32"
+          "@id": "#sequencing-process-d4465b90-601c-43da-9e7b-d41b773b11c0"
         }
       ],
       "name": "Sequencing stage ERX12433627"
@@ -266,7 +241,7 @@
       "@type": "Dataset",
       "hasPart": [
         {
-          "@id": "#processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484"
+          "@id": "#processed-dna-rna-0f618238-4c84-4801-be88-a4e3df2e85a4"
         },
         {
           "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz"
@@ -274,10 +249,10 @@
       ],
       "mentions": [
         {
-          "@id": "#wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340"
+          "@id": "#wet-lab-process-ec120787-35f6-4617-895d-e82623281b03"
         },
         {
-          "@id": "#sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7"
+          "@id": "#sequencing-process-c7887c7c-1e2e-421a-89ed-5b06c9a11093"
         }
       ],
       "name": "Sequencing stage ERX12405204"
@@ -287,7 +262,7 @@
       "@type": "Dataset",
       "hasPart": [
         {
-          "@id": "#processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8"
+          "@id": "#processed-dna-rna-0d11c773-4d71-4de8-b9ae-7bd1ac69122d"
         },
         {
           "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz"
@@ -295,10 +270,10 @@
       ],
       "mentions": [
         {
-          "@id": "#wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f"
+          "@id": "#wet-lab-process-7976cc6b-7269-48cc-a405-829c1633825b"
         },
         {
-          "@id": "#sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67"
+          "@id": "#sequencing-process-91de7230-e754-4823-a4c3-0934445b4fd3"
         }
       ],
       "name": "Sequencing stage ERX12405205"
@@ -312,14 +287,16 @@
           "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz"
         },
         {
-          "@id": "%23assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671"
+          "@id": "%23assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922"
         }
       ],
-      "mentions": {
-        "@id": "#assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95"
-      },
+      "mentions": [
+        {
+          "@id": "#assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3"
+        }
+      ],
       "name": "idCulLati1.1 assembly for Culex laticinctus",
-      "sdDatePublished": "2025-12-16T11:09:17+00:00"
+      "sdDatePublished": "2026-10-13T13:45:41+00:00"
     },
     {
       "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/",
@@ -330,14 +307,16 @@
           "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNG01.fasta.gz"
         },
         {
-          "@id": "%23assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671"
+          "@id": "%23assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922"
         }
       ],
-      "mentions": {
-        "@id": "#assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42"
-      },
+      "mentions": [
+        {
+          "@id": "#assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118"
+        }
+      ],
       "name": "idCulLati1.1 alternate haplotype assembly for Culex laticinctus",
-      "sdDatePublished": "2025-12-16T11:09:17+00:00"
+      "sdDatePublished": "2026-10-13T13:45:41+00:00"
     },
     {
       "@id": "https://spdx.org/licenses/CC0-1.0",
@@ -346,261 +325,13 @@
       "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
     },
     {
-      "@id": "#wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "instrument": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "DNA/RNA extraction process (ERX12519568)",
-      "object": {
-        "@id": "https://identifiers.org/ena.embl:SAMEA114402094"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "#processed-dna-rna-725f2053-d8db-472c-a815-361997c13865"
-      }
-    },
-    {
-      "@id": "#sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "instrument": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "Genome sequencing process (ERX12519568)",
-      "object": {
-        "@id": "#processed-dna-rna-725f2053-d8db-472c-a815-361997c13865"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": [
-        {
-          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
-        },
-        {
-          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
-        }
-      ]
-    },
-    {
-      "@id": "#wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "instrument": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "DNA/RNA extraction process (ERX12433627)",
-      "object": {
-        "@id": "https://identifiers.org/ena.embl:SAMEA114402091"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "#processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe"
-      }
-    },
-    {
-      "@id": "#sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "instrument": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "Genome sequencing process (ERX12433627)",
-      "object": {
-        "@id": "#processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": [
-        {
-          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz"
-        },
-        {
-          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz"
-        }
-      ]
-    },
-    {
-      "@id": "#wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "instrument": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "DNA/RNA extraction process (ERX12405204)",
-      "object": {
-        "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "#processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484"
-      }
-    },
-    {
-      "@id": "#sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "instrument": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "Genome sequencing process (ERX12405204)",
-      "object": {
-        "@id": "#processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz"
-      }
-    },
-    {
-      "@id": "#wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "instrument": {
-        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "DNA/RNA extraction process (ERX12405205)",
-      "object": {
-        "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "#processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8"
-      }
-    },
-    {
-      "@id": "#sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67",
-      "@type": "LabProcess",
-      "agent": "TODO wet lab contributors",
-      "executesLabProtocol": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "instrument": {
-        "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba"
-      },
-      "location": {
-        "@id": "https://www.geonames.org/2653941"
-      },
-      "name": "Genome sequencing process (ERX12405205)",
-      "object": {
-        "@id": "#processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8"
-      },
-      "provider": {
-        "@id": "https://ror.org/05cy4wa09"
-      },
-      "result": {
-        "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz"
-      }
-    },
-    {
-      "@id": "#assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95",
-      "@type": "CreateAction",
-      "agent": "TODO assembly contributors",
-      "instrument": {
-        "@id": "%23assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671"
-      },
-      "name": "Genome assembly process (GCA_964187845.1)",
-      "object": [
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12405204"
-        },
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12405205"
-        },
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12433627"
-        }
-      ],
-      "result": {
-        "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/"
-      }
-    },
-    {
-      "@id": "#assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42",
-      "@type": "CreateAction",
-      "agent": "TODO assembly contributors",
-      "instrument": {
-        "@id": "%23assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671"
-      },
-      "name": "Genome assembly process (GCA_964187835.1)",
-      "object": [
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12405204"
-        },
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12405205"
-        },
-        {
-          "@id": "https://identifiers.org/ena.embl:ERX12433627"
-        }
-      ],
-      "result": {
-        "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/"
-      }
-    },
-    {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
         "@id": "./"
       },
       "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.1"
+        "@id": "https://w3id.org/ro/crate/1.3"
       }
     },
     {
@@ -642,7 +373,7 @@
       "name": "Sanger Tree of Life Wet Laboratory Protocol Collection  V.1"
     },
     {
-      "@id": "#sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba",
+      "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517",
       "@type": "LabProtocol",
       "description": "Sequencing protocol described in (paper link - https://docs.google.com/document/d/199jTDzWqWLShYXEvS08YbqMkUz_HyNlmT2cRf5879nU/edit?tab=t.0)",
       "name": "Sequencing protocol"
@@ -666,7 +397,7 @@
       ]
     },
     {
-      "@id": "#processed-dna-rna-725f2053-d8db-472c-a815-361997c13865",
+      "@id": "#processed-dna-rna-dd4def88-2c2c-44a4-834d-dcfe40052de5",
       "@type": "BioSample",
       "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
       "name": "Processed DNA/RNA (ERX12519568)"
@@ -678,7 +409,7 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_1.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.428477"
+      "sdDatePublished": "2026-10-13 14:45:39.178399"
     },
     {
       "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz",
@@ -687,10 +418,63 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Illumina NovaSeq X paired end sequencing: ERR13148263_2.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.428522"
+      "sdDatePublished": "2026-10-13 14:45:39.178457"
     },
     {
-      "@id": "#processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe",
+      "@id": "#wet-lab-process-32443baf-d200-4c86-88d7-b52ce72c2e70",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "instrument": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "DNA/RNA extraction process (ERX12519568)",
+      "object": {
+        "@id": "https://identifiers.org/ena.embl:SAMEA114402094"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": {
+        "@id": "#processed-dna-rna-dd4def88-2c2c-44a4-834d-dcfe40052de5"
+      }
+    },
+    {
+      "@id": "#sequencing-process-92ff7213-cde6-4605-ab88-d43c052a87ed",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "Genome sequencing process (ERX12519568)",
+      "object": {
+        "@id": "#processed-dna-rna-dd4def88-2c2c-44a4-834d-dcfe40052de5"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": [
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz"
+        },
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz"
+        }
+      ]
+    },
+    {
+      "@id": "#processed-dna-rna-9b8d9e96-6dac-48a0-acd8-5ce120ddf117",
       "@type": "BioSample",
       "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
       "name": "Processed DNA/RNA (ERX12433627)"
@@ -702,7 +486,7 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Illumina NovaSeq X paired end sequencing: ERR13063103_1.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.496667"
+      "sdDatePublished": "2026-10-13 14:45:39.349607"
     },
     {
       "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz",
@@ -711,10 +495,63 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Illumina NovaSeq X paired end sequencing: ERR13063103_2.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.496701"
+      "sdDatePublished": "2026-10-13 14:45:39.349649"
     },
     {
-      "@id": "#processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484",
+      "@id": "#wet-lab-process-380341f0-f7d2-40b5-bdb3-66b237c3c867",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "instrument": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "DNA/RNA extraction process (ERX12433627)",
+      "object": {
+        "@id": "https://identifiers.org/ena.embl:SAMEA114402091"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": {
+        "@id": "#processed-dna-rna-9b8d9e96-6dac-48a0-acd8-5ce120ddf117"
+      }
+    },
+    {
+      "@id": "#sequencing-process-d4465b90-601c-43da-9e7b-d41b773b11c0",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "Genome sequencing process (ERX12433627)",
+      "object": {
+        "@id": "#processed-dna-rna-9b8d9e96-6dac-48a0-acd8-5ce120ddf117"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": [
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz"
+        },
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz"
+        }
+      ]
+    },
+    {
+      "@id": "#processed-dna-rna-0f618238-4c84-4801-be88-a4e3df2e85a4",
       "@type": "BioSample",
       "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
       "name": "Processed DNA/RNA (ERX12405204)"
@@ -726,10 +563,60 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Revio sequencing: ERR13033463.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.539947"
+      "sdDatePublished": "2026-10-13 14:45:39.488353"
     },
     {
-      "@id": "#processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8",
+      "@id": "#wet-lab-process-ec120787-35f6-4617-895d-e82623281b03",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "instrument": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "DNA/RNA extraction process (ERX12405204)",
+      "object": {
+        "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": {
+        "@id": "#processed-dna-rna-0f618238-4c84-4801-be88-a4e3df2e85a4"
+      }
+    },
+    {
+      "@id": "#sequencing-process-c7887c7c-1e2e-421a-89ed-5b06c9a11093",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "Genome sequencing process (ERX12405204)",
+      "object": {
+        "@id": "#processed-dna-rna-0f618238-4c84-4801-be88-a4e3df2e85a4"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": [
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz"
+        }
+      ]
+    },
+    {
+      "@id": "#processed-dna-rna-0d11c773-4d71-4de8-b9ae-7bd1ac69122d",
       "@type": "BioSample",
       "description": "This entity represents the processed DNA/RNA from the genomic extraction process",
       "name": "Processed DNA/RNA (ERX12405205)"
@@ -741,10 +628,60 @@
       "description": "example: PacBio sequencing of library ERGA_PI14589222, constructed from sample accession SAMEA114402090 for study accession PRJEB75413.",
       "encodingFormat": "TODO file type for FASTA",
       "name": "Revio sequencing: ERR13033464.fastq.gz",
-      "sdDatePublished": "2025-12-16 11:09:16.585529"
+      "sdDatePublished": "2026-10-13 14:45:39.656190"
     },
     {
-      "@id": "%23assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671",
+      "@id": "#wet-lab-process-7976cc6b-7269-48cc-a405-829c1633825b",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "instrument": {
+        "@id": "https://dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "DNA/RNA extraction process (ERX12405205)",
+      "object": {
+        "@id": "https://identifiers.org/ena.embl:SAMEA114402090"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": {
+        "@id": "#processed-dna-rna-0d11c773-4d71-4de8-b9ae-7bd1ac69122d"
+      }
+    },
+    {
+      "@id": "#sequencing-process-91de7230-e754-4823-a4c3-0934445b4fd3",
+      "@type": "LabProcess",
+      "agent": "TODO wet lab contributors",
+      "executesLabProtocol": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "instrument": {
+        "@id": "#sequencing-protocol-4c1f2a46-a3fa-4206-985c-1e1f76b53517"
+      },
+      "location": {
+        "@id": "https://www.geonames.org/2653941"
+      },
+      "name": "Genome sequencing process (ERX12405205)",
+      "object": {
+        "@id": "#processed-dna-rna-0d11c773-4d71-4de8-b9ae-7bd1ac69122d"
+      },
+      "provider": {
+        "@id": "https://ror.org/05cy4wa09"
+      },
+      "result": [
+        {
+          "@id": "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz"
+        }
+      ]
+    },
+    {
+      "@id": "%23assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922",
       "@type": [
         "File",
         "SoftwareSourceCode",
@@ -755,19 +692,20 @@
       "programmingLanguage": {
         "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
       },
-      "sdDatePublished": "2025-12-16 11:09:16.585715"
+      "sdDatePublished": "2026-10-13 14:45:39.656305"
     },
     {
       "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
       "@type": "ComputerLanguage",
       "alternateName": "CWL",
       "identifier": {
-        "@id": "https://w3id.org/cwl/"
+        "@id": "https://w3id.org/cwl/v1.2.0/"
       },
       "name": "Common Workflow Language",
       "url": {
         "@id": "https://www.commonwl.org/"
-      }
+      },
+      "version": "1.2.0"
     },
     {
       "@id": "#analysis-collection",
@@ -787,7 +725,30 @@
       "encodingFormat": "TODO file type for FASTA",
       "identifier": "https://identifiers.org/ena.embl:CAXLNB01",
       "name": "Culex laticinctus genome assembly",
-      "sdDatePublished": "2025-12-16 11:09:16.908298"
+      "sdDatePublished": "2026-10-13 14:45:40.556781"
+    },
+    {
+      "@id": "#assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3",
+      "@type": "CreateAction",
+      "agent": "TODO assembly contributors",
+      "instrument": {
+        "@id": "%23assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922"
+      },
+      "name": "Genome assembly process (GCA_964187845.1)",
+      "object": [
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12405204"
+        },
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12405205"
+        },
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12433627"
+        }
+      ],
+      "result": {
+        "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/"
+      }
     },
     {
       "@id": "ftp://ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNG01.fasta.gz",
@@ -795,7 +756,30 @@
       "encodingFormat": "TODO file type for FASTA",
       "identifier": "https://identifiers.org/ena.embl:CAXLNG01",
       "name": "Culex laticinctus genome assembly",
-      "sdDatePublished": "2025-12-16 11:09:17.259589"
+      "sdDatePublished": "2026-10-13 14:45:41.354320"
+    },
+    {
+      "@id": "#assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118",
+      "@type": "CreateAction",
+      "agent": "TODO assembly contributors",
+      "instrument": {
+        "@id": "%23assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922"
+      },
+      "name": "Genome assembly process (GCA_964187835.1)",
+      "object": [
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12405204"
+        },
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12405205"
+        },
+        {
+          "@id": "https://identifiers.org/ena.embl:ERX12433627"
+        }
+      ],
+      "result": {
+        "@id": "https://www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/"
+      }
     }
   ]
 }
@@ -869,7 +853,7 @@ table.table {
             <td style='text-align:left'><span>Genome of Culex laticinctus created by ERGA-BGE</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">datePublished<span>&nbsp;</span><a href="http://schema.org/datePublished">[?]</a></th>
-            <td style='text-align:left'><span>2025-12-16T11:09:16+00:00</span></td>
+            <td style='text-align:left'><span>2026-10-13T13:45:38+00:00</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.ncbi.nlm.nih.gov/taxonomy/1464561">Culex laticinctus</a></td>
@@ -914,33 +898,10 @@ table.table {
                         <li><a href="#https%3A//www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/">idCulLati1.1 alternate haplotype assembly for Culex laticinctus</a></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4">DNA/RNA extraction process (ERX12519568)</a></li>
-                        
-                        <li><a href="#%23sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1">Genome sequencing process (ERX12519568)</a></li>
-                        
-                        <li><a href="#%23wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f">DNA/RNA extraction process (ERX12433627)</a></li>
-                        
-                        <li><a href="#%23sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32">Genome sequencing process (ERX12433627)</a></li>
-                        
-                        <li><a href="#%23wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340">DNA/RNA extraction process (ERX12405204)</a></li>
-                        
-                        <li><a href="#%23sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7">Genome sequencing process (ERX12405204)</a></li>
-                        
-                        <li><a href="#%23wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f">DNA/RNA extraction process (ERX12405205)</a></li>
-                        
-                        <li><a href="#%23sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67">Genome sequencing process (ERX12405205)</a></li>
-                        
-                        <li><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></li>
-                        
-                        <li><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></li>
-                        </ul></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">scientificName</th>
+            <th style="text-align:left;" class="prop">scientificName<span>&nbsp;</span><a href="https://bioschemas.org/terms/scientificName">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.ncbi.nlm.nih.gov/taxonomy/1464561">Culex laticinctus</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <th style="text-align:left;" class="prop">taxonomicRange<span>&nbsp;</span><a href="http://schema.org/taxonomicRange">[?]</a></th>
             <td style='text-align:left'><a href="#https%3A//www.ncbi.nlm.nih.gov/taxonomy/1464561">Culex laticinctus</a></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
@@ -969,10 +930,10 @@ table.table {
             <th style="text-align:left;" class="prop">@type</th>
             <td style='text-align:left'><span>Taxon</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">scientificName</th>
+            <th style="text-align:left;" class="prop">scientificName<span>&nbsp;</span><a href="https://bioschemas.org/terms/scientificName">[?]</a></th>
             <td style='text-align:left'><span>Culex laticinctus</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">taxonRank</th>
+            <th style="text-align:left;" class="prop">taxonRank<span>&nbsp;</span><a href="https://bioschemas.org/terms/taxonRank">[?]</a></th>
             <td style='text-align:left'><ul>
                         <li><a href="https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734">https://bench.boldsystems.org/index.php/TaxBrowser_TaxonPage?taxid=304734</a></li>
                         
@@ -984,10 +945,10 @@ table.table {
             <th style="text-align:left;" class="prop">about<span>&nbsp;</span><a href="http://schema.org/about">[?]</a></th>
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">scientificName</th>
+            <th style="text-align:left;" class="prop">scientificName<span>&nbsp;</span><a href="https://bioschemas.org/terms/scientificName">[?]</a></th>
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">taxonomicRange</th>
+            <th style="text-align:left;" class="prop">taxonomicRange<span>&nbsp;</span><a href="http://schema.org/taxonomicRange">[?]</a></th>
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
             </tr></tbody>
             </table>
@@ -1016,7 +977,7 @@ table.table {
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
             <td style='text-align:left'><span>ENA record for biosample accession SAMEA114402090.</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">collector</th>
+            <th style="text-align:left;" class="prop">collector<span>&nbsp;</span><a href="https://bioschemas.org/terms/collector">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
@@ -1025,10 +986,10 @@ table.table {
             <th style="text-align:left;" class="prop">contributor<span>&nbsp;</span><a href="http://schema.org/contributor">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">custodian</th>
+            <th style="text-align:left;" class="prop">custodian<span>&nbsp;</span><a href="https://bioschemas.org/terms/custodian">[?]</a></th>
             <td style='text-align:left'><span>TODO custodian</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">ethics</th>
+            <th style="text-align:left;" class="prop">ethics<span>&nbsp;</span><a href="https://bioschemas.org/terms/ethics">[?]</a></th>
             <td style='text-align:left'><a href="https://www.boe.es/eli/es-an/l/2003/10/28/8">https://www.boe.es/eli/es-an/l/2003/10/28/8</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
@@ -1042,7 +1003,7 @@ table.table {
                         <li><a href="https://identifiers.org/biosample:SAMEA114402090">https://identifiers.org/biosample:SAMEA114402090</a></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">locationOfOrigin</th>
+            <th style="text-align:left;" class="prop">locationOfOrigin<span>&nbsp;</span><a href="https://bioschemas.org/terms/locationOfOrigin">[?]</a></th>
             <td style='text-align:left'><span>37.315096 N 6.168537 W</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sameAs<span>&nbsp;</span><a href="http://schema.org/sameAs">[?]</a></th>
@@ -1057,9 +1018,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340">DNA/RNA extraction process (ERX12405204)</a></li>
+                        <li><a href="#%23wet-lab-process-ec120787-35f6-4617-895d-e82623281b03">DNA/RNA extraction process (ERX12405204)</a></li>
                         
-                        <li><a href="#%23wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f">DNA/RNA extraction process (ERX12405205)</a></li>
+                        <li><a href="#%23wet-lab-process-7976cc6b-7269-48cc-a405-829c1633825b">DNA/RNA extraction process (ERX12405205)</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -1088,7 +1049,7 @@ table.table {
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
             <td style='text-align:left'><span>ENA record for biosample accession SAMEA114402091.</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">collector</th>
+            <th style="text-align:left;" class="prop">collector<span>&nbsp;</span><a href="https://bioschemas.org/terms/collector">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
@@ -1097,10 +1058,10 @@ table.table {
             <th style="text-align:left;" class="prop">contributor<span>&nbsp;</span><a href="http://schema.org/contributor">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">custodian</th>
+            <th style="text-align:left;" class="prop">custodian<span>&nbsp;</span><a href="https://bioschemas.org/terms/custodian">[?]</a></th>
             <td style='text-align:left'><span>TODO custodian</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">ethics</th>
+            <th style="text-align:left;" class="prop">ethics<span>&nbsp;</span><a href="https://bioschemas.org/terms/ethics">[?]</a></th>
             <td style='text-align:left'><a href="https://www.boe.es/eli/es-an/l/2003/10/28/8">https://www.boe.es/eli/es-an/l/2003/10/28/8</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
@@ -1114,7 +1075,7 @@ table.table {
                         <li><a href="https://identifiers.org/biosample:SAMEA114402091">https://identifiers.org/biosample:SAMEA114402091</a></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">locationOfOrigin</th>
+            <th style="text-align:left;" class="prop">locationOfOrigin<span>&nbsp;</span><a href="https://bioschemas.org/terms/locationOfOrigin">[?]</a></th>
             <td style='text-align:left'><span>37.315096 N 6.168537 W</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sameAs<span>&nbsp;</span><a href="http://schema.org/sameAs">[?]</a></th>
@@ -1128,7 +1089,7 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f">DNA/RNA extraction process (ERX12433627)</a></td>
+            <td style='text-align:left'><a href="#%23wet-lab-process-380341f0-f7d2-40b5-bdb3-66b237c3c867">DNA/RNA extraction process (ERX12433627)</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1156,7 +1117,7 @@ table.table {
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
             <td style='text-align:left'><span>ENA record for biosample accession SAMEA114402094.</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">collector</th>
+            <th style="text-align:left;" class="prop">collector<span>&nbsp;</span><a href="https://bioschemas.org/terms/collector">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
@@ -1165,10 +1126,10 @@ table.table {
             <th style="text-align:left;" class="prop">contributor<span>&nbsp;</span><a href="http://schema.org/contributor">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">custodian</th>
+            <th style="text-align:left;" class="prop">custodian<span>&nbsp;</span><a href="https://bioschemas.org/terms/custodian">[?]</a></th>
             <td style='text-align:left'><span>TODO custodian</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">ethics</th>
+            <th style="text-align:left;" class="prop">ethics<span>&nbsp;</span><a href="https://bioschemas.org/terms/ethics">[?]</a></th>
             <td style='text-align:left'><a href="https://www.boe.es/eli/es-an/l/2003/10/28/8">https://www.boe.es/eli/es-an/l/2003/10/28/8</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
@@ -1182,7 +1143,7 @@ table.table {
                         <li><a href="https://identifiers.org/biosample:SAMEA114402094">https://identifiers.org/biosample:SAMEA114402094</a></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">locationOfOrigin</th>
+            <th style="text-align:left;" class="prop">locationOfOrigin<span>&nbsp;</span><a href="https://bioschemas.org/terms/locationOfOrigin">[?]</a></th>
             <td style='text-align:left'><span>37.315096 N 6.168537 W</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sameAs<span>&nbsp;</span><a href="http://schema.org/sameAs">[?]</a></th>
@@ -1196,7 +1157,7 @@ table.table {
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4">DNA/RNA extraction process (ERX12519568)</a></td>
+            <td style='text-align:left'><a href="#%23wet-lab-process-32443baf-d200-4c86-88d7-b52ce72c2e70">DNA/RNA extraction process (ERX12519568)</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1224,7 +1185,7 @@ table.table {
             <th style="text-align:left;" class="prop">description<span>&nbsp;</span><a href="http://schema.org/description">[?]</a></th>
             <td style='text-align:left'><span>ENA record for biosample accession SAMEA114402071.</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">collector</th>
+            <th style="text-align:left;" class="prop">collector<span>&nbsp;</span><a href="https://bioschemas.org/terms/collector">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">conformsTo<span>&nbsp;</span><a href="http://purl.org/dc/terms/conformsTo">[?]</a></th>
@@ -1233,10 +1194,10 @@ table.table {
             <th style="text-align:left;" class="prop">contributor<span>&nbsp;</span><a href="http://schema.org/contributor">[?]</a></th>
             <td style='text-align:left'><span>Sonia Cebrian Camison</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">custodian</th>
+            <th style="text-align:left;" class="prop">custodian<span>&nbsp;</span><a href="https://bioschemas.org/terms/custodian">[?]</a></th>
             <td style='text-align:left'><span>TODO custodian</span></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">ethics</th>
+            <th style="text-align:left;" class="prop">ethics<span>&nbsp;</span><a href="https://bioschemas.org/terms/ethics">[?]</a></th>
             <td style='text-align:left'><a href="https://www.boe.es/eli/es-an/l/2003/10/28/8">https://www.boe.es/eli/es-an/l/2003/10/28/8</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">identifier<span>&nbsp;</span><a href="http://schema.org/identifier">[?]</a></th>
@@ -1250,7 +1211,7 @@ table.table {
                         <li><a href="https://identifiers.org/biosample:SAMEA114402071">https://identifiers.org/biosample:SAMEA114402071</a></li>
                         </ul></td>
             </tr><tr>
-            <th style="text-align:left;" class="prop">locationOfOrigin</th>
+            <th style="text-align:left;" class="prop">locationOfOrigin<span>&nbsp;</span><a href="https://bioschemas.org/terms/locationOfOrigin">[?]</a></th>
             <td style='text-align:left'><span>37.315096 N 6.168537 W</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -1288,7 +1249,7 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23processed-dna-rna-725f2053-d8db-472c-a815-361997c13865">Processed DNA/RNA (ERX12519568)</a></li>
+                        <li><a href="#%23processed-dna-rna-dd4def88-2c2c-44a4-834d-dcfe40052de5">Processed DNA/RNA (ERX12519568)</a></li>
                         
                         <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13148263_1.fastq.gz</a></li>
                         
@@ -1297,9 +1258,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4">DNA/RNA extraction process (ERX12519568)</a></li>
+                        <li><a href="#%23wet-lab-process-32443baf-d200-4c86-88d7-b52ce72c2e70">DNA/RNA extraction process (ERX12519568)</a></li>
                         
-                        <li><a href="#%23sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1">Genome sequencing process (ERX12519568)</a></li>
+                        <li><a href="#%23sequencing-process-92ff7213-cde6-4605-ab88-d43c052a87ed">Genome sequencing process (ERX12519568)</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -1334,7 +1295,7 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe">Processed DNA/RNA (ERX12433627)</a></li>
+                        <li><a href="#%23processed-dna-rna-9b8d9e96-6dac-48a0-acd8-5ce120ddf117">Processed DNA/RNA (ERX12433627)</a></li>
                         
                         <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13063103_1.fastq.gz</a></li>
                         
@@ -1343,9 +1304,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f">DNA/RNA extraction process (ERX12433627)</a></li>
+                        <li><a href="#%23wet-lab-process-380341f0-f7d2-40b5-bdb3-66b237c3c867">DNA/RNA extraction process (ERX12433627)</a></li>
                         
-                        <li><a href="#%23sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32">Genome sequencing process (ERX12433627)</a></li>
+                        <li><a href="#%23sequencing-process-d4465b90-601c-43da-9e7b-d41b773b11c0">Genome sequencing process (ERX12433627)</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -1357,9 +1318,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></li>
+                        <li><a href="#%23assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3">Genome assembly process (GCA_964187845.1)</a></li>
                         
-                        <li><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></li>
+                        <li><a href="#%23assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118">Genome assembly process (GCA_964187835.1)</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -1387,16 +1348,16 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484">Processed DNA/RNA (ERX12405204)</a></li>
+                        <li><a href="#%23processed-dna-rna-0f618238-4c84-4801-be88-a4e3df2e85a4">Processed DNA/RNA (ERX12405204)</a></li>
                         
                         <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz">Revio sequencing: ERR13033463.fastq.gz</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340">DNA/RNA extraction process (ERX12405204)</a></li>
+                        <li><a href="#%23wet-lab-process-ec120787-35f6-4617-895d-e82623281b03">DNA/RNA extraction process (ERX12405204)</a></li>
                         
-                        <li><a href="#%23sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7">Genome sequencing process (ERX12405204)</a></li>
+                        <li><a href="#%23sequencing-process-c7887c7c-1e2e-421a-89ed-5b06c9a11093">Genome sequencing process (ERX12405204)</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -1408,9 +1369,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></li>
+                        <li><a href="#%23assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3">Genome assembly process (GCA_964187845.1)</a></li>
                         
-                        <li><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></li>
+                        <li><a href="#%23assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118">Genome assembly process (GCA_964187835.1)</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -1438,16 +1399,16 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8">Processed DNA/RNA (ERX12405205)</a></li>
+                        <li><a href="#%23processed-dna-rna-0d11c773-4d71-4de8-b9ae-7bd1ac69122d">Processed DNA/RNA (ERX12405205)</a></li>
                         
                         <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz">Revio sequencing: ERR13033464.fastq.gz</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f">DNA/RNA extraction process (ERX12405205)</a></li>
+                        <li><a href="#%23wet-lab-process-7976cc6b-7269-48cc-a405-829c1633825b">DNA/RNA extraction process (ERX12405205)</a></li>
                         
-                        <li><a href="#%23sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67">Genome sequencing process (ERX12405205)</a></li>
+                        <li><a href="#%23sequencing-process-91de7230-e754-4823-a4c3-0934445b4fd3">Genome sequencing process (ERX12405205)</a></li>
                         </ul></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
@@ -1459,9 +1420,9 @@ table.table {
             </tr><tr>
             <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
             <td style='text-align:left'><ul>
-                        <li><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></li>
+                        <li><a href="#%23assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3">Genome assembly process (GCA_964187845.1)</a></li>
                         
-                        <li><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></li>
+                        <li><a href="#%23assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118">Genome assembly process (GCA_964187835.1)</a></li>
                         </ul></td>
             </tr></tbody>
             </table>
@@ -1494,14 +1455,14 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="#ftp%3A//ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNB01.fasta.gz">Culex laticinctus genome assembly</a></li>
                         
-                        <li><a href="#%2523assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671">Assembly workflow (placeholder)</a></li>
+                        <li><a href="#%2523assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922">Assembly workflow (placeholder)</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></td>
+            <td style='text-align:left'><a href="#%23assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3">Genome assembly process (GCA_964187845.1)</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sdDatePublished<span>&nbsp;</span><a href="http://schema.org/sdDatePublished">[?]</a></th>
-            <td style='text-align:left'><span>2025-12-16T11:09:17+00:00</span></td>
+            <td style='text-align:left'><span>2026-10-13T13:45:41+00:00</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -1514,7 +1475,7 @@ table.table {
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">Genome assembly process (GCA_964187845.1)</a></td>
+            <td style='text-align:left'><a href="#%23assembly-process-d38ba6c9-d7fb-4330-9aac-e34c90a2c8c3">Genome assembly process (GCA_964187845.1)</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1546,14 +1507,14 @@ table.table {
             <td style='text-align:left'><ul>
                         <li><a href="#ftp%3A//ftp.ebi.ac.uk/pub/databases/ena/wgs/public/cax/CAXLNG01.fasta.gz">Culex laticinctus genome assembly</a></li>
                         
-                        <li><a href="#%2523assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671">Assembly workflow (placeholder)</a></li>
+                        <li><a href="#%2523assembly-workflow-df71f4ea-1e29-4883-9fa4-f112ec939922">Assembly workflow (placeholder)</a></li>
                         </ul></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></td>
+            <td style='text-align:left'><a href="#%23assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118">Genome assembly process (GCA_964187835.1)</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">sdDatePublished<span>&nbsp;</span><a href="http://schema.org/sdDatePublished">[?]</a></th>
-            <td style='text-align:left'><span>2025-12-16T11:09:17+00:00</span></td>
+            <td style='text-align:left'><span>2026-10-13T13:45:41+00:00</span></td>
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">hasPart<span>&nbsp;</span><a href="http://schema.org/hasPart">[?]</a></th>
             <td style='text-align:left'><ul>
@@ -1566,7 +1527,7 @@ table.table {
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
             </tr><tr>
             <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">Genome assembly process (GCA_964187835.1)</a></td>
+            <td style='text-align:left'><a href="#%23assembly-process-95b510d6-68be-46f2-b74d-347c6aa52118">Genome assembly process (GCA_964187835.1)</a></td>
             </tr></tbody>
             </table>
         </div>
@@ -1596,518 +1557,6 @@ table.table {
             </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
             <th style="text-align:left;" class="prop">license<span>&nbsp;</span><a href="http://schema.org/license">[?]</a></th>
             <td style='text-align:left'><a href="#./">Genome of Culex laticinctus</a></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> DNA/RNA extraction process (ERX12519568)</h3>
-                
-                
-                
-                
-        <div id="#wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#wet-lab-process-e20137f7-7ca7-4809-8e24-00a39cb5d0b4</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>DNA/RNA extraction process (ERX12519568)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//identifiers.org/ena.embl%3ASAMEA114402094">Sample SAMEA114402094</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-725f2053-d8db-472c-a815-361997c13865">Processed DNA/RNA (ERX12519568)</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12519568">Sequencing stage ERX12519568</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome sequencing process (ERX12519568)</h3>
-                
-                
-                
-                
-        <div id="#sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#sequencing-process-69b379b2-c4ce-40c0-a613-aea905a364b1</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome sequencing process (ERX12519568)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-725f2053-d8db-472c-a815-361997c13865">Processed DNA/RNA (ERX12519568)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_1.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13148263_1.fastq.gz</a></li>
-                        
-                        <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR131/063/ERR13148263/ERR13148263_2.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13148263_2.fastq.gz</a></li>
-                        </ul></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12519568">Sequencing stage ERX12519568</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> DNA/RNA extraction process (ERX12433627)</h3>
-                
-                
-                
-                
-        <div id="#wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#wet-lab-process-99107bc5-cf06-423c-9aa2-0c7706518d0f</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>DNA/RNA extraction process (ERX12433627)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//identifiers.org/ena.embl%3ASAMEA114402091">Sample SAMEA114402091</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe">Processed DNA/RNA (ERX12433627)</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12433627">Sequencing stage ERX12433627</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome sequencing process (ERX12433627)</h3>
-                
-                
-                
-                
-        <div id="#sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#sequencing-process-6e29817a-a515-42fe-b2a8-e53c47e2fe32</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome sequencing process (ERX12433627)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-dae4518b-6f91-485f-a3c7-8eb48581c2fe">Processed DNA/RNA (ERX12433627)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_1.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13063103_1.fastq.gz</a></li>
-                        
-                        <li><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/003/ERR13063103/ERR13063103_2.fastq.gz">Illumina NovaSeq X paired end sequencing: ERR13063103_2.fastq.gz</a></li>
-                        </ul></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12433627">Sequencing stage ERX12433627</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> DNA/RNA extraction process (ERX12405204)</h3>
-                
-                
-                
-                
-        <div id="#wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#wet-lab-process-359a6ae0-989f-4064-8ee7-01ec3fade340</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>DNA/RNA extraction process (ERX12405204)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//identifiers.org/ena.embl%3ASAMEA114402090">Sample SAMEA114402090</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484">Processed DNA/RNA (ERX12405204)</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405204">Sequencing stage ERX12405204</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome sequencing process (ERX12405204)</h3>
-                
-                
-                
-                
-        <div id="#sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#sequencing-process-03b617b7-d2be-4678-ba55-b5e78afa7eb7</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome sequencing process (ERX12405204)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-cdf79335-7135-459b-b07d-b69f9c2f6484">Processed DNA/RNA (ERX12405204)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/063/ERR13033463/ERR13033463.fastq.gz">Revio sequencing: ERR13033463.fastq.gz</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405204">Sequencing stage ERX12405204</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> DNA/RNA extraction process (ERX12405205)</h3>
-                
-                
-                
-                
-        <div id="#wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#wet-lab-process-bac7e276-9074-457b-9400-2de08f37bd5f</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>DNA/RNA extraction process (ERX12405205)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//dx.doi.org/10.17504/protocols.io.8epv5xxy6g1b/v1">Sanger Tree of Life Wet Laboratory Protocol Collection  V.1</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//identifiers.org/ena.embl%3ASAMEA114402090">Sample SAMEA114402090</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8">Processed DNA/RNA (ERX12405205)</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405205">Sequencing stage ERX12405205</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome sequencing process (ERX12405205)</h3>
-                
-                
-                
-                
-        <div id="#sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#sequencing-process-5b2da2db-aa69-4deb-8384-b8c3090c3d67</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome sequencing process (ERX12405205)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>LabProcess</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO wet lab contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">executesLabProtocol</th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%23sequencing-protocol-29b7dcc6-3a94-4f73-94ea-4ecf5704bdba">Sequencing protocol</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">location<span>&nbsp;</span><a href="http://schema.org/location">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.geonames.org/2653941">Cambridge, UK</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><a href="#%23processed-dna-rna-cb720491-a883-4b75-85b1-95c718a3cef8">Processed DNA/RNA (ERX12405205)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">provider<span>&nbsp;</span><a href="http://schema.org/provider">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//ror.org/05cy4wa09">Wellcome Sanger Institute</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#ftp%3A//ftp.sra.ebi.ac.uk/vol1/fastq/ERR130/064/ERR13033464/ERR13033464.fastq.gz">Revio sequencing: ERR13033464.fastq.gz</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405205">Sequencing stage ERX12405205</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome assembly process (GCA_964187845.1)</h3>
-                
-                
-                
-                
-        <div id="#assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#assembly-process-bdfa7bea-ba82-485a-ba00-d38d6590aa95</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome assembly process (GCA_964187845.1)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>CreateAction</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO assembly contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%2523assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671">Assembly workflow (placeholder)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405204">Sequencing stage ERX12405204</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405205">Sequencing stage ERX12405205</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12433627">Sequencing stage ERX12433627</a></li>
-                        </ul></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/">idCulLati1.1 assembly for Culex laticinctus</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//www.ebi.ac.uk/ena/browser/view/GCA_964187845.1/">idCulLati1.1 assembly for Culex laticinctus</a></li>
-                        </ul></td>
-            </tr></tbody>
-            </table>
-        </div>
-            </div>
-        <hr/><br/><br/>
-            <div>
-                <h3> Genome assembly process (GCA_964187835.1)</h3>
-                
-                
-                
-                
-        <div id="#assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42">
-            
-            <table class="table metadata table-striped" >
-                <tbody><tr>
-            <th style="text-align:left;" class="prop">@id</th>
-            <td style='text-align:left'><span>#assembly-process-24fe3f4d-0ea4-464e-9b67-0f3643001b42</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">name<span>&nbsp;</span><a href="http://schema.org/name">[?]</a></th>
-            <td style='text-align:left'><span>Genome assembly process (GCA_964187835.1)</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">@type</th>
-            <td style='text-align:left'><span>CreateAction</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">agent<span>&nbsp;</span><a href="http://schema.org/agent">[?]</a></th>
-            <td style='text-align:left'><span>TODO assembly contributors</span></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">instrument<span>&nbsp;</span><a href="http://schema.org/instrument">[?]</a></th>
-            <td style='text-align:left'><a href="#%2523assembly-workflow-2d73eb49-b832-4092-b0f3-a70e10fd9671">Assembly workflow (placeholder)</a></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">object<span>&nbsp;</span><a href="http://schema.org/object">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405204">Sequencing stage ERX12405204</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12405205">Sequencing stage ERX12405205</a></li>
-                        
-                        <li><a href="#https%3A//identifiers.org/ena.embl%3AERX12433627">Sequencing stage ERX12433627</a></li>
-                        </ul></td>
-            </tr><tr>
-            <th style="text-align:left;" class="prop">result<span>&nbsp;</span><a href="http://schema.org/result">[?]</a></th>
-            <td style='text-align:left'><a href="#https%3A//www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/">idCulLati1.1 alternate haplotype assembly for Culex laticinctus</a></td>
-            </tr><tr><th colspan="2" style="text-align:center">Items that reference this one</th><tr><tr>
-            <th style="text-align:left;" class="prop">mentions<span>&nbsp;</span><a href="http://schema.org/mentions">[?]</a></th>
-            <td style='text-align:left'><ul>
-                        <li><a href="#./">Genome of Culex laticinctus</a></li>
-                        
-                        <li><a href="#https%3A//www.ebi.ac.uk/ena/browser/view/GCA_964187835.1/">idCulLati1.1 alternate haplotype assembly for Culex laticinctus</a></li>
-                        </ul></td>
             </tr></tbody>
             </table>
         </div>
