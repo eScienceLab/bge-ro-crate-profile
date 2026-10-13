@@ -1,0 +1,4 @@
+requests
+rocrate>=0.16.0
+roc-validator>=0.12.0
+pandas

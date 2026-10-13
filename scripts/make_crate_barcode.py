@@ -284,6 +284,8 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
             "description": "A placeholder for a workflow that could exist on WorkflowHub (etc) or be directly contained within the crate",
             "sdDatePublished": str(datetime.now()),
         },
+        lang="cwl",
+        lang_version="1.2.0",
     )
 
     multiple = True if len(analysis_accessions) > 1 else False
@@ -457,6 +459,12 @@ def main():
     # the validation of additional samples - the workflow executions and analysis in these example files
 
     # what would a ROC export from BOLD look like?
+
+    #######################
+    # add profile context #
+    #######################
+    bge_profile_context = "https://esciencelab.org.uk/bge-ro-crate-profile/context.json"
+    crate.metadata.extra_contexts.append(bge_profile_context)
 
     #################
     # write & check #

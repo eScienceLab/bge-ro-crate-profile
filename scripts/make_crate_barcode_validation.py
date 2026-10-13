@@ -163,6 +163,12 @@ for bold_process_id in df["bold_process_id"].unique():
 
 print(df.loc[df["species"] == name])
 
+#######################
+# add profile context #
+#######################
+bge_profile_context = "https://esciencelab.org.uk/bge-ro-crate-profile/context.json"
+crate.metadata.extra_contexts.append(bge_profile_context)
+
 # Writing the RO-Crate metadata:
 crate.write(output_dir)
 

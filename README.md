@@ -20,8 +20,8 @@ Read the profile here: [BGE Profile](bge-profile.md).
 
 There are two example RO-Crates which follow the profile: 
 
-* Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
-* Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
+* Genome example: [HTML preview](0.2-DRAFT/example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json).
+* Barcode example: [HTML preview](0.2-DRAFT/example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](0.2-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json).
 
 ## Example crate details
 
@@ -76,7 +76,7 @@ When substantial changes are made to the code, the `example-bge-crate-barcode/` 
 
 ## For developers – scripts and examples
 
-See [Developer Notes](developer_notes.md).
+See [Developer Notes](scripts/developer_notes.md).
 
 ## Licensing
 

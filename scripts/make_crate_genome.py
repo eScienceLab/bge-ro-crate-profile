@@ -362,6 +362,8 @@ def add_analysis_stage(crate: ROCrate, analysis_accessions: str) -> Entity:
             "description": "A placeholder for a workflow that could exist on WorkflowHub (etc) or be directly contained within the crate",
             "sdDatePublished": str(datetime.now()),
         },
+        lang="cwl",
+        lang_version="1.2.0",
     )
 
     analysis_collection = crate.add(
@@ -534,6 +536,12 @@ def main():
         crate=crate,
         analysis_accessions=genome_assembly_accessions,
     )
+
+    #######################
+    # add profile context #
+    #######################
+    bge_profile_context = "https://esciencelab.org.uk/bge-ro-crate-profile/context.json"
+    crate.metadata.extra_contexts.append(bge_profile_context)
 
     #################
     # write & check #
