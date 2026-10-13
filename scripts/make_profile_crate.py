@@ -1,0 +1,99 @@
+from rocratepcc import *
+
+# List all types which are used in this profile
+types = [
+    UsedType(iri="https://schema.org/CreativeWork", name="CreativeWork"),
+    UsedType(iri="http://www.w3.org/ns/dx/prof/Profile", name="Profile"),
+    # TODO - add types used in context
+]
+
+# List all authors of this profile
+authors = [
+    Author(orcid="0000-0002-0035-6475", name="Eli Chadwick"),
+    Author(orcid="0000-0002-2036-8350", name="Nick Juty"),
+    Author(orcid="0000-0003-2569-0768", name="Joana Pauperio"),
+    Author(orcid="0000-0001-8293-4816", name="Tom Brown"),
+    Author(orcid="0000-0001-9254-7318", name="Rutger Vos"),
+]
+
+# Version of the profile (semver if possible)
+version = "0.2-DRAFT"
+
+# Identifier of the root data entity of the profile, if url not applicable then use "./"
+id = f"https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"  # TODO w3id
+
+# Name of the profile
+name = "Biodiversity Genomics RO-Crate Profile"
+
+# Description of the profile
+description = "The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different steps of biodiversity genomics research, from sample collection and preservation through to genome assembly, annotation, and further analysis."
+
+# License by which the profile is published
+license = License(iri="https://spdx.org/licenses/Apache-2.0", name="Apache License 2.0")
+
+# List of the textual resources we use as specifications for this profile
+specifications = [
+    TextualResource(
+        name="Biodiversity Genomics RO-Crate Profile description",
+        file_path="bge-profile.md",
+        encoding_format="text/markdown",
+        root_data_entity_id=id,
+    )
+]
+
+# TODO: absolute URIs for resources
+examples = [
+    TextualResource(
+        name="Genome example - Culex laticinctus (RO-Crate JSON-LD)",
+        # description="Example genome assembly provenance for Culex laticinctus. For demo purposes only; may not represent the true provenance of this genome.",
+        file_path="example-bge-crate-genome/ro-crate-metadata.json",
+        encoding_format="application/ld+json",
+    ),
+    TextualResource(
+        name="Genome example - Culex laticinctus (RO-Crate HTML preview)",
+        # description="Example genome assembly provenance for Culex laticinctus. For demo purposes only; may not represent the true provenance of this genome.",
+        file_path="example-bge-crate-genome/ro-crate-preview.html",
+        encoding_format="text/html",
+    ),
+    TextualResource(
+        name="Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate JSON-LD)",
+        # description="Example barcode provenance built using metadata retrieved from BOLD for the Process ID MHMXN361-07. For demo purposes only; may not represent the true provenance of this genome.",
+        file_path="example-bge-crate-barcode/ro-crate-metadata.json",
+        encoding_format="application/ld+json",
+    ),
+    TextualResource(
+        name="Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate HTML preview)",
+        # description="Example barcode provenance built using metadata retrieved from BOLD for the Process ID MHMXN361-07. For demo purposes only; may not represent the true provenance of this genome.",
+        file_path="example-bge-crate-barcode/ro-crate-preview.html",
+        encoding_format="text/html",
+    ),
+]
+
+# List of all the resource descriptors. Here, only the specification is given. Other possible types
+resourceDescriptors = [
+    Specification(specifications),
+    Example(examples),
+    # Guidance()
+    # Constraint()
+]
+
+# The root data entity of the profile
+rootEntity = RootDataEntity(
+    id=id,
+    name=name,
+    description=description,
+    license=license,
+    used_types=types,
+    resource_descriptors=resourceDescriptors,
+    authors=authors,
+)
+
+# Profile entity
+profile = Profile(rootEntity, license=license)
+
+# Convert the profile to a JSON-LD string
+string = profile.ToROCrateJsonString(spaces=2)
+
+# Write the string to a file "ro-crate-metadata.json"
+with open("ro-crate-metadata.json", "w", encoding="utf-8") as f:
+    f.write(string)
