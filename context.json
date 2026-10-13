@@ -12,6 +12,8 @@
         "locationOfOrigin": "https://bioschemas.org/terms/locationOfOrigin",
         "collectionMethod": "https://bioschemas.org/terms/collectionMethod",
         "ethics": "https://bioschemas.org/terms/ethics",
-        "submitter": "https://bioschemas.org/terms/submitter"
+        "submitter": "https://bioschemas.org/terms/submitter",
+        "dateCollected": "https://bioschemas.org/terms/dateCollected",
+        "executesLabProtocol": "https://bioschemas.org/terms/executesLabProtocol"
     }
 }
