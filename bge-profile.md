@@ -1,7 +1,8 @@
 # Biodiversity Genomics RO-Crate Profile
 
-Version: 0.1-DRAFT  
+Version: 0.1 
 Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/bge-profile.html>  
+JSON-LD context: https://esciencelab.org.uk/bge-ro-crate-profile/context.json
 Authors: 
 * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
 
@@ -47,7 +48,7 @@ At each stage, accession numbers, authors, affiliations, and additional metadata
 
 ![Detailed structure of a BGE RO-Crate. Each main stage now contains the data and processes as a smaller chain within the stage. The output of one stage is connected to the input of the next by the accession number.](img/detailed-sequence-of-processes.svg)
 
-This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html)page of the RO-Crate specification is also relevant here.
+This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html) page of the RO-Crate specification is also relevant here.
 
 ## Notes before reading
 
