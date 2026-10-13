@@ -17,9 +17,6 @@ def validate_crate(crate_uri):
     settings = services.ValidationSettings(
         # Set the path to the RO-Crate root directory
         rocrate_uri=crate_uri,
-        # Set the identifier of the RO-Crate profile to use for validation.
-        # If not set, the system will attempt to automatically determine the appropriate validation profile.
-        profile_identifier="ro-crate-1.1",
         # Set the requirement level for the validation
         requirement_severity=models.Severity.REQUIRED,
         # requirement_severity=models.Severity.RECOMMENDED, # use for best practices!

@@ -1,8 +1,9 @@
 # Biodiversity Genomics RO-Crate Profile
 
-Version: 0.1 
+Version: 0.2-DRAFT
 Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/bge-profile.html>  
 JSON-LD context: https://esciencelab.org.uk/bge-ro-crate-profile/context.json
+Extends: [RO-Crate 1.3](https://w3id.org/ro/crate/1.3)
 Authors: 
 * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
 
@@ -48,7 +49,7 @@ At each stage, accession numbers, authors, affiliations, and additional metadata
 
 ![Detailed structure of a BGE RO-Crate. Each main stage now contains the data and processes as a smaller chain within the stage. The output of one stage is connected to the input of the next by the accession number.](img/detailed-sequence-of-processes.svg)
 
-This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.2/provenance.html) page of the RO-Crate specification is also relevant here.
+This profile takes heavy inspiration from the [Process Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/process_run_crate/) profile, specifically in how processes are connected to inputs, outputs, and tools through the use of `CreateAction`. As Process Run Crate is intended only for describing computational processes, we aim to generalize its approach to work in additional contexts. The [Provenance of entities](https://www.researchobject.org/ro-crate/specification/1.3/provenance.html) page of the RO-Crate specification is also relevant here.
 
 ## Notes before reading
 
@@ -61,6 +62,14 @@ This spreadsheet [RO-Crate Bioschema mapping](https://docs.google.com/spreadshee
 The [ISA (Investigation, Study, Assay) metadata framework](https://isa-specs.readthedocs.io/en/latest/index.html) and [ISA RO-Crate profile](https://github.com/nfdi4plants/isa-ro-crate-profile/blob/release/profile/isa_ro_crate.md) may map onto this draft profile cleanly (with the root dataset as the Investigation and the stages as Studies). That profile is already supported by some existing platforms and projects (e.g. FAIRDOM-SEEK, FAIR Data Station, ARC framework). A future version of this profile may incorporate or inherit requirements from the ISA profile in order to improve interoperability.
 
 The [Common Provenance Model](https://www.nature.com/articles/s41597-022-01537-6) (CPM) and the [CPM RO-Crate profile](https://by-covid.github.io/cpm-ro-crate/0.2/) also offer a path to more detailed, distributed provenance metadata. Incorporating CPM would better support the step-by-step construction of the provenance chain _during_ the research pipeline, rather than at the end of it. For now, this profile focuses mainly on the publication use case, where all provenance information is collected from disparate database sources once the analysis is complete and ready to publish. A future version of this profile may incorporate or inherit requirements from the CPM profile.
+
+## Declaring Conformance
+
+This profile is compatible with RO-Crate version 1.3.
+
+To declare that an RO-Crate conforms to this profile:
+* include the versioned profile context permalink in `@context`
+* include the versioned profile permalink in `conformsTo` on the Root Data Entity
 
 ## Core Metadata
 
@@ -79,7 +88,7 @@ The root data entity should include the following properties:
     * One or more `BioSample`s representing the sample(s)
     * One or more `File`s or `Dataset`s representing the raw genetic data
     * One or more `File`s or `Dataset`s representing the primary output(s) of the analysis
-* `funder`: should reference an `Organization` representing the project that funded the work. See [Funding and grants](https://www.researchobject.org/ro-crate/specification/1.2/contextual-entities.html#funding-and-grants) from the core RO-Crate spec.
+* `funder`: should reference an `Organization` representing the project that funded the work. See [Funding and grants](https://www.researchobject.org/ro-crate/specification/1.3/contextual-entities.html#funding-and-grants) from the core RO-Crate spec.
 
 ## Species/taxon
 
@@ -110,7 +119,7 @@ Each BioSample entity's `@id` MUST be either:
 * a local identifier, if no accession is available (e.g. if the entity represents an untracked intermediate stage in a process)
 
 If the `@id` resolves to another RO-Crate, additional metadata should be added according to [Referencing other RO-Crates](
-https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#referencing-other-ro-crates).
+https://www.researchobject.org/ro-crate/specification/1.3/data-entities.html#referencing-other-ro-crates).
 
 A BioSample entity MUST include the following properties:
 * `name`: A human-friendly name for the sample. This SHOULD be unique within the crate. Example: "Culex laticinctus sample SAMEA114402090"
@@ -138,7 +147,7 @@ If the `@id` does not resolve to another RO-Crate, the following additional meta
 
 ## Stage: Wet lab and sequencing
 
-At minimum, there MUST be an entity representing the sequenced data. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
+At minimum, there MUST be an entity representing the sequenced data. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.3/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
 
 Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `BioSample`s connected to `File`/`Dataset` entities by `LabProcess` and `CreateAction` entities, and the chain SHOULD be connected to the biobanked sample from the previous stage. For example:
 
@@ -148,7 +157,7 @@ Additional provenance information for the sequenced data MAY be provided. This S
 
 ## Stage: Computational Analysis
 
-At minimum, there MUST be an entity representing the analysis results. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.2/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
+At minimum, there MUST be an entity representing the analysis results. This SHOULD be a data entity representing the data itself (so should have type `File` or `Dataset`; the data may be [web-based](https://www.researchobject.org/ro-crate/specification/1.3/data-entities.html#web-based-data-entities)). There MAY be multiple entities representing multiple data files.
 
 Additional provenance information for the sequenced data MAY be provided. This SHOULD be in the form of `File`/`Dataset` entities connected by `CreateAction` entities, and the chain SHOULD be connected to the sequenced data from the previous stage. For example:
 
