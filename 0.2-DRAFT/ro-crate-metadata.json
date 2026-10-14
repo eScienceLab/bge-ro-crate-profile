@@ -129,6 +129,12 @@
       "encodingFormat": "text/html"
     },
     {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json",
+      "@type": "File",
+      "name": "Biodiversity Genomics RO-Crate Profile Context (JSON-LD)",
+      "encodingFormat": "application/ld+json"
+    },
+    {
       "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json",
       "@type": "File",
       "name": "Genome example - Culex laticinctus (RO-Crate JSON-LD)",
@@ -164,6 +170,9 @@
         },
         {
           "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
         }
       ]
     },
@@ -282,6 +291,9 @@
           "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html"
         },
         {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
+        },
+        {
           "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
         },
         {
@@ -302,7 +314,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-10-14T10:15:56.159",
+      "datePublished": "2026-10-14T10:49:36.080",
       "isProfileOf": "https://w3id.org/ro/crate/1.3"
     },
     {

@@ -74,6 +74,11 @@ specifications = [
         file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/bge-profile.html",
         encoding_format="text/html",
     ),
+    TextualResource(
+        name="Biodiversity Genomics RO-Crate Profile Context (JSON-LD)",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/context.json",
+        encoding_format="application/ld+json",
+    ),
 ]
 
 examples = [
