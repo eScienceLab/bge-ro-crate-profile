@@ -52,7 +52,12 @@ name = "Biodiversity Genomics RO-Crate Profile"
 description = "The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different steps of biodiversity genomics research, from sample collection and preservation through to genome assembly, annotation, and further analysis."
 
 # License by which the profile is published
-license = License(iri="https://spdx.org/licenses/Apache-2.0", name="Apache License 2.0")
+license_rde = License(
+    iri="https://spdx.org/licenses/Apache-2.0", name="Apache License 2.0"
+)
+license_metadata = License(
+    iri="https://spdx.org/licenses/CC0-1.0", name="Creative Commons Zero v1.0 Universal"
+)
 
 # List of the textual resources we use as specifications for this profile
 specifications = [
@@ -113,7 +118,7 @@ rootEntity = RootDataEntity(
     id=id,
     name=name,
     description=description,
-    license=license,
+    license=license_rde,
     used_types=types,
     resource_descriptors=resourceDescriptors,
     authors=authors,
@@ -121,7 +126,7 @@ rootEntity = RootDataEntity(
 )
 
 # Profile entity
-profile = Profile(rootEntity, license=license)
+profile = Profile(rootEntity, license=license_metadata)
 
 # Convert the profile to a JSON-LD string
 string = profile.ToROCrateJsonString(spaces=2)
