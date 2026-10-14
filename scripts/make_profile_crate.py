@@ -20,7 +20,7 @@ authors = [
 version = "0.2-DRAFT"
 
 # Identifier of the root data entity of the profile, if url not applicable then use "./"
-id = f"https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"  # TODO w3id
+id = f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/bge-profile"  # TODO w3id
 
 # Name of the profile
 name = "Biodiversity Genomics RO-Crate Profile"
@@ -34,37 +34,40 @@ license = License(iri="https://spdx.org/licenses/Apache-2.0", name="Apache Licen
 # List of the textual resources we use as specifications for this profile
 specifications = [
     TextualResource(
-        name="Biodiversity Genomics RO-Crate Profile description",
-        file_path="bge-profile.md",
+        name="Biodiversity Genomics RO-Crate Profile description (Markdown)",
+        file_path=f"https://github.com/eScienceLab/bge-ro-crate-profile/blob/main/{version}/bge-profile.md",
         encoding_format="text/markdown",
-        root_data_entity_id=id,
-    )
+    ),
+    TextualResource(
+        name="Biodiversity Genomics RO-Crate Profile description (HTML)",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/bge-profile.html",
+        encoding_format="text/html",
+    ),
 ]
 
-# TODO: absolute URIs for resources
 examples = [
     TextualResource(
         name="Genome example - Culex laticinctus (RO-Crate JSON-LD)",
         # description="Example genome assembly provenance for Culex laticinctus. For demo purposes only; may not represent the true provenance of this genome.",
-        file_path="example-bge-crate-genome/ro-crate-metadata.json",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/example-bge-crate-genome/ro-crate-metadata.json",
         encoding_format="application/ld+json",
     ),
     TextualResource(
         name="Genome example - Culex laticinctus (RO-Crate HTML preview)",
         # description="Example genome assembly provenance for Culex laticinctus. For demo purposes only; may not represent the true provenance of this genome.",
-        file_path="example-bge-crate-genome/ro-crate-preview.html",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/example-bge-crate-genome/ro-crate-preview.html",
         encoding_format="text/html",
     ),
     TextualResource(
         name="Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate JSON-LD)",
         # description="Example barcode provenance built using metadata retrieved from BOLD for the Process ID MHMXN361-07. For demo purposes only; may not represent the true provenance of this genome.",
-        file_path="example-bge-crate-barcode/ro-crate-metadata.json",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/example-bge-crate-barcode/ro-crate-metadata.json",
         encoding_format="application/ld+json",
     ),
     TextualResource(
         name="Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate HTML preview)",
         # description="Example barcode provenance built using metadata retrieved from BOLD for the Process ID MHMXN361-07. For demo purposes only; may not represent the true provenance of this genome.",
-        file_path="example-bge-crate-barcode/ro-crate-preview.html",
+        file_path=f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/example-bge-crate-barcode/ro-crate-preview.html",
         encoding_format="text/html",
     ),
 ]
