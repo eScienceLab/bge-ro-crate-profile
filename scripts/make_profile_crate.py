@@ -13,12 +13,19 @@ types = [
     UsedType(iri="https://bioschemas.org/terms/collector", name="collector"),
     UsedType(iri="https://bioschemas.org/terms/maintainer", name="maintainer"),
     UsedType(iri="https://bioschemas.org/terms/custodian", name="custodian"),
-    UsedType(iri="https://bioschemas.org/terms/locationOfOrigin", name="locationOfOrigin"),
-    UsedType(iri="https://bioschemas.org/terms/collectionMethod", name="collectionMethod"),
+    UsedType(
+        iri="https://bioschemas.org/terms/locationOfOrigin", name="locationOfOrigin"
+    ),
+    UsedType(
+        iri="https://bioschemas.org/terms/collectionMethod", name="collectionMethod"
+    ),
     UsedType(iri="https://bioschemas.org/terms/ethics", name="ethics"),
     UsedType(iri="https://bioschemas.org/terms/submitter", name="submitter"),
     UsedType(iri="https://bioschemas.org/terms/dateCollected", name="dateCollected"),
-    UsedType(iri="https://bioschemas.org/terms/executesLabProtocol" name="executesLabProtocol"),
+    UsedType(
+        iri="https://bioschemas.org/terms/executesLabProtocol",
+        name="executesLabProtocol",
+    ),
 ]
 
 # List all authors of this profile
@@ -30,8 +37,17 @@ authors = [
     Author(orcid="0000-0001-9254-7318", name="Rutger Vos"),
 ]
 
+keywords = [
+    "biodiversity",
+    "genomics",
+    "lab process",
+    "life sciences",
+    "bioinformatics",
+]
+
 # Version of the profile (semver if possible)
 version = "0.2-DRAFT"
+version_tag = "0.2"  # github tag
 
 # Identifier of the root data entity of the profile, if url not applicable then use "./"
 id = f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/bge-profile"  # TODO w3id
@@ -49,7 +65,7 @@ license = License(iri="https://spdx.org/licenses/Apache-2.0", name="Apache Licen
 specifications = [
     TextualResource(
         name="Biodiversity Genomics RO-Crate Profile description (Markdown)",
-        file_path=f"https://github.com/eScienceLab/bge-ro-crate-profile/blob/main/{version}/bge-profile.md",
+        file_path=f"https://github.com/eScienceLab/bge-ro-crate-profile/tree/{version_tag}/{version}/bge-profile.md",
         encoding_format="text/markdown",
     ),
     TextualResource(
@@ -103,6 +119,7 @@ rootEntity = RootDataEntity(
     used_types=types,
     resource_descriptors=resourceDescriptors,
     authors=authors,
+    keywords=keywords,
 )
 
 # Profile entity
@@ -111,6 +128,23 @@ profile = Profile(rootEntity, license=license)
 # Convert the profile to a JSON-LD string
 string = profile.ToROCrateJsonString(spaces=2)
 
+# override the base RO-Crate version
+# the profile crate itself is valid under 1.2 but needs 1.3 for `isProfileOf`,
+# so just change it throughout to be consistent
+# can be removed when https://github.com/nfdi4plants/ROCratePCC/issues/4 is complete
+string = string.replace(
+    "https://w3id.org/ro/crate/1.2", "https://w3id.org/ro/crate/1.3"
+)
+
+# fix the base RO-Crate conformsTo reference
+# can be removed when https://github.com/nfdi4plants/ROCratePCC/issues/2 is complete
+string = string.replace(
+    '"conformsTo": "https://w3id.org/ro/crate/1.3"',
+    '"conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}',
+)
+
+metadata_file_path = f"../{version}/ro-crate-metadata.json"
+
 # Write the string to a file "ro-crate-metadata.json"
-with open("ro-crate-metadata.json", "w", encoding="utf-8") as f:
+with open(metadata_file_path, "w", encoding="utf-8") as f:
     f.write(string)
