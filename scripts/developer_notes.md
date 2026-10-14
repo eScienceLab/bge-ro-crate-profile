@@ -4,19 +4,27 @@ These notes are relevant to the GitHub repository for the profile: https://githu
 
 ## Code
 
+To run the scripts you must install the requirements listed in `requirements.txt`.
+
+The scripts use [`roc-validator`](https://github.com/crs4/rocrate-validator) to automatically run validation against the specification when generating RO-Crates. This should tell you if you did anything wrong according to the base spec (but does not mean that everything is definitely correct - e.g. it is possible to link things incorrectly and still pass validation).
+
+### Examples
+
 The `make_crate_genome.py` and `make_crate_barcode.py` scripts create example crates that represent the profile.
 
 Currently the scripts are more defined than the profile text.
-
-To run the scripts you must install the requirements listed in `requirements.txt`.
-
-The scripts automatically run validation against the RO-Crate 1.1 specification when generating the RO-Crate. This should tell you if you did anything wrong according to the base spec (but does not mean that all entities are linked correctly). 
 
 The scripts generate RO-Crates in the `bge-crate-genome` and `bge-crate-barcode` folders respectively. To generate a HTML preview of the crate (useful for checking things are linked as intended):
 ```
 npm install ro-crate-html
 rochtml bge-crate-genome/ro-crate-metadata.json
 ```
+
+### Profile Crate
+
+The `make_profile_crate.py` script builds a Profile Crate (an RO-Crate that represents the profile itself) using the [ROCratePCC](https://github.com/nfdi4plants/ROCratePCC) package. The resulting crate should be suitable for submission to the [RO-Crate Profile Portal](https://profiles.ro-crate.org/en/). 
+
+If there are changes to the `context.json` or the URIs for the profile/examples, the script should be updated accordingly. When releasing a new profile version, ensure all the metadata in the script (authors etc) is up to date.
 
 ## Where to find useful metadata and identifiers
 

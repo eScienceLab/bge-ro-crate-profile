@@ -1,21 +1,21 @@
 # Biodiversity Genomics RO-Crate Profile
 
-Version: 0.2-DRAFT  
-Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html>  
-JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json>  
-Extends: [RO-Crate 1.3](https://w3id.org/ro/crate/1.3)  
-Authors: 
-* Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
-
-Contributors:
-* Nick Juty, <https://orcid.org/0000-0002-2036-8350>
-* Joana Pauperio, <https://orcid.org/0000-0003-2569-0768>
-* Tom Brown, <https://orcid.org/0000-0001-8293-4816>
-* Rutger Vos, <https://orcid.org/0000-0001-9254-7318>
-
-Example metadata files (work in progress, may not be fully compliant):
-* Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
-* Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
+* Version: 0.2-DRAFT  
+* Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html>  
+* JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json>  
+* Extends: 
+  * [RO-Crate 1.3](https://w3id.org/ro/crate/1.3)  
+* Authors: 
+  * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
+* Contributors:
+  * Nick Juty, <https://orcid.org/0000-0002-2036-8350>
+  * Joana Pauperio, <https://orcid.org/0000-0003-2569-0768>
+  * Tom Brown, <https://orcid.org/0000-0001-8293-4816>
+  * Rutger Vos, <https://orcid.org/0000-0001-9254-7318>
+* Example metadata files (work in progress, may not be fully compliant):
+  * Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
+  * Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
+* Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 
 © 2025 The University of Manchester, UK
 
