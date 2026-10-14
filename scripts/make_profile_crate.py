@@ -1,4 +1,5 @@
 from rocratepcc import *
+from utils import validate_crate
 
 # List all types which are used in this profile
 types = [
@@ -143,8 +144,12 @@ string = string.replace(
     '"conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}',
 )
 
-metadata_file_path = f"../{version}/ro-crate-metadata.json"
+metadata_file_dir = f"../{version}/"
 
 # Write the string to a file "ro-crate-metadata.json"
-with open(metadata_file_path, "w", encoding="utf-8") as f:
+with open(f"{metadata_file_dir}/ro-crate-metadata.json", "w", encoding="utf-8") as f:
     f.write(string)
+
+print("RO-Crate generated. Validating...")
+
+validate_crate(metadata_file_dir)
