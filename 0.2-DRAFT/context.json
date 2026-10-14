@@ -1,7 +1,7 @@
 {
     "@context": {
-        "BioSample": "https://bioschemas.org/BioSample",
-        "Taxon": "https://bioschemas.org/Taxon",
+        "BioSample": "https://bioschemas.org/terms/BioSample",
+        "Taxon": "https://bioschemas.org/terms/Taxon",
         "LabProcess": "https://bioschemas.org/LabProcess",
         "LabProtocol": "https://bioschemas.org/LabProtocol",
         "scientificName": "https://bioschemas.org/terms/scientificName",

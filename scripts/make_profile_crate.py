@@ -4,7 +4,21 @@ from rocratepcc import *
 types = [
     UsedType(iri="https://schema.org/CreativeWork", name="CreativeWork"),
     UsedType(iri="http://www.w3.org/ns/dx/prof/Profile", name="Profile"),
-    # TODO - add types used in context
+    UsedType(iri="https://bioschemas.org/terms/BioSample", name="BioSample"),
+    UsedType(iri="https://bioschemas.org/terms/Taxon", name="Taxon"),
+    UsedType(iri="https://bioschemas.org/LabProcess", name="LabProcess"),
+    UsedType(iri="https://bioschemas.org/LabProtocol", name="LabProtocol"),
+    UsedType(iri="https://bioschemas.org/terms/scientificName", name="scientificName"),
+    UsedType(iri="https://bioschemas.org/terms/taxonRank", name="taxonRank"),
+    UsedType(iri="https://bioschemas.org/terms/collector", name="collector"),
+    UsedType(iri="https://bioschemas.org/terms/maintainer", name="maintainer"),
+    UsedType(iri="https://bioschemas.org/terms/custodian", name="custodian"),
+    UsedType(iri="https://bioschemas.org/terms/locationOfOrigin", name="locationOfOrigin"),
+    UsedType(iri="https://bioschemas.org/terms/collectionMethod", name="collectionMethod"),
+    UsedType(iri="https://bioschemas.org/terms/ethics", name="ethics"),
+    UsedType(iri="https://bioschemas.org/terms/submitter", name="submitter"),
+    UsedType(iri="https://bioschemas.org/terms/dateCollected", name="dateCollected"),
+    UsedType(iri="https://bioschemas.org/terms/executesLabProtocol" name="executesLabProtocol"),
 ]
 
 # List all authors of this profile
