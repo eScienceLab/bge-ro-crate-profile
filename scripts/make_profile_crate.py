@@ -1,32 +1,28 @@
 from rocratepcc import *
 from utils import validate_crate
+import json
+
+
+def load_types_from_context_file(context_file: str) -> list[UsedType]:
+    with open(context_file, "r") as f:
+        c = json.load(f)
+        context = c.get("@context", None)
+        if not context:
+            raise ValueError('no "@context" found in input file')
+        return [UsedType(iri=iri, name=key) for key, iri in context.items()]
+
+
+# Version of the profile (semver if possible)
+version = "0.2-DRAFT"
+version_tag = "0.2"  # github tag
+
+profile_dir = f"../{version}/"
 
 # List all types which are used in this profile
 types = [
     UsedType(iri="https://schema.org/CreativeWork", name="CreativeWork"),
     UsedType(iri="http://www.w3.org/ns/dx/prof/Profile", name="Profile"),
-    UsedType(iri="https://bioschemas.org/terms/BioSample", name="BioSample"),
-    UsedType(iri="https://bioschemas.org/terms/Taxon", name="Taxon"),
-    UsedType(iri="https://bioschemas.org/LabProcess", name="LabProcess"),
-    UsedType(iri="https://bioschemas.org/LabProtocol", name="LabProtocol"),
-    UsedType(iri="https://bioschemas.org/terms/scientificName", name="scientificName"),
-    UsedType(iri="https://bioschemas.org/terms/taxonRank", name="taxonRank"),
-    UsedType(iri="https://bioschemas.org/terms/collector", name="collector"),
-    UsedType(iri="https://bioschemas.org/terms/maintainer", name="maintainer"),
-    UsedType(iri="https://bioschemas.org/terms/custodian", name="custodian"),
-    UsedType(
-        iri="https://bioschemas.org/terms/locationOfOrigin", name="locationOfOrigin"
-    ),
-    UsedType(
-        iri="https://bioschemas.org/terms/collectionMethod", name="collectionMethod"
-    ),
-    UsedType(iri="https://bioschemas.org/terms/ethics", name="ethics"),
-    UsedType(iri="https://bioschemas.org/terms/submitter", name="submitter"),
-    UsedType(iri="https://bioschemas.org/terms/dateCollected", name="dateCollected"),
-    UsedType(
-        iri="https://bioschemas.org/terms/executesLabProtocol",
-        name="executesLabProtocol",
-    ),
+    *load_types_from_context_file(f"{profile_dir}/context.json"),
 ]
 
 # List all authors of this profile
@@ -45,10 +41,6 @@ keywords = [
     "life sciences",
     "bioinformatics",
 ]
-
-# Version of the profile (semver if possible)
-version = "0.2-DRAFT"
-version_tag = "0.2"  # github tag
 
 # Identifier of the root data entity of the profile, if url not applicable then use "./"
 id = f"https://esciencelab.org.uk/bge-ro-crate-profile/{version}/bge-profile"  # TODO w3id
@@ -149,12 +141,10 @@ string = string.replace(
     '"conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}',
 )
 
-metadata_file_dir = f"../{version}/"
-
 # Write the string to a file "ro-crate-metadata.json"
-with open(f"{metadata_file_dir}/ro-crate-metadata.json", "w", encoding="utf-8") as f:
+with open(f"{profile_dir}/ro-crate-metadata.json", "w", encoding="utf-8") as f:
     f.write(string)
 
 print("RO-Crate generated. Validating...")
 
-validate_crate(metadata_file_dir)
+validate_crate(profile_dir)
