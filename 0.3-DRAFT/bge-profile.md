@@ -1,8 +1,8 @@
 # Biodiversity Genomics RO-Crate Profile
 
-* Version: 0.2-DRAFT  
-* Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html>  
-* JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json>  
+* Version: 0.3-DRAFT  
+* Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html>  
+* JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json>  
 * Extends: 
   * [RO-Crate 1.3](https://w3id.org/ro/crate/1.3)  
 * Authors: 
@@ -12,12 +12,12 @@
   * Joana Pauperio, <https://orcid.org/0000-0003-2569-0768>
   * Tom Brown, <https://orcid.org/0000-0001-8293-4816>
   * Rutger Vos, <https://orcid.org/0000-0001-9254-7318>
-* Example metadata files (work in progress, may not be fully compliant):
+* Example metadata files (work in progress, may be out of sync with spec):
   * Genome example: [HTML preview](example-bge-crate-genome/ro-crate-preview.html), [JSON-LD](example-bge-crate-genome/ro-crate-metadata.json).
   * Barcode example: [HTML preview](example-bge-crate-barcode/ro-crate-preview.html), [JSON-LD](example-bge-crate-barcode/ro-crate-metadata.json).
 * Profile Crate: [ro-crate-metadata.json](ro-crate-metadata.json)
 
-© 2025 The University of Manchester, UK
+© 2025-2026 The University of Manchester, UK
 
 Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
@@ -53,7 +53,7 @@ This profile takes heavy inspiration from the [Process Run Crate](https://www.re
 
 ## Notes before reading
 
-This profile is a first draft currently in active development. It may change substantially before a stable release is made.
+This profile is a draft currently in active development. It may change substantially before a stable release is made.
 
 Note the distinction between Bioschemas LabProtocol (a sequence of tasks and operations executed to perform experimental research) and LabProcess (the specific application of a LabProtocol to some input (biological material or data) to produce some output (biological material or data)). This is analogous to the prospective and retrospective provenance ideas presented in [Workflow Run Crate](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate/).
 
@@ -129,8 +129,10 @@ If the `@id` does not resolve to another RO-Crate, the following additional meta
 * `collector`: person who collected the sample
 * `maintainer` / `custodian`: person who is or was responsible for custody of the sample
 * `contributor`: person who identified the sample
+* `dateCollected`
 * `locationOfOrigin`: where the sample was collected
 * `collectionMethod` and `ethics`: Details/locations of permits and/or ethical/legal documentation/compliance
+
 
 ### LabProcess entity metadata
 `LabProcess` entities MUST have the following properties:
@@ -144,6 +146,7 @@ If the `@id` does not resolve to another RO-Crate, the following additional meta
 * `agent`: link to a `Person` who carried out the process
 * `object`: link to entities representing the inputs
 * `result`: link to entities representing the output
+* `executesLabProtocol`: link to a `LabProtocol` entity for the SOP used (duplicate of `instrument`)
 
 ## Stage: Wet lab and sequencing
 

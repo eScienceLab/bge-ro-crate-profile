@@ -1,0 +1,339 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.3/context",
+  "@graph": [
+    {
+      "@id": "https://spdx.org/licenses/Apache-2.0",
+      "@type": "CreativeWork",
+      "name": "Apache License 2.0"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0035-6475",
+      "@type": "Person",
+      "name": "Eli Chadwick"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-2036-8350",
+      "@type": "Person",
+      "name": "Nick Juty"
+    },
+    {
+      "@id": "https://orcid.org/0000-0003-2569-0768",
+      "@type": "Person",
+      "name": "Joana Pauperio"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-8293-4816",
+      "@type": "Person",
+      "name": "Tom Brown"
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9254-7318",
+      "@type": "Person",
+      "name": "Rutger Vos"
+    },
+    {
+      "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md",
+      "@type": "File",
+      "name": "Biodiversity Genomics RO-Crate Profile description (Markdown)",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "https://schema.org/CreativeWork",
+      "@type": "DefinedTerm",
+      "name": "CreativeWork"
+    },
+    {
+      "@id": "http://www.w3.org/ns/dx/prof/Profile",
+      "@type": "DefinedTerm",
+      "name": "Profile"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/BioSample",
+      "@type": "DefinedTerm",
+      "name": "BioSample"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/Taxon",
+      "@type": "DefinedTerm",
+      "name": "Taxon"
+    },
+    {
+      "@id": "https://bioschemas.org/LabProcess",
+      "@type": "DefinedTerm",
+      "name": "LabProcess"
+    },
+    {
+      "@id": "https://bioschemas.org/LabProtocol",
+      "@type": "DefinedTerm",
+      "name": "LabProtocol"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/scientificName",
+      "@type": "DefinedTerm",
+      "name": "scientificName"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/taxonRank",
+      "@type": "DefinedTerm",
+      "name": "taxonRank"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/collector",
+      "@type": "DefinedTerm",
+      "name": "collector"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/maintainer",
+      "@type": "DefinedTerm",
+      "name": "maintainer"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/custodian",
+      "@type": "DefinedTerm",
+      "name": "custodian"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/locationOfOrigin",
+      "@type": "DefinedTerm",
+      "name": "locationOfOrigin"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/collectionMethod",
+      "@type": "DefinedTerm",
+      "name": "collectionMethod"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/ethics",
+      "@type": "DefinedTerm",
+      "name": "ethics"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/submitter",
+      "@type": "DefinedTerm",
+      "name": "submitter"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/dateCollected",
+      "@type": "DefinedTerm",
+      "name": "dateCollected"
+    },
+    {
+      "@id": "https://bioschemas.org/terms/executesLabProtocol",
+      "@type": "DefinedTerm",
+      "name": "executesLabProtocol"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html",
+      "@type": "File",
+      "name": "Biodiversity Genomics RO-Crate Profile description (HTML)",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json",
+      "@type": "File",
+      "name": "Biodiversity Genomics RO-Crate Profile Context (JSON-LD)",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json",
+      "@type": "File",
+      "name": "Genome example - Culex laticinctus (RO-Crate JSON-LD)",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html",
+      "@type": "File",
+      "name": "Genome example - Culex laticinctus (RO-Crate HTML preview)",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json",
+      "@type": "File",
+      "name": "Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate JSON-LD)",
+      "encodingFormat": "application/ld+json"
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html",
+      "@type": "File",
+      "name": "Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate HTML preview)",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "#hasSpecification",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/specification"
+      },
+      "hasArtifact": [
+        {
+          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json"
+        }
+      ]
+    },
+    {
+      "@id": "#hasExample",
+      "@type": "ResourceDescriptor",
+      "hasRole": {
+        "@id": "http://www.w3.org/ns/dx/prof/role/example"
+      },
+      "hasArtifact": [
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
+        }
+      ]
+    },
+    {
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile",
+      "@type": [
+        "Dataset",
+        "Profile"
+      ],
+      "license": {
+        "@id": "https://spdx.org/licenses/Apache-2.0"
+      },
+      "name": "Biodiversity Genomics RO-Crate Profile",
+      "description": "The aim of this profile is to provide a full description of the provenance of biodiversity genomics data. This means capturing and connecting the different steps of biodiversity genomics research, from sample collection and preservation through to genome assembly, annotation, and further analysis.",
+      "author": [
+        {
+          "@id": "https://orcid.org/0000-0002-0035-6475"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-2036-8350"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-2569-0768"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-8293-4816"
+        },
+        {
+          "@id": "https://orcid.org/0000-0001-9254-7318"
+        }
+      ],
+      "keywords": [
+        "biodiversity",
+        "genomics",
+        "lab process",
+        "life sciences",
+        "bioinformatics"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md"
+        },
+        {
+          "@id": "https://schema.org/CreativeWork"
+        },
+        {
+          "@id": "http://www.w3.org/ns/dx/prof/Profile"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/BioSample"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/Taxon"
+        },
+        {
+          "@id": "https://bioschemas.org/LabProcess"
+        },
+        {
+          "@id": "https://bioschemas.org/LabProtocol"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/scientificName"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/taxonRank"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/collector"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/maintainer"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/custodian"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/locationOfOrigin"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/collectionMethod"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/ethics"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/submitter"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/dateCollected"
+        },
+        {
+          "@id": "https://bioschemas.org/terms/executesLabProtocol"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
+        },
+        {
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
+        }
+      ],
+      "hasResource": [
+        {
+          "@id": "#hasSpecification"
+        },
+        {
+          "@id": "#hasExample"
+        }
+      ],
+      "datePublished": "2026-10-14T12:30:16.612",
+      "isProfileOf": "https://w3id.org/ro/crate/1.3"
+    },
+    {
+      "@id": "https://spdx.org/licenses/CC0-1.0",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Zero v1.0 Universal"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile"
+      },
+      "license": {
+        "@id": "https://spdx.org/licenses/CC0-1.0"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.3"
+      }
+    }
+  ]
+}

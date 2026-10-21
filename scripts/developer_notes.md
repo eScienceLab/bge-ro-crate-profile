@@ -12,7 +12,7 @@ The scripts use [`roc-validator`](https://github.com/crs4/rocrate-validator) to 
 
 The `make_crate_genome.py` and `make_crate_barcode.py` scripts create example crates that represent the profile.
 
-Currently the scripts are more defined than the profile text.
+Currently the scripts are not in sync with the profile text - as of v0.2 the scripts have been advanced further than the profile text.
 
 The scripts generate RO-Crates in the `bge-crate-genome` and `bge-crate-barcode` folders respectively. To generate a HTML preview of the crate (useful for checking things are linked as intended):
 ```
