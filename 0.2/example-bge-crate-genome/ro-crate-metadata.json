@@ -1,7 +1,7 @@
 {
     "@context": [
         "https://w3id.org/ro/crate/1.3/context",
-        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
+        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2/context.json"
     ],
     "@graph": [
         {
@@ -14,7 +14,7 @@
             ],
             "conformsTo": [
                 {
-                    "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"
+                    "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2/bge-profile"
                 }
             ],
             "datePublished": "2026-10-13T15:41:20+00:00",
@@ -780,13 +780,13 @@
             }
         },
         {
-            "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile",
+            "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2/bge-profile",
             "@type": [
                 "CreativeWork",
                 "Profile"
             ],
             "name": "Biodiversity Genomics RO-Crate Profile",
-            "version": "0.2-DRAFT"
+            "version": "0.2"
         }
     ]
 }
