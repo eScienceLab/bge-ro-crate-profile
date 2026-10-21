@@ -1,1 +1,1 @@
-0.2-DRAFT/bge-profile.md
+0.2/bge-profile.md

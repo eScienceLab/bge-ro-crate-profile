@@ -464,13 +464,11 @@ def main():
     # add profile context #
     #######################
     bge_profile_context = (
-        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
+        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2/context.json"
     )
     crate.metadata.extra_contexts.append(bge_profile_context)
 
-    bge_profile_uri = (
-        "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"
-    )
+    bge_profile_uri = "https://esciencelab.org.uk/bge-ro-crate-profile/0.2/bge-profile"
     bge_profile = crate.add(
         ContextEntity(
             crate,
@@ -478,7 +476,7 @@ def main():
             properties={
                 "@type": ["CreativeWork", "Profile"],
                 "name": "Biodiversity Genomics RO-Crate Profile",
-                "version": "0.2-DRAFT",
+                "version": "0.2",
             },
         )
     )
