@@ -32,7 +32,7 @@
       "name": "Rutger Vos"
     },
     {
-      "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.2-DRAFT/bge-profile.md",
+      "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md",
       "@type": "File",
       "name": "Biodiversity Genomics RO-Crate Profile description (Markdown)",
       "encodingFormat": "text/markdown"
@@ -123,37 +123,37 @@
       "name": "executesLabProtocol"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html",
       "@type": "File",
       "name": "Biodiversity Genomics RO-Crate Profile description (HTML)",
       "encodingFormat": "text/html"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json",
       "@type": "File",
       "name": "Biodiversity Genomics RO-Crate Profile Context (JSON-LD)",
       "encodingFormat": "application/ld+json"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json",
       "@type": "File",
       "name": "Genome example - Culex laticinctus (RO-Crate JSON-LD)",
       "encodingFormat": "application/ld+json"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-preview.html",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html",
       "@type": "File",
       "name": "Genome example - Culex laticinctus (RO-Crate HTML preview)",
       "encodingFormat": "text/html"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json",
       "@type": "File",
       "name": "Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate JSON-LD)",
       "encodingFormat": "application/ld+json"
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-preview.html",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html",
       "@type": "File",
       "name": "Barcode example - BOLD Process ID MHMXN361-07 (RO-Crate HTML preview)",
       "encodingFormat": "text/html"
@@ -166,13 +166,13 @@
       },
       "hasArtifact": [
         {
-          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.2-DRAFT/bge-profile.md"
+          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json"
         }
       ]
     },
@@ -184,21 +184,21 @@
       },
       "hasArtifact": [
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
         }
       ]
     },
     {
-      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile",
+      "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile",
       "@type": [
         "Dataset",
         "Profile"
@@ -234,7 +234,7 @@
       ],
       "hasPart": [
         {
-          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.2-DRAFT/bge-profile.md"
+          "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.3-DRAFT/bge-profile.md"
         },
         {
           "@id": "https://schema.org/CreativeWork"
@@ -288,22 +288,22 @@
           "@id": "https://bioschemas.org/terms/executesLabProtocol"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile.html"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/context.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/context.json"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-metadata.json"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-genome/ro-crate-preview.html"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-metadata.json"
         },
         {
-          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
+          "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/example-bge-crate-barcode/ro-crate-preview.html"
         }
       ],
       "hasResource": [
@@ -326,12 +326,14 @@
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
       "about": {
-        "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.2-DRAFT/bge-profile"
+        "@id": "https://esciencelab.org.uk/bge-ro-crate-profile/0.3-DRAFT/bge-profile"
       },
       "license": {
         "@id": "https://spdx.org/licenses/CC0-1.0"
       },
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.3"
+      }
     }
   ]
 }
