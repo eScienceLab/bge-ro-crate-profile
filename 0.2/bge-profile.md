@@ -1,8 +1,8 @@
 # Biodiversity Genomics RO-Crate Profile
 
 * Version: 0.2  
-* Permalink: N/A - use GH Pages link <https://esciencelab.org.uk/bge-ro-crate-profile/0.2/bge-profile.html>  
-* JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.2/context.json>  
+* Permalink: <https://w3id.org/ro/bg-crate/0.2>
+* JSON-LD context: <https://w3id.org/ro/bg-crate/0.2/context>  
 * Extends: 
   * [RO-Crate 1.3](https://w3id.org/ro/crate/1.3)  
 * Authors: 

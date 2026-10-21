@@ -1,8 +1,8 @@
 # Biodiversity Genomics RO-Crate Profile
 
 Version: 0.1  
-Permalink: N/A - use draft link <https://esciencelab.org.uk/bge-ro-crate-profile/0.1/bge-profile.html>  
-JSON-LD context: <https://esciencelab.org.uk/bge-ro-crate-profile/0.1/context.json>  
+Permalink: <https://w3id.org/ro/bg-crate/0.1>  
+JSON-LD context: <https://w3id.org/ro/bg-crate/0.1/context>  
 Authors: 
 * Eli Chadwick, <https://orcid.org/0000-0002-0035-6475>
 
