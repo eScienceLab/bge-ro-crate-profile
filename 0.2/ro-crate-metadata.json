@@ -58,12 +58,12 @@
       "name": "Taxon"
     },
     {
-      "@id": "https://bioschemas.org/LabProcess",
+      "@id": "https://bioschemas.org/draft_terms/LabProcess",
       "@type": "DefinedTerm",
       "name": "LabProcess"
     },
     {
-      "@id": "https://bioschemas.org/LabProtocol",
+      "@id": "https://bioschemas.org/draft_terms/LabProtocol",
       "@type": "DefinedTerm",
       "name": "LabProtocol"
     },
@@ -83,37 +83,32 @@
       "name": "collector"
     },
     {
-      "@id": "https://bioschemas.org/terms/maintainer",
-      "@type": "DefinedTerm",
-      "name": "maintainer"
-    },
-    {
       "@id": "https://bioschemas.org/terms/custodian",
       "@type": "DefinedTerm",
       "name": "custodian"
     },
     {
-      "@id": "https://bioschemas.org/terms/locationOfOrigin",
+      "@id": "https://bioschemas.org/draft_terms/locationOfOrigin",
       "@type": "DefinedTerm",
       "name": "locationOfOrigin"
     },
     {
-      "@id": "https://bioschemas.org/terms/collectionMethod",
+      "@id": "https://bioschemas.org/draft_terms/collectionMethod",
       "@type": "DefinedTerm",
       "name": "collectionMethod"
     },
     {
-      "@id": "https://bioschemas.org/terms/ethics",
+      "@id": "https://bioschemas.org/draft_terms/ethics",
       "@type": "DefinedTerm",
       "name": "ethics"
     },
     {
-      "@id": "https://bioschemas.org/terms/submitter",
+      "@id": "https://bioschemas.org/draft_terms/submitter",
       "@type": "DefinedTerm",
       "name": "submitter"
     },
     {
-      "@id": "https://bioschemas.org/terms/dateCollected",
+      "@id": "https://bioschemas.org/draft_terms/dateCollected",
       "@type": "DefinedTerm",
       "name": "dateCollected"
     },
@@ -232,6 +227,7 @@
         "life sciences",
         "bioinformatics"
       ],
+      "version": "0.2",
       "hasPart": [
         {
           "@id": "https://github.com/eScienceLab/bge-ro-crate-profile/tree/0.2/0.2/bge-profile.md"
@@ -249,10 +245,10 @@
           "@id": "https://bioschemas.org/terms/Taxon"
         },
         {
-          "@id": "https://bioschemas.org/LabProcess"
+          "@id": "https://bioschemas.org/draft_terms/LabProcess"
         },
         {
-          "@id": "https://bioschemas.org/LabProtocol"
+          "@id": "https://bioschemas.org/draft_terms/LabProtocol"
         },
         {
           "@id": "https://bioschemas.org/terms/scientificName"
@@ -264,25 +260,22 @@
           "@id": "https://bioschemas.org/terms/collector"
         },
         {
-          "@id": "https://bioschemas.org/terms/maintainer"
-        },
-        {
           "@id": "https://bioschemas.org/terms/custodian"
         },
         {
-          "@id": "https://bioschemas.org/terms/locationOfOrigin"
+          "@id": "https://bioschemas.org/draft_terms/locationOfOrigin"
         },
         {
-          "@id": "https://bioschemas.org/terms/collectionMethod"
+          "@id": "https://bioschemas.org/draft_terms/collectionMethod"
         },
         {
-          "@id": "https://bioschemas.org/terms/ethics"
+          "@id": "https://bioschemas.org/draft_terms/ethics"
         },
         {
-          "@id": "https://bioschemas.org/terms/submitter"
+          "@id": "https://bioschemas.org/draft_terms/submitter"
         },
         {
-          "@id": "https://bioschemas.org/terms/dateCollected"
+          "@id": "https://bioschemas.org/draft_terms/dateCollected"
         },
         {
           "@id": "https://bioschemas.org/terms/executesLabProtocol"
@@ -314,7 +307,7 @@
           "@id": "#hasExample"
         }
       ],
-      "datePublished": "2026-10-14T12:30:16.612",
+      "datePublished": "2026-10-27T10:57:36.445",
       "isProfileOf": "https://w3id.org/ro/crate/1.3"
     },
     {
@@ -331,9 +324,7 @@
       "license": {
         "@id": "https://spdx.org/licenses/CC0-1.0"
       },
-      "conformsTo": {
-        "@id": "https://w3id.org/ro/crate/1.3"
-      }
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.3"}
     }
   ]
 }

@@ -13,7 +13,7 @@ def load_types_from_context_file(context_file: str) -> list[UsedType]:
 
 
 # Version of the profile (semver if possible)
-version = "0.2-DRAFT"
+version = "0.2"
 version_tag = "0.2"  # github tag
 
 profile_dir = f"../{version}/"
@@ -123,6 +123,7 @@ rootEntity = RootDataEntity(
     resource_descriptors=resourceDescriptors,
     authors=authors,
     keywords=keywords,
+    version=version,
 )
 
 # Profile entity
